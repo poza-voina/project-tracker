@@ -1,0 +1,343 @@
+2025-10-09 23:15:15.076 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:15:15.119 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:15:15.210 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:15:15.218 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:15:15.219 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:16:03.960 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/ - null null
+2025-10-09 23:16:04.209 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/ - 404 0 null 255.2913ms
+2025-10-09 23:16:04.351 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5231/, Response status code: 404
+2025-10-09 23:16:07.474 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger - null null
+2025-10-09 23:16:07.481 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger - 404 0 null 7.0094ms
+2025-10-09 23:16:07.484 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5231/swagger, Response status code: 404
+2025-10-09 23:16:14.971 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:16:14.992 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 404 0 null 20.9358ms
+2025-10-09 23:16:14.994 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5231/swagger/index.html, Response status code: 404
+2025-10-09 23:18:00.570 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/ - null null
+2025-10-09 23:17:36.930 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:18:14.352 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:18:14.441 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:18:14.456 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:18:14.457 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:18:42.307 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:18:42.345 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:18:42.458 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:18:42.458 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:18:42.459 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:18:55.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger - null null
+2025-10-09 23:20:21.249 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:20:21.302 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:20:21.397 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:20:21.417 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:20:21.418 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:20:41.894 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/ - null null
+2025-10-09 23:20:55.990 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:20:56.011 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:20:56.082 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:20:56.087 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:20:56.087 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:20:57.428 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/ - null null
+2025-10-09 23:20:57.726 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/ - 404 0 null 301.3662ms
+2025-10-09 23:20:57.734 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5231/, Response status code: 404
+2025-10-09 23:21:16.377 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/ - null null
+2025-10-09 23:21:16.384 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/ - 404 0 null 7.2322ms
+2025-10-09 23:21:16.393 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5231/, Response status code: 404
+2025-10-09 23:21:20.246 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger - null null
+2025-10-09 23:21:20.259 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger - 301 0 null 13.3153ms
+2025-10-09 23:21:20.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:21:20.371 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 104.922ms
+2025-10-09 23:21:20.389 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - null null
+2025-10-09 23:21:20.384 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.css - null null
+2025-10-09 23:21:20.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-09 23:21:20.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.js - null null
+2025-10-09 23:21:20.420 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - null null
+2025-10-09 23:21:20.440 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.js - 200 null application/javascript;charset=utf-8 19.8472ms
+2025-10-09 23:21:20.443 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:21:20.442 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-09 23:21:20.452 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.css - 200 202 text/css 68.5153ms
+2025-10-09 23:21:20.453 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 10.2288ms
+2025-10-09 23:21:20.459 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:21:20.462 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-09 23:21:20.466 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-09 23:21:20.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - 200 154949 text/css 67.0715ms
+2025-10-09 23:21:20.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 67.8802ms
+2025-10-09 23:21:20.527 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-09 23:21:20.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 171.1404ms
+2025-10-09 23:21:20.577 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.6872ms
+2025-10-09 23:21:20.803 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:21:20.824 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - null null
+2025-10-09 23:21:21.081 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-09 23:21:21.082 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - 200 628 image/png 257.5402ms
+2025-10-09 23:21:21.261 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 457.4545ms
+2025-10-09 23:21:49.206 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/api/employees/1 - null null
+2025-10-09 23:21:49.210 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetEmployee (ProjectTracker.Api)'
+2025-10-09 23:21:49.236 +03:00 [INF] Route matched with {action = "GetEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEmployee(Int64) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:21:54.433 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.GetEmployee (ProjectTracker.Api) in 5191.0624ms
+2025-10-09 23:21:54.436 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetEmployee (ProjectTracker.Api)'
+2025-10-09 23:21:54.444 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+ProjectTracker.Abstractions.Exceptions.NotFoundException: сущность с идентификаторами = [1] не найдены
+   at ProjectTracker.Infrastructure.Repositories.Repository`1.FindAsync(Object[] objects) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Infrastructure\Repositories\Repository.cs:line 94
+   at ProjectTracker.Core.Services.EmployeeService.GetAsync(Int64 id) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Core\Services\EmployeeService.cs:line 48
+   at ProjectTracker.Api.Controllers.EmployeeController.GetEmployee(Int64 id) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Api\Controllers\EmployeeController.cs:line 14
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-09 23:21:54.644 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/api/employees/1 - 404 null application/json; charset=utf-8 5438.3299ms
+2025-10-09 23:22:12.723 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/api/employees?PageNumber=1&PageSize=100 - null null
+2025-10-09 23:22:12.772 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:12.829 +03:00 [INF] Route matched with {action = "GetAllEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployee(ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationRequest) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:22:12.958 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 23:22:12.961 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-10-09 23:22:13.155 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationResponse`1[[ProjectTracker.Contracts.ViewModels.Employee.EmployeeBaseResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 23:22:13.177 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api) in 343.8202ms
+2025-10-09 23:22:13.178 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:13.179 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/api/employees?PageNumber=1&PageSize=100 - 200 null application/json; charset=utf-8 455.8476ms
+2025-10-09 23:22:27.358 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/employees - application/json 90
+2025-10-09 23:22:27.365 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:27.373 +03:00 [INF] Route matched with {action = "CreateEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(ProjectTracker.Contracts.ViewModels.Employee.CreateEmployeeRequest) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:22:27.710 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Employee.EmployeeBaseResponse'.
+2025-10-09 23:22:27.712 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api) in 337.8948ms
+2025-10-09 23:22:27.714 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:27.714 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/employees - 200 null application/json; charset=utf-8 356.4635ms
+2025-10-09 23:22:33.339 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:22:33.353 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:22:33.357 +03:00 [INF] Route matched with {action = "DeleteEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEmployeeAsync(Int64) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:22:37.233 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api) in 3875.1167ms
+2025-10-09 23:22:37.236 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:22:37.238 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+ProjectTracker.Abstractions.Exceptions.NotFoundException: сущность с идентификаторами = [0] не найдены
+   at ProjectTracker.Infrastructure.Repositories.Repository`1.FindAsync(Object[] objects) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Infrastructure\Repositories\Repository.cs:line 94
+   at ProjectTracker.Infrastructure.Repositories.Repository`1.DeleteAsync(Int64 id, CancellationToken cancellationToken) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Infrastructure\Repositories\Repository.cs:line 52
+   at ProjectTracker.Core.Services.EmployeeService.DeleteAsync(Int64 id) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Core\Services\EmployeeService.cs:line 25
+   at ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync(Int64 id) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Api\Controllers\EmployeeController.cs:line 38
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-09 23:22:37.254 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees - 404 null application/json; charset=utf-8 3915.3863ms
+2025-10-09 23:22:45.810 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/api/employees?PageNumber=1&PageSize=100 - null null
+2025-10-09 23:22:45.841 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:45.842 +03:00 [INF] Route matched with {action = "GetAllEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEmployee(ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationRequest) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:22:45.892 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationResponse`1[[ProjectTracker.Contracts.ViewModels.Employee.EmployeeBaseResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-09 23:22:45.906 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api) in 17.715ms
+2025-10-09 23:22:45.910 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.GetAllEmployee (ProjectTracker.Api)'
+2025-10-09 23:22:45.910 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/api/employees?PageNumber=1&PageSize=100 - 200 null application/json; charset=utf-8 100.7062ms
+2025-10-09 23:23:19.477 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:23:19.479 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:23:19.481 +03:00 [INF] Route matched with {action = "DeleteEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEmployeeAsync(Int64) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:24:01.138 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:24:01.171 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:24:01.186 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:24:01.288 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:24:01.293 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:24:01.445 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:24:01.446 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:24:01.448 +03:00 [INF] Route matched with {action = "DeleteEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEmployeeAsync(Int64) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:24:27.698 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:24:27.758 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:24:27.823 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:24:27.825 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:24:27.825 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:24:36.437 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:24:36.642 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:36.645 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:36.654 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees - 405 0 null 222.5899ms
+2025-10-09 23:24:40.134 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:24:40.152 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.159 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.163 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees - 405 0 null 29.0396ms
+2025-10-09 23:24:40.672 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:24:40.698 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.719 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.720 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees - 405 0 null 47.6258ms
+2025-10-09 23:24:40.814 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees - null null
+2025-10-09 23:24:40.816 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.819 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-10-09 23:24:40.820 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees - 405 0 null 5.7903ms
+2025-10-09 23:24:51.246 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:24:51.612 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 366.6246ms
+2025-10-09 23:24:51.642 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - null null
+2025-10-09 23:24:51.642 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.css - null null
+2025-10-09 23:24:51.681 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-09 23:24:51.681 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.js - null null
+2025-10-09 23:24:51.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - null null
+2025-10-09 23:24:51.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.js - 200 null application/javascript;charset=utf-8 9.2465ms
+2025-10-09 23:24:51.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:24:51.712 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 3.4508ms
+2025-10-09 23:24:51.729 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-09 23:24:51.730 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-09 23:24:51.733 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-09 23:24:51.749 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-09 23:24:51.795 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.css - 200 202 text/css 152.9325ms
+2025-10-09 23:24:51.798 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 155.2803ms
+2025-10-09 23:24:51.798 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 116.8115ms
+2025-10-09 23:24:51.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - 200 154949 text/css 116.1022ms
+2025-10-09 23:24:51.801 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:24:51.884 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 82.5905ms
+2025-10-09 23:24:52.065 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:24:52.072 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - null null
+2025-10-09 23:24:52.109 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-09 23:24:52.121 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - 200 628 image/png 49.1347ms
+2025-10-09 23:24:52.267 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 202.2374ms
+2025-10-09 23:24:55.778 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5231/api/employees/1 - null null
+2025-10-09 23:24:55.787 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:24:55.810 +03:00 [INF] Route matched with {action = "DeleteEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEmployeeAsync(Int64) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-09 23:25:01.020 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-10-09 23:25:01.025 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api) in 5211.0942ms
+2025-10-09 23:25:01.028 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.DeleteEmployeeAsync (ProjectTracker.Api)'
+2025-10-09 23:25:01.037 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5231/api/employees/1 - 200 0 null 5258.568ms
+2025-10-09 23:32:20.733 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:32:20.787 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:32:20.878 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:32:20.879 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:32:20.882 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:32:25.471 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:32:25.844 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 377.8181ms
+2025-10-09 23:32:25.871 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.css - null null
+2025-10-09 23:32:25.910 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - null null
+2025-10-09 23:32:25.941 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-09 23:32:25.941 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.js - null null
+2025-10-09 23:32:25.944 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - null null
+2025-10-09 23:32:25.951 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.js - 200 null application/javascript;charset=utf-8 10.1056ms
+2025-10-09 23:32:25.954 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-09 23:32:25.957 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.css - 200 202 text/css 85.6764ms
+2025-10-09 23:32:25.955 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:32:25.963 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 7.419ms
+2025-10-09 23:32:25.965 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-09 23:32:25.975 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - 200 154949 text/css 30.6984ms
+2025-10-09 23:32:25.965 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-09 23:32:25.979 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 38.64ms
+2025-10-09 23:32:25.982 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-09 23:32:25.983 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 73.0773ms
+2025-10-09 23:32:25.983 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:32:26.094 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 111.0179ms
+2025-10-09 23:32:26.524 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - null null
+2025-10-09 23:32:26.723 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:32:26.726 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-09 23:32:26.729 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - 200 628 image/png 205.4956ms
+2025-10-09 23:32:26.860 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/employees" for actions - ProjectTracker.Api.Controllers.EmployeeController.GetEmployee (ProjectTracker.Api), ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api). Actions require a unique method/path combination for Swagger/OpenAPI 2.0 and 3.0. Use ConflictingActionsResolver as a workaround or provide your own implementation of PathGroupSelector.
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.PrepareGenerateOperation(IGrouping`2 group)
+   at System.Linq.Enumerable.IteratorSelectIterator`2.MoveNext()
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-09 23:32:26.890 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 500 null application/json; charset=utf-8 166.5088ms
+2025-10-09 23:32:31.494 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:32:31.496 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:32:31.511 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 18.2878ms
+2025-10-09 23:32:31.517 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.664ms
+2025-10-09 23:32:31.609 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:32:31.634 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/employees" for actions - ProjectTracker.Api.Controllers.EmployeeController.GetEmployee (ProjectTracker.Api), ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api). Actions require a unique method/path combination for Swagger/OpenAPI 2.0 and 3.0. Use ConflictingActionsResolver as a workaround or provide your own implementation of PathGroupSelector.
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.PrepareGenerateOperation(IGrouping`2 group)
+   at System.Linq.Enumerable.IteratorSelectIterator`2.MoveNext()
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-09 23:32:31.644 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 500 null application/json; charset=utf-8 34.8857ms
+2025-10-09 23:33:18.112 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:33:18.134 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:33:18.203 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:33:18.206 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:33:18.207 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:33:18.286 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:33:18.663 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 380.9194ms
+2025-10-09 23:33:18.694 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.css - null null
+2025-10-09 23:33:18.694 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - null null
+2025-10-09 23:33:18.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-09 23:33:18.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.js - null null
+2025-10-09 23:33:18.724 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - null null
+2025-10-09 23:33:18.731 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.js - 200 null application/javascript;charset=utf-8 11.4443ms
+2025-10-09 23:33:18.737 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-09 23:33:18.744 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:33:18.753 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-09 23:33:18.753 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-09 23:33:18.787 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-09 23:33:18.800 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.css - 200 202 text/css 106.252ms
+2025-10-09 23:33:18.808 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 63.4892ms
+2025-10-09 23:33:18.810 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 91.964ms
+2025-10-09 23:33:18.810 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - 200 154949 text/css 85.2202ms
+2025-10-09 23:33:18.810 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 115.8035ms
+2025-10-09 23:33:18.820 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:33:18.854 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.8494ms
+2025-10-09 23:33:18.961 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:33:18.973 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - null null
+2025-10-09 23:33:19.282 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-09 23:33:19.303 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - 200 628 image/png 330.4454ms
+2025-10-09 23:33:19.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 527.949ms
+2025-10-09 23:34:48.755 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:34:49.080 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:34:49.180 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:34:49.207 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:34:49.210 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:34:54.049 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:34:54.329 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 285.4332ms
+2025-10-09 23:34:54.378 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:34:54.382 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 4.2035ms
+2025-10-09 23:34:54.400 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:34:54.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.5936ms
+2025-10-09 23:34:54.707 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:34:54.962 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 254.9217ms
+2025-10-09 23:34:58.525 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:34:58.551 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 26.596ms
+2025-10-09 23:34:58.588 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - null null
+2025-10-09 23:34:58.588 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.css - null null
+2025-10-09 23:34:58.620 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-09 23:34:58.620 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.js - null null
+2025-10-09 23:34:58.629 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.js - 200 null application/javascript;charset=utf-8 9.0773ms
+2025-10-09 23:34:58.623 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - null null
+2025-10-09 23:34:58.633 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:34:58.633 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-09 23:34:58.639 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-09 23:34:58.640 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-09 23:34:58.640 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 6.9154ms
+2025-10-09 23:34:58.641 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.css - 200 202 text/css 53.1071ms
+2025-10-09 23:34:58.696 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 76.1894ms
+2025-10-09 23:34:58.696 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui.css - 200 154949 text/css 73.6476ms
+2025-10-09 23:34:58.699 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-09 23:34:58.705 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 117.1204ms
+2025-10-09 23:34:58.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:34:58.754 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.977ms
+2025-10-09 23:34:58.827 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:34:58.828 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - null null
+2025-10-09 23:34:58.995 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 168.3084ms
+2025-10-09 23:34:59.025 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-09 23:34:59.034 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/favicon-32x32.png - 200 628 image/png 205.6689ms
+2025-10-09 23:35:34.097 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-09 23:35:34.120 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-09 23:35:34.181 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-09 23:35:34.182 +03:00 [INF] Hosting environment: Development
+2025-10-09 23:35:34.182 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-09 23:35:39.831 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-09 23:35:40.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 521.2903ms
+2025-10-09 23:35:40.387 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-09 23:35:40.562 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-09 23:35:40.568 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 5.5584ms
+2025-10-09 23:35:40.605 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 217.5552ms
+2025-10-09 23:35:40.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-09 23:35:40.916 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.3252ms
