@@ -1,41 +1,40 @@
-var builder = WebApplication.CreateBuilder(args);
+using FluentValidation;
+using Microsoft.AspNetCore.Authentication;
+using ProjectTracker.Abstractions.Constants;
+using ProjectTracker.Api;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
+
+
+services.AddCorsConfiguration();
+
+services.AddDbContextConfiguration(configuration);
+
+services.AddExceptionHandler<ExceptionHandler>();
+
+services.AddControllerConfiguration();
+
+services.AddEndpointsApiExplorer();
+
+services.AddSwaggerGenConfiguration(configuration);
+
+services.AddValidationConfiguration(); // TODO: посмотреть будут ли работать
+
+services.AddRepositories();
+
+services.AddServices();
+
+builder.AddSerilog();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseExceptionHandler(_ => { });
+app.MapControllers();
 
-app.UseHttpsRedirection();
+app.UseSwagger();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.UseSwaggerUI();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
