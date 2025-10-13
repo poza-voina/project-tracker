@@ -2,7 +2,7 @@
 
 namespace ProjectTracker.Infrastructure.Repositories.Interfaces;
 
-public interface IRepository<TModel> where TModel : class, IDatabaseModel<long>
+public interface IRepository<TModel> where TModel : class, IDatabaseModel
 {
 	Task<TModel> AddAsync(
 		TModel entity,

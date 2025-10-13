@@ -9,6 +9,7 @@ using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Text.Json.Serialization;
 using Serilog;
 
@@ -21,7 +22,12 @@ public static class DependencyInjection
 		var connectionSection = configuration.GetRequiredSection(EnvironmentConstants.ConnectionSection);
 		var connectionString = connectionSection.GetRequiredValue<string>(EnvironmentConstants.DefaultConnectionStringKey);
 
-		services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connectionString));
+		services.AddDbContext<ApplicationDbContext>(
+			options => options
+				.UseNpgsql(connectionString)
+				.EnableSensitiveDataLogging()
+				.LogTo(message => Log.Information(message),
+				new[] { DbLoggerCategory.Database.Command.Name }));
 	}
 
 	public static void AddCorsConfiguration(this IServiceCollection services)
@@ -86,6 +92,7 @@ public static class DependencyInjection
 	public static void AddServices(this IServiceCollection services)
 	{
 		services.AddScoped<IEmployeeService, EmployeeService>();
+		services.AddScoped<ITaskService, TaskService>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)

@@ -30,6 +30,11 @@ public class ProjectModelConfiguration : IEntityTypeConfiguration<ProjectModel>
 			.HasOne(x => x.Manager)
 			.WithMany(x => x.SupervisedProjects)
 			.HasForeignKey(x => x.ManagerId);
+
+		builder
+			.HasOne(x => x.TaskFlow)
+			.WithMany(x => x.Projects)
+			.HasForeignKey(x => x.TaskFlowId);
 	}
 
 	private static void BindingColumns(EntityTypeBuilder<ProjectModel> builder)
@@ -55,5 +60,10 @@ public class ProjectModelConfiguration : IEntityTypeConfiguration<ProjectModel>
 		builder
 			.Property(x => x.ManagerId)
 			.HasColumnName("manager_id");
+
+		builder
+			.Property(x => x.TaskFlowId)
+			.HasColumnName("task_flow_id")
+			.IsRequired();
 	}
 }
