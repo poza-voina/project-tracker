@@ -30,6 +30,11 @@ public class TaskFlowModelConfiguration : IEntityTypeConfiguration<TaskFlowModel
 			.HasMany(x => x.Edges)
 			.WithOne(x => x.TaskFlow)
 			.HasForeignKey(x => x.TaskFlowId);
+
+		builder
+			.HasOne(x => x.ProjectDeletableStatus)
+			.WithOne(x => x.DeletableTaskFlow)
+			.HasForeignKey<TaskFlowModel>(x => x.ProjectDeletableStatusId);
 	}
 
 	private static void BindingColumns(EntityTypeBuilder<TaskFlowModel> builder)
@@ -37,5 +42,9 @@ public class TaskFlowModelConfiguration : IEntityTypeConfiguration<TaskFlowModel
 		builder
 			.Property(x => x.Id)
 			.HasColumnName("id");
+
+		builder
+			.Property(x => x.ProjectDeletableStatusId)
+			.HasColumnName("project_deletable_status_id");
 	}
 }

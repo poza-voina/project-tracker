@@ -33,6 +33,8 @@ public class TaskService(
 		var taskModel = await taskRepository
 			.GetAll()
 			.Include(x => x.Status)
+			.Include(x => x.Performers)
+			.Include(x => x.Observers)
 			.FirstOrDefaultAsync(x => x.Id == request.TaskId)
 			?? throw new NotFoundException($"Задача с id = {request.TaskId} не найдена");
 
@@ -140,5 +142,19 @@ public class TaskService(
 			?? throw new NotFoundException($"Задача с id = {id} не найдена");
 
 		return model.Adapt<TaskWithStatusEmployeesReponse>();
+	}
+
+	public async Task<TaskWithStatusResponse> UpdateAsync(UpdateTaskRequest request)
+	{
+		var model = await taskRepository
+			.GetAll()
+			.Include(x => x.Status).FirstOrDefaultAsync(x => x.Id == request.Id)
+			?? throw new NotFoundException($"Задача с id = {request.Id} не найдена");
+
+		request.Adapt(model);
+
+		model = await taskRepository.UpdateAsync(model);
+
+		return model.Adapt<TaskWithStatusResponse>();
 	}
 }

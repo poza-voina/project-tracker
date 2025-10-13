@@ -9,6 +9,7 @@ public class TaskFlowNodeModel : IDatabaseModel
 	public long TaskFlowId { get; set; }
 	public TaskFlowNodeStatus? Status { get; set; }
 	public virtual TaskFlowModel? TaskFlow{ get; set; }
+	public virtual TaskFlowModel? DeletableTaskFlow{ get; set; }
 	public virtual ICollection<TaskModel> TaskModels { get; set; } = [];
 	public virtual ICollection<TaskFlowEdgeModel> FromEdges { get; set; } = [];
 	public virtual ICollection<TaskFlowEdgeModel> ToEdges { get; set; } = [];
