@@ -11,5 +11,5 @@ public class ProjectModel : IDatabaseModel
 	public virtual TaskFlowModel? TaskFlow { get; set; }
 	public virtual EmployeeModel? ProjectManager { get; set; }
 	public virtual EmployeeModel? Manager { get; set; }
-	public virtual ICollection<TaskModel>? Tasks { get; set; }
+	public virtual ICollection<TaskModel> Tasks { get; set; } = [];
 }

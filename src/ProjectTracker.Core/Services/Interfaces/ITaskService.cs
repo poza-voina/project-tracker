@@ -9,6 +9,7 @@ public interface ITaskService
 	Task<TaskWithStatusEmployeesReponse> GetAsync(long id);
 	Task<PaginationResponse<TaskWithStatusEmployeesReponse>> GetAllAsync(GetPaginationTasksRequest request);
 	Task<TaskWithStatusResponse> CreateAsync(CreateTaskRequest request);
+	Task<TaskWithStatusResponse> UpdateAsync(UpdateTaskRequest request);
 	Task DeleteAsync(long id);
 	Task<TaskWithStatusEmployeesReponse> ChangeStatusAsync(ChangeTaskStatusRequest request);
 	Task AddPerformerAsync(AddTaskPerformerRequest request);

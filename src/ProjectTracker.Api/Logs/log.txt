@@ -341,3 +341,1003 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2025-10-09 23:35:40.605 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 217.5552ms
 2025-10-09 23:35:40.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
 2025-10-09 23:35:40.916 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.3252ms
+2025-10-13 14:42:06.921 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-13 14:42:06.961 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-13 14:42:07.019 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-13 14:42:07.020 +03:00 [INF] Hosting environment: Development
+2025-10-13 14:42:07.021 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-13 14:42:29.961 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/index.html - null null
+2025-10-13 14:42:30.315 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/index.html - 200 null text/html;charset=utf-8 360.4526ms
+2025-10-13 14:42:30.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_vs/browserLink - null null
+2025-10-13 14:42:30.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-13 14:42:30.439 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 28.7272ms
+2025-10-13 14:42:30.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.037ms
+2025-10-13 14:42:30.712 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-13 14:42:31.050 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 337.8256ms
+2025-10-13 14:42:31.833 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-13 14:42:31.875 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.3765ms
+2025-10-13 14:44:26.018 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-13 14:44:26.041 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-13 14:44:26.125 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-13 14:44:26.176 +03:00 [INF] Hosting environment: Development
+2025-10-13 14:44:26.177 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-13 14:44:26.763 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-13 14:44:27.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 365.7336ms
+2025-10-13 14:46:13.422 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231//api/employees - application/json 121
+2025-10-13 14:46:13.437 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231//api/employees - 404 0 null 50.3065ms
+2025-10-13 14:46:13.441 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5231//api/employees, Response status code: 404
+2025-10-13 14:46:35.346 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/employees - application/json 121
+2025-10-13 14:46:35.353 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api)'
+2025-10-13 14:46:35.379 +03:00 [INF] Route matched with {action = "CreateEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEmployee(ProjectTracker.Contracts.ViewModels.Employee.CreateEmployeeRequest) on controller ProjectTracker.Api.Controllers.EmployeeController (ProjectTracker.Api).
+2025-10-13 14:46:38.463 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-10-13 14:46:39.125 +03:00 [INF] dbug: 13.10.2025 14:46:39.124 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:46:39.140 +03:00 [INF] dbug: 13.10.2025 14:46:39.140 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (18ms).
+2025-10-13 14:46:39.149 +03:00 [INF] dbug: 13.10.2025 14:46:39.149 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (31ms).
+2025-10-13 14:46:39.156 +03:00 [INF] dbug: 13.10.2025 14:46:39.156 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='string' (Nullable = false), @p1='string' (Nullable = false), @p2='string', @p3='Tester' (Nullable = false), @p4='string' (Nullable = false)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO employee (first_name, last_name, patronymic, role, username)
+      VALUES (@p0, @p1, @p2, @p3, @p4)
+      RETURNING id;
+2025-10-13 14:46:39.233 +03:00 [INF] info: 13.10.2025 14:46:39.233 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (78ms) [Parameters=[@p0='string' (Nullable = false), @p1='string' (Nullable = false), @p2='string', @p3='Tester' (Nullable = false), @p4='string' (Nullable = false)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO employee (first_name, last_name, patronymic, role, username)
+      VALUES (@p0, @p1, @p2, @p3, @p4)
+      RETURNING id;
+2025-10-13 14:46:39.263 +03:00 [INF] dbug: 13.10.2025 14:46:39.263 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:46:39.274 +03:00 [INF] dbug: 13.10.2025 14:46:39.274 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 34ms reading results.
+2025-10-13 14:46:39.317 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Employee.EmployeeBaseResponse'.
+2025-10-13 14:46:39.330 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api) in 3944.7008ms
+2025-10-13 14:46:39.331 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.EmployeeController.CreateEmployee (ProjectTracker.Api)'
+2025-10-13 14:46:39.343 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/employees - 200 null application/json; charset=utf-8 4023.2433ms
+2025-10-13 14:48:02.376 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-13 14:48:02.475 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-13 14:48:02.666 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-13 14:48:02.722 +03:00 [INF] Hosting environment: Development
+2025-10-13 14:48:02.728 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-13 14:48:30.769 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - null null
+2025-10-13 14:48:31.132 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 364.7095ms
+2025-10-13 14:49:19.838 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/projects - application/json 93
+2025-10-13 14:49:19.847 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.ProjectController.CreateProject (ProjectTracker.Api)'
+2025-10-13 14:49:19.872 +03:00 [INF] Route matched with {action = "CreateProject", controller = "Project"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateProject(ProjectTracker.Contracts.ViewModels.Project.CreateProjectRequest) on controller ProjectTracker.Api.Controllers.ProjectController (ProjectTracker.Api).
+2025-10-13 14:49:20.977 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-10-13 14:49:21.604 +03:00 [INF] dbug: 13.10.2025 14:49:21.604 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:49:21.612 +03:00 [INF] dbug: 13.10.2025 14:49:21.612 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (12ms).
+2025-10-13 14:49:21.618 +03:00 [INF] dbug: 13.10.2025 14:49:21.618 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (20ms).
+2025-10-13 14:49:21.629 +03:00 [INF] dbug: 13.10.2025 14:49:21.628 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='string', @p1=NULL (DbType = Int64), @p2='string' (Nullable = false), @p3='1', @p4='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO project (description, manager_id, name, project_manager_id, task_flow_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4)
+      RETURNING id;
+2025-10-13 14:49:21.698 +03:00 [INF] info: 13.10.2025 14:49:21.698 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (74ms) [Parameters=[@p0='string', @p1=NULL (DbType = Int64), @p2='string' (Nullable = false), @p3='1', @p4='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO project (description, manager_id, name, project_manager_id, task_flow_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4)
+      RETURNING id;
+2025-10-13 14:49:21.728 +03:00 [INF] dbug: 13.10.2025 14:49:21.728 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:49:21.740 +03:00 [INF] dbug: 13.10.2025 14:49:21.740 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 36ms reading results.
+2025-10-13 14:49:21.775 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Project.ProjectBaseResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:49:21.788 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.ProjectController.CreateProject (ProjectTracker.Api) in 1910.778ms
+2025-10-13 14:49:21.789 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.ProjectController.CreateProject (ProjectTracker.Api)'
+2025-10-13 14:49:21.799 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/projects - 200 null application/json; charset=utf-8 1960.8725ms
+2025-10-13 14:50:07.201 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/tasks - application/json 114
+2025-10-13 14:50:07.206 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:07.212 +03:00 [INF] Route matched with {action = "CreateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTask(ProjectTracker.Contracts.ViewModels.Task.CreateTaskRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:50:07.358 +03:00 [INF] dbug: 13.10.2025 14:50:07.358 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:07.359 +03:00 [INF] dbug: 13.10.2025 14:50:07.359 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:07.362 +03:00 [INF] dbug: 13.10.2025 14:50:07.362 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-10-13 14:50:07.365 +03:00 [INF] dbug: 13.10.2025 14:50:07.365 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task1' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:07.385 +03:00 [INF] info: 13.10.2025 14:50:07.385 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (19ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task1' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:07.391 +03:00 [INF] dbug: 13.10.2025 14:50:07.391 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:07.392 +03:00 [INF] dbug: 13.10.2025 14:50:07.392 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 6ms reading results.
+2025-10-13 14:50:07.824 +03:00 [INF] dbug: 13.10.2025 14:50:07.824 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:07.825 +03:00 [INF] dbug: 13.10.2025 14:50:07.825 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:07.826 +03:00 [INF] dbug: 13.10.2025 14:50:07.826 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:07.828 +03:00 [INF] dbug: 13.10.2025 14:50:07.828 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:07.832 +03:00 [INF] info: 13.10.2025 14:50:07.832 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:07.838 +03:00 [INF] dbug: 13.10.2025 14:50:07.838 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:07.839 +03:00 [INF] dbug: 13.10.2025 14:50:07.839 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-10-13 14:50:07.901 +03:00 [INF] dbug: 13.10.2025 14:50:07.901 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:07.902 +03:00 [INF] dbug: 13.10.2025 14:50:07.902 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:07.903 +03:00 [INF] dbug: 13.10.2025 14:50:07.903 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:07.905 +03:00 [INF] dbug: 13.10.2025 14:50:07.905 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:07.909 +03:00 [INF] info: 13.10.2025 14:50:07.909 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__taskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:07.944 +03:00 [INF] dbug: 13.10.2025 14:50:07.944 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:07.949 +03:00 [INF] dbug: 13.10.2025 14:50:07.949 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 37ms reading results.
+2025-10-13 14:50:07.961 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:50:07.975 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api) in 760.2549ms
+2025-10-13 14:50:07.977 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:07.978 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/tasks - 200 null application/json; charset=utf-8 777.2792ms
+2025-10-13 14:50:17.085 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/tasks - application/json 114
+2025-10-13 14:50:17.088 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:17.091 +03:00 [INF] Route matched with {action = "CreateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTask(ProjectTracker.Contracts.ViewModels.Task.CreateTaskRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:50:17.116 +03:00 [INF] dbug: 13.10.2025 14:50:17.115 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:17.117 +03:00 [INF] dbug: 13.10.2025 14:50:17.117 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:17.118 +03:00 [INF] dbug: 13.10.2025 14:50:17.118 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:17.122 +03:00 [INF] dbug: 13.10.2025 14:50:17.122 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task2' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:17.128 +03:00 [INF] info: 13.10.2025 14:50:17.128 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task2' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:17.130 +03:00 [INF] dbug: 13.10.2025 14:50:17.130 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:17.136 +03:00 [INF] dbug: 13.10.2025 14:50:17.136 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-10-13 14:50:17.143 +03:00 [INF] dbug: 13.10.2025 14:50:17.143 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:17.144 +03:00 [INF] dbug: 13.10.2025 14:50:17.144 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+2025-10-13 14:50:17.145 +03:00 [INF] dbug: 13.10.2025 14:50:17.145 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:17.150 +03:00 [INF] dbug: 13.10.2025 14:50:17.150 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:17.153 +03:00 [INF] info: 13.10.2025 14:50:17.153 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:17.157 +03:00 [INF] dbug: 13.10.2025 14:50:17.157 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:17.158 +03:00 [INF] dbug: 13.10.2025 14:50:17.158 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:50:17.160 +03:00 [INF] dbug: 13.10.2025 14:50:17.160 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:17.167 +03:00 [INF] dbug: 13.10.2025 14:50:17.167 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (6ms).
+2025-10-13 14:50:17.168 +03:00 [INF] dbug: 13.10.2025 14:50:17.168 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (7ms).
+2025-10-13 14:50:17.169 +03:00 [INF] dbug: 13.10.2025 14:50:17.169 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskId_0='2'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:17.174 +03:00 [INF] info: 13.10.2025 14:50:17.174 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__taskId_0='2'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:17.177 +03:00 [INF] dbug: 13.10.2025 14:50:17.177 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:17.180 +03:00 [INF] dbug: 13.10.2025 14:50:17.180 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 4ms reading results.
+2025-10-13 14:50:17.182 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:50:17.184 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api) in 89.0678ms
+2025-10-13 14:50:17.186 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:17.188 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/tasks - 200 null application/json; charset=utf-8 102.4177ms
+2025-10-13 14:50:19.544 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/tasks - application/json 114
+2025-10-13 14:50:19.547 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:19.548 +03:00 [INF] Route matched with {action = "CreateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTask(ProjectTracker.Contracts.ViewModels.Task.CreateTaskRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:50:19.558 +03:00 [INF] dbug: 13.10.2025 14:50:19.558 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:19.560 +03:00 [INF] dbug: 13.10.2025 14:50:19.560 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:19.561 +03:00 [INF] dbug: 13.10.2025 14:50:19.561 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:50:19.562 +03:00 [INF] dbug: 13.10.2025 14:50:19.562 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task3' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:19.567 +03:00 [INF] info: 13.10.2025 14:50:19.567 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task3' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:19.576 +03:00 [INF] dbug: 13.10.2025 14:50:19.576 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:19.581 +03:00 [INF] dbug: 13.10.2025 14:50:19.581 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-10-13 14:50:19.587 +03:00 [INF] dbug: 13.10.2025 14:50:19.587 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:19.589 +03:00 [INF] dbug: 13.10.2025 14:50:19.589 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:19.590 +03:00 [INF] dbug: 13.10.2025 14:50:19.590 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:19.591 +03:00 [INF] dbug: 13.10.2025 14:50:19.591 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:19.593 +03:00 [INF] info: 13.10.2025 14:50:19.593 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:19.595 +03:00 [INF] dbug: 13.10.2025 14:50:19.595 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:19.597 +03:00 [INF] dbug: 13.10.2025 14:50:19.597 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:50:19.598 +03:00 [INF] dbug: 13.10.2025 14:50:19.598 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:19.603 +03:00 [INF] dbug: 13.10.2025 14:50:19.603 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (5ms).
+2025-10-13 14:50:19.604 +03:00 [INF] dbug: 13.10.2025 14:50:19.604 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (6ms).
+2025-10-13 14:50:19.605 +03:00 [INF] dbug: 13.10.2025 14:50:19.605 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskId_0='3'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:19.611 +03:00 [INF] info: 13.10.2025 14:50:19.611 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__taskId_0='3'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:19.613 +03:00 [INF] dbug: 13.10.2025 14:50:19.613 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:19.617 +03:00 [INF] dbug: 13.10.2025 14:50:19.617 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 4ms reading results.
+2025-10-13 14:50:19.619 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:50:19.621 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api) in 71.5562ms
+2025-10-13 14:50:19.623 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:19.625 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/tasks - 200 null application/json; charset=utf-8 80.7948ms
+2025-10-13 14:50:22.797 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5231/api/tasks - application/json 114
+2025-10-13 14:50:22.800 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:22.802 +03:00 [INF] Route matched with {action = "CreateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateTask(ProjectTracker.Contracts.ViewModels.Task.CreateTaskRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:50:22.809 +03:00 [INF] dbug: 13.10.2025 14:50:22.809 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:22.811 +03:00 [INF] dbug: 13.10.2025 14:50:22.811 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:22.814 +03:00 [INF] dbug: 13.10.2025 14:50:22.814 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-10-13 14:50:22.816 +03:00 [INF] dbug: 13.10.2025 14:50:22.816 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task4' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:22.825 +03:00 [INF] info: 13.10.2025 14:50:22.825 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[@p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='string', @p3=NULL (DbType = Int64), @p4='task4' (Nullable = false), @p5='Blocker' (Nullable = false), @p6='1', @p7='1'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO task (created_at, deadline, description, group_id, name, priority, project_id, task_flow_node_id)
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING id, xmin;
+2025-10-13 14:50:22.831 +03:00 [INF] dbug: 13.10.2025 14:50:22.831 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:22.832 +03:00 [INF] dbug: 13.10.2025 14:50:22.832 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:50:22.834 +03:00 [INF] dbug: 13.10.2025 14:50:22.834 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:22.835 +03:00 [INF] dbug: 13.10.2025 14:50:22.835 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:50:22.837 +03:00 [INF] dbug: 13.10.2025 14:50:22.837 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:50:22.841 +03:00 [INF] dbug: 13.10.2025 14:50:22.841 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:22.845 +03:00 [INF] info: 13.10.2025 14:50:22.845 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__request_ProjectId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t0.id
+      FROM project AS p
+      INNER JOIN task_flow AS t ON p.task_flow_id = t.id
+      INNER JOIN task_flow_node AS t0 ON t.id = t0.task_flow_id
+      WHERE p.id = @__request_ProjectId_0 AND t0.status = 'Start'
+2025-10-13 14:50:22.847 +03:00 [INF] dbug: 13.10.2025 14:50:22.847 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:22.848 +03:00 [INF] dbug: 13.10.2025 14:50:22.848 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-10-13 14:50:22.849 +03:00 [INF] dbug: 13.10.2025 14:50:22.849 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:50:22.852 +03:00 [INF] dbug: 13.10.2025 14:50:22.852 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:50:22.853 +03:00 [INF] dbug: 13.10.2025 14:50:22.853 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:50:22.856 +03:00 [INF] dbug: 13.10.2025 14:50:22.856 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskId_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:22.861 +03:00 [INF] info: 13.10.2025 14:50:22.861 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__taskId_0='4'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__taskId_0
+      LIMIT 1
+2025-10-13 14:50:22.862 +03:00 [INF] dbug: 13.10.2025 14:50:22.862 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:50:22.864 +03:00 [INF] dbug: 13.10.2025 14:50:22.864 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:50:22.865 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:50:22.867 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api) in 60.8546ms
+2025-10-13 14:50:22.869 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.CreateTask (ProjectTracker.Api)'
+2025-10-13 14:50:22.870 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5231/api/tasks - 200 null application/json; charset=utf-8 73.5523ms
+2025-10-13 14:51:35.854 +03:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5231/api/tasks - application/json 115
+2025-10-13 14:51:35.894 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.UpdateTask (ProjectTracker.Api)'
+2025-10-13 14:51:35.899 +03:00 [INF] Route matched with {action = "UpdateTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateTask(ProjectTracker.Contracts.ViewModels.Task.UpdateTaskRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:51:35.953 +03:00 [INF] dbug: 13.10.2025 14:51:35.953 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:51:35.954 +03:00 [INF] dbug: 13.10.2025 14:51:35.954 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:51:35.955 +03:00 [INF] dbug: 13.10.2025 14:51:35.955 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:51:35.957 +03:00 [INF] dbug: 13.10.2025 14:51:35.957 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_Id_0
+      LIMIT 1
+2025-10-13 14:51:35.976 +03:00 [INF] info: 13.10.2025 14:51:35.976 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (19ms) [Parameters=[@__request_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_Id_0
+      LIMIT 1
+2025-10-13 14:51:35.981 +03:00 [INF] dbug: 13.10.2025 14:51:35.981 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:51:35.984 +03:00 [INF] dbug: 13.10.2025 14:51:35.984 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 4ms reading results.
+2025-10-13 14:51:36.019 +03:00 [INF] dbug: 13.10.2025 14:51:36.019 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:51:36.022 +03:00 [INF] dbug: 13.10.2025 14:51:36.022 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:51:36.023 +03:00 [INF] dbug: 13.10.2025 14:51:36.023 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-10-13 14:51:36.024 +03:00 [INF] dbug: 13.10.2025 14:51:36.024 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='1', @p9='969' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:51:36.036 +03:00 [INF] info: 13.10.2025 14:51:36.036 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (12ms) [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='1', @p9='969' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:51:36.040 +03:00 [INF] dbug: 13.10.2025 14:51:36.040 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:51:36.056 +03:00 [INF] dbug: 13.10.2025 14:51:36.056 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 16ms reading results.
+2025-10-13 14:51:36.058 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:51:36.061 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.UpdateTask (ProjectTracker.Api) in 160.1945ms
+2025-10-13 14:51:36.065 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.UpdateTask (ProjectTracker.Api)'
+2025-10-13 14:51:36.066 +03:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5231/api/tasks - 200 null application/json; charset=utf-8 212.4003ms
+2025-10-13 14:52:11.481 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:52:11.485 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:52:11.491 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:52:15.565 +03:00 [INF] dbug: 13.10.2025 14:52:15.565 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:52:15.566 +03:00 [INF] dbug: 13.10.2025 14:52:15.566 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:52:15.568 +03:00 [INF] dbug: 13.10.2025 14:52:15.568 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:52:15.569 +03:00 [INF] dbug: 13.10.2025 14:52:15.569 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:52:15.571 +03:00 [INF] info: 13.10.2025 14:52:15.571 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:52:15.574 +03:00 [INF] dbug: 13.10.2025 14:52:15.574 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:52:15.575 +03:00 [INF] dbug: 13.10.2025 14:52:15.575 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+2025-10-13 14:52:15.596 +03:00 [INF] dbug: 13.10.2025 14:52:15.596 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:52:15.598 +03:00 [INF] dbug: 13.10.2025 14:52:15.598 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:52:15.599 +03:00 [INF] dbug: 13.10.2025 14:52:15.599 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:52:15.600 +03:00 [INF] dbug: 13.10.2025 14:52:15.600 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskModel_TaskFlowNodeId_0='1' (Nullable = true), @__request_TaskFlowNodeId_1='2' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:52:15.604 +03:00 [INF] info: 13.10.2025 14:52:15.604 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__taskModel_TaskFlowNodeId_0='1' (Nullable = true), @__request_TaskFlowNodeId_1='2' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:52:15.621 +03:00 [INF] dbug: 13.10.2025 14:52:15.621 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:52:15.623 +03:00 [INF] dbug: 13.10.2025 14:52:15.623 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 17ms reading results.
+2025-10-13 14:52:15.638 +03:00 [INF] dbug: 13.10.2025 14:52:15.638 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:52:15.639 +03:00 [INF] dbug: 13.10.2025 14:52:15.639 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+2025-10-13 14:52:15.640 +03:00 [INF] dbug: 13.10.2025 14:52:15.640 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:52:15.641 +03:00 [INF] dbug: 13.10.2025 14:52:15.641 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='2', @p9='973' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:52:15.653 +03:00 [INF] info: 13.10.2025 14:52:15.653 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (12ms) [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='2', @p9='973' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:52:15.654 +03:00 [INF] dbug: 13.10.2025 14:52:15.654 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:52:15.655 +03:00 [INF] dbug: 13.10.2025 14:52:15.655 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 0ms reading results.
+2025-10-13 14:52:15.673 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:52:15.681 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api) in 4188.4368ms
+2025-10-13 14:52:15.683 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:52:15.684 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - 200 null application/json; charset=utf-8 4202.8536ms
+2025-10-13 14:53:27.436 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:53:27.440 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:53:27.441 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:53:31.747 +03:00 [INF] dbug: 13.10.2025 14:53:31.747 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:53:31.749 +03:00 [INF] dbug: 13.10.2025 14:53:31.749 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:53:31.750 +03:00 [INF] dbug: 13.10.2025 14:53:31.750 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:53:31.752 +03:00 [INF] dbug: 13.10.2025 14:53:31.752 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:53:31.755 +03:00 [INF] info: 13.10.2025 14:53:31.755 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:53:31.782 +03:00 [INF] dbug: 13.10.2025 14:53:31.782 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:53:31.783 +03:00 [INF] dbug: 13.10.2025 14:53:31.783 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:53:35.172 +03:00 [INF] dbug: 13.10.2025 14:53:35.172 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:53:35.174 +03:00 [INF] dbug: 13.10.2025 14:53:35.174 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:53:35.177 +03:00 [INF] dbug: 13.10.2025 14:53:35.177 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (5ms).
+2025-10-13 14:53:35.179 +03:00 [INF] dbug: 13.10.2025 14:53:35.179 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskModel_TaskFlowNodeId_0='2' (Nullable = true), @__request_TaskFlowNodeId_1='2' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:53:35.182 +03:00 [INF] info: 13.10.2025 14:53:35.182 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__taskModel_TaskFlowNodeId_0='2' (Nullable = true), @__request_TaskFlowNodeId_1='2' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:53:35.205 +03:00 [INF] dbug: 13.10.2025 14:53:35.205 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:53:35.206 +03:00 [INF] dbug: 13.10.2025 14:53:35.206 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:53:39.995 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api) in 12552.3658ms
+2025-10-13 14:53:39.998 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:53:40.001 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+ProjectTracker.Abstractions.Exceptions.NotFoundException: Статус не найден или не является следующим
+   at ProjectTracker.Core.Services.TaskService.ChangeStatusAsync(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Core\Services\TaskService.cs:line 44
+   at ProjectTracker.Api.Controllers.TaskController.ChangeStatus(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Api\Controllers\TaskController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-13 14:53:40.230 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - 404 null application/json; charset=utf-8 12795.8249ms
+2025-10-13 14:53:46.036 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:53:46.039 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:53:46.041 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:53:48.347 +03:00 [INF] dbug: 13.10.2025 14:53:48.347 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:53:48.348 +03:00 [INF] dbug: 13.10.2025 14:53:48.348 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+2025-10-13 14:53:48.349 +03:00 [INF] dbug: 13.10.2025 14:53:48.349 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:53:48.353 +03:00 [INF] dbug: 13.10.2025 14:53:48.353 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:53:48.355 +03:00 [INF] info: 13.10.2025 14:53:48.355 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task AS t
+      INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+      WHERE t.id = @__request_TaskId_0
+      LIMIT 1
+2025-10-13 14:53:48.376 +03:00 [INF] dbug: 13.10.2025 14:53:48.376 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:53:48.377 +03:00 [INF] dbug: 13.10.2025 14:53:48.377 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:53:50.741 +03:00 [INF] dbug: 13.10.2025 14:53:50.741 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:53:50.742 +03:00 [INF] dbug: 13.10.2025 14:53:50.742 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:53:50.743 +03:00 [INF] dbug: 13.10.2025 14:53:50.743 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:53:50.743 +03:00 [INF] dbug: 13.10.2025 14:53:50.743 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskModel_TaskFlowNodeId_0='2' (Nullable = true), @__request_TaskFlowNodeId_1='3' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:53:56.031 +03:00 [INF] info: 13.10.2025 14:53:50.746 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[@__taskModel_TaskFlowNodeId_0='2' (Nullable = true), @__request_TaskFlowNodeId_1='3' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:53:56.758 +03:00 [INF] dbug: 13.10.2025 14:53:56.114 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:53:57.327 +03:00 [INF] dbug: 13.10.2025 14:53:56.780 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 681ms reading results.
+2025-10-13 14:54:03.181 +03:00 [INF] dbug: 13.10.2025 14:54:03.181 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:54:03.183 +03:00 [INF] dbug: 13.10.2025 14:54:03.183 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:54:03.184 +03:00 [INF] dbug: 13.10.2025 14:54:03.184 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:54:03.187 +03:00 [INF] dbug: 13.10.2025 14:54:03.187 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='3', @p9='974' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:54:03.212 +03:00 [INF] info: 13.10.2025 14:54:03.212 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (24ms) [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='3', @p9='974' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:54:03.215 +03:00 [INF] dbug: 13.10.2025 14:54:03.215 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:54:03.217 +03:00 [INF] dbug: 13.10.2025 14:54:03.217 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 2ms reading results.
+2025-10-13 14:56:29.235 +03:00 [INF] Now listening on: https://localhost:7003
+2025-10-13 14:56:29.285 +03:00 [INF] Now listening on: http://localhost:5231
+2025-10-13 14:56:29.413 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-13 14:56:29.413 +03:00 [INF] Hosting environment: Development
+2025-10-13 14:56:29.414 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.Api
+2025-10-13 14:56:34.276 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:56:34.391 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:56:34.412 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:56:38.535 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-10-13 14:56:39.181 +03:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-10-13 14:56:39.419 +03:00 [INF] dbug: 13.10.2025 14:56:39.419 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:56:39.427 +03:00 [INF] dbug: 13.10.2025 14:56:39.427 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (11ms).
+2025-10-13 14:56:39.433 +03:00 [INF] dbug: 13.10.2025 14:56:39.433 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (20ms).
+2025-10-13 14:56:39.444 +03:00 [INF] dbug: 13.10.2025 14:56:39.444 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:56:39.506 +03:00 [INF] info: 13.10.2025 14:56:39.506 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (67ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:56:39.638 +03:00 [INF] dbug: 13.10.2025 14:56:39.638 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:56:39.648 +03:00 [INF] dbug: 13.10.2025 14:56:39.648 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 135ms reading results.
+2025-10-13 14:56:41.584 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api) in 7164.3945ms
+2025-10-13 14:56:41.590 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:56:41.593 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException: Exception of type 'Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException' was thrown.
+   at ProjectTracker.Core.Services.TaskService.ChangeStatusAsync(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Core\Services\TaskService.cs:line 43
+   at ProjectTracker.Api.Controllers.TaskController.ChangeStatus(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Api\Controllers\TaskController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-13 14:56:41.834 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - 409 null application/json; charset=utf-8 7563.3473ms
+2025-10-13 14:56:56.135 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5231/api/tasks/1 - null null
+2025-10-13 14:56:56.150 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.GetTask (ProjectTracker.Api)'
+2025-10-13 14:56:56.158 +03:00 [INF] Route matched with {action = "GetTask", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTask(Int64) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:56:56.233 +03:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-10-13 14:56:56.262 +03:00 [INF] dbug: 13.10.2025 14:56:56.262 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:56:56.263 +03:00 [INF] dbug: 13.10.2025 14:56:56.263 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-13 14:56:56.265 +03:00 [INF] dbug: 13.10.2025 14:56:56.265 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:56:56.266 +03:00 [INF] dbug: 13.10.2025 14:56:56.266 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__id_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_observer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_performer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:56:56.274 +03:00 [INF] info: 13.10.2025 14:56:56.274 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__id_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_observer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_performer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:56:56.281 +03:00 [INF] dbug: 13.10.2025 14:56:56.281 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:56:56.282 +03:00 [INF] dbug: 13.10.2025 14:56:56.282 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-10-13 14:56:56.377 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:56:56.415 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.GetTask (ProjectTracker.Api) in 254.3298ms
+2025-10-13 14:56:56.417 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.GetTask (ProjectTracker.Api)'
+2025-10-13 14:56:56.419 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5231/api/tasks/1 - 200 null application/json; charset=utf-8 283.7617ms
+2025-10-13 14:57:35.714 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:57:35.720 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:57:35.721 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:57:36.967 +03:00 [INF] dbug: 13.10.2025 14:57:36.967 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:57:36.969 +03:00 [INF] dbug: 13.10.2025 14:57:36.969 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:57:36.972 +03:00 [INF] dbug: 13.10.2025 14:57:36.972 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (5ms).
+2025-10-13 14:57:36.974 +03:00 [INF] dbug: 13.10.2025 14:57:36.974 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:57:36.980 +03:00 [INF] info: 13.10.2025 14:57:36.980 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:57:36.989 +03:00 [INF] dbug: 13.10.2025 14:57:36.989 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:57:36.990 +03:00 [INF] dbug: 13.10.2025 14:57:36.990 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:57:37.071 +03:00 [INF] dbug: 13.10.2025 14:57:37.071 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:57:37.074 +03:00 [INF] dbug: 13.10.2025 14:57:37.074 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:57:37.080 +03:00 [INF] dbug: 13.10.2025 14:57:37.079 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (7ms).
+2025-10-13 14:57:37.081 +03:00 [INF] dbug: 13.10.2025 14:57:37.081 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskModel_TaskFlowNodeId_0='3' (Nullable = true), @__request_TaskFlowNodeId_1='3' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:57:37.093 +03:00 [INF] info: 13.10.2025 14:57:37.093 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[@__taskModel_TaskFlowNodeId_0='3' (Nullable = true), @__request_TaskFlowNodeId_1='3' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:57:37.095 +03:00 [INF] dbug: 13.10.2025 14:57:37.095 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:57:37.100 +03:00 [INF] dbug: 13.10.2025 14:57:37.100 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 5ms reading results.
+2025-10-13 14:57:39.275 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api) in 3551.5164ms
+2025-10-13 14:57:39.281 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:57:39.282 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+ProjectTracker.Abstractions.Exceptions.NotFoundException: Статус не найден или не является следующим
+   at ProjectTracker.Core.Services.TaskService.ChangeStatusAsync(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Core\Services\TaskService.cs:line 46
+   at ProjectTracker.Api.Controllers.TaskController.ChangeStatus(ChangeTaskStatusRequest request) in E:\projects\dotnet\project-tracker\src\ProjectTracker.Api\Controllers\TaskController.cs:line 56
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2025-10-13 14:57:39.299 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - 404 null application/json; charset=utf-8 3584.8369ms
+2025-10-13 14:57:43.513 +03:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - application/json 62
+2025-10-13 14:57:43.517 +03:00 [INF] Executing endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:57:43.518 +03:00 [INF] Route matched with {action = "ChangeStatus", controller = "Task"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangeStatus(ProjectTracker.Contracts.ViewModels.Task.ChangeTaskStatusRequest) on controller ProjectTracker.Api.Controllers.TaskController (ProjectTracker.Api).
+2025-10-13 14:57:47.540 +03:00 [INF] dbug: 13.10.2025 14:57:47.540 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:57:47.543 +03:00 [INF] dbug: 13.10.2025 14:57:47.543 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (3ms).
+2025-10-13 14:57:47.545 +03:00 [INF] dbug: 13.10.2025 14:57:47.545 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-10-13 14:57:47.546 +03:00 [INF] dbug: 13.10.2025 14:57:47.546 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:57:47.554 +03:00 [INF] info: 13.10.2025 14:57:47.553 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[@__request_TaskId_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT s.id, s.created_at, s.deadline, s.description, s.group_id, s.name, s.priority, s.project_id, s.task_flow_node_id, s.xmin, s.id0, s.name0, s.status, s.task_flow_id, s0."TaskId", s0."EmployeeId", s0.id, s0.first_name, s0.last_name, s0.patronymic, s0.role, s0.username, s1."TaskId", s1."EmployeeId", s1.id, s1.first_name, s1.last_name, s1.patronymic, s1.role, s1.username
+      FROM (
+          SELECT t.id, t.created_at, t.deadline, t.description, t.group_id, t.name, t.priority, t.project_id, t.task_flow_node_id, t.xmin, t0.id AS id0, t0.name AS name0, t0.status, t0.task_flow_id
+          FROM task AS t
+          INNER JOIN task_flow_node AS t0 ON t.task_flow_node_id = t0.id
+          WHERE t.id = @__request_TaskId_0
+          LIMIT 1
+      ) AS s
+      LEFT JOIN (
+          SELECT t1."TaskId", t1."EmployeeId", e.id, e.first_name, e.last_name, e.patronymic, e.role, e.username
+          FROM task_performer AS t1
+          INNER JOIN employee AS e ON t1."EmployeeId" = e.id
+      ) AS s0 ON s.id = s0."TaskId"
+      LEFT JOIN (
+          SELECT t2."TaskId", t2."EmployeeId", e0.id, e0.first_name, e0.last_name, e0.patronymic, e0.role, e0.username
+          FROM task_observer AS t2
+          INNER JOIN employee AS e0 ON t2."EmployeeId" = e0.id
+      ) AS s1 ON s.id = s1."TaskId"
+      ORDER BY s.id, s.id0, s0."TaskId", s0."EmployeeId", s0.id, s1."TaskId", s1."EmployeeId"
+2025-10-13 14:57:47.559 +03:00 [INF] dbug: 13.10.2025 14:57:47.559 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:57:47.560 +03:00 [INF] dbug: 13.10.2025 14:57:47.560 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 1ms reading results.
+2025-10-13 14:57:47.561 +03:00 [INF] dbug: 13.10.2025 14:57:47.561 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:57:47.564 +03:00 [INF] dbug: 13.10.2025 14:57:47.564 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+2025-10-13 14:57:47.567 +03:00 [INF] dbug: 13.10.2025 14:57:47.567 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (5ms).
+2025-10-13 14:57:47.568 +03:00 [INF] dbug: 13.10.2025 14:57:47.568 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__taskModel_TaskFlowNodeId_0='3' (Nullable = true), @__request_TaskFlowNodeId_1='4' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:57:47.572 +03:00 [INF] info: 13.10.2025 14:57:47.572 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[@__taskModel_TaskFlowNodeId_0='3' (Nullable = true), @__request_TaskFlowNodeId_1='4' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.from_node_id, t.task_flow_id, t.to_node_id, t0.id, t0.name, t0.status, t0.task_flow_id
+      FROM task_flow_edge AS t
+      LEFT JOIN task_flow_node AS t0 ON t.to_node_id = t0.id
+      WHERE t.from_node_id = @__taskModel_TaskFlowNodeId_0 AND t.to_node_id = @__request_TaskFlowNodeId_1
+      LIMIT 1
+2025-10-13 14:57:47.590 +03:00 [INF] dbug: 13.10.2025 14:57:47.590 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:57:47.592 +03:00 [INF] dbug: 13.10.2025 14:57:47.592 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 18ms reading results.
+2025-10-13 14:57:47.725 +03:00 [INF] dbug: 13.10.2025 14:57:47.725 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-13 14:57:47.726 +03:00 [INF] dbug: 13.10.2025 14:57:47.726 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+2025-10-13 14:57:47.730 +03:00 [INF] dbug: 13.10.2025 14:57:47.730 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (4ms).
+2025-10-13 14:57:47.731 +03:00 [INF] dbug: 13.10.2025 14:57:47.731 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='4', @p9='975' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:57:47.744 +03:00 [INF] info: 13.10.2025 14:57:47.744 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (12ms) [Parameters=[@p8='1', @p0='0001-01-01T00:00:00.0000000' (DbType = DateTime), @p1=NULL (DbType = DateTime), @p2='description', @p3=NULL (DbType = Int64), @p4='task1_edited' (Nullable = false), @p5='Critical' (Nullable = false), @p6='1', @p7='4', @p9='975' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      UPDATE task SET created_at = @p0, deadline = @p1, description = @p2, group_id = @p3, name = @p4, priority = @p5, project_id = @p6, task_flow_node_id = @p7
+      WHERE id = @p8 AND xmin = @p9
+      RETURNING xmin;
+2025-10-13 14:57:47.758 +03:00 [INF] dbug: 13.10.2025 14:57:47.758 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker' on server 'tcp://localhost:5432'.
+2025-10-13 14:57:47.761 +03:00 [INF] dbug: 13.10.2025 14:57:47.761 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker' on server 'tcp://localhost:5432' is being disposed after spending 13ms reading results.
+2025-10-13 14:57:47.792 +03:00 [INF] Executing OkObjectResult, writing value of type 'ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult`1[[ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse, ProjectTracker.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-13 14:57:47.794 +03:00 [INF] Executed action ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api) in 4272.551ms
+2025-10-13 14:57:47.796 +03:00 [INF] Executed endpoint 'ProjectTracker.Api.Controllers.TaskController.ChangeStatus (ProjectTracker.Api)'
+2025-10-13 14:57:47.797 +03:00 [INF] Request finished HTTP/1.1 PATCH http://localhost:5231/api/tasks/change-status - 200 null application/json; charset=utf-8 4284.0924ms

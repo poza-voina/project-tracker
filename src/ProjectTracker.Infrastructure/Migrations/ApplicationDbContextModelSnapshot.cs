@@ -60,7 +60,7 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.ToTable("employee", (string)null);
                 });
 
-            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.ObserverTask", b =>
+            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.ObserverTaskModel", b =>
                 {
                     b.Property<long>("TaskId")
                         .HasColumnType("bigint");
@@ -75,7 +75,7 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.ToTable("task_observer", (string)null);
                 });
 
-            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.PerformerTask", b =>
+            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.PerformerTaskModel", b =>
                 {
                     b.Property<long>("TaskId")
                         .HasColumnType("bigint");
@@ -172,7 +172,14 @@ namespace ProjectTracker.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
+                    b.Property<long?>("ProjectDeletableStatusId")
+                        .HasColumnType("bigint")
+                        .HasColumnName("project_deletable_status_id");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectDeletableStatusId")
+                        .IsUnique();
 
                     b.ToTable("task_flow", (string)null);
                 });
@@ -285,7 +292,7 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.ToTable("task", (string)null);
                 });
 
-            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.ObserverTask", b =>
+            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.ObserverTaskModel", b =>
                 {
                     b.HasOne("ProjectTracker.Infrastructure.Models.EmployeeModel", "Employee")
                         .WithMany()
@@ -304,7 +311,7 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.Navigation("Task");
                 });
 
-            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.PerformerTask", b =>
+            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.PerformerTaskModel", b =>
                 {
                     b.HasOne("ProjectTracker.Infrastructure.Models.EmployeeModel", "Employee")
                         .WithMany()
@@ -369,6 +376,15 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.Navigation("ToNode");
                 });
 
+            modelBuilder.Entity("ProjectTracker.Infrastructure.Models.TaskFlowModel", b =>
+                {
+                    b.HasOne("ProjectTracker.Infrastructure.Models.TaskFlowNodeModel", "ProjectDeletableStatus")
+                        .WithOne("DeletableTaskFlow")
+                        .HasForeignKey("ProjectTracker.Infrastructure.Models.TaskFlowModel", "ProjectDeletableStatusId");
+
+                    b.Navigation("ProjectDeletableStatus");
+                });
+
             modelBuilder.Entity("ProjectTracker.Infrastructure.Models.TaskFlowNodeModel", b =>
                 {
                     b.HasOne("ProjectTracker.Infrastructure.Models.TaskFlowModel", "TaskFlow")
@@ -428,6 +444,8 @@ namespace ProjectTracker.Infrastructure.Migrations
 
             modelBuilder.Entity("ProjectTracker.Infrastructure.Models.TaskFlowNodeModel", b =>
                 {
+                    b.Navigation("DeletableTaskFlow");
+
                     b.Navigation("FromEdges");
 
                     b.Navigation("TaskModels");

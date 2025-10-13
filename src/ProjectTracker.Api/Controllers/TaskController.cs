@@ -73,4 +73,12 @@ public class TaskController(ITaskService taskService) : ControllerBase
 
 		return Ok();
 	}
+
+	[HttpPut]
+	public async Task<IActionResult> UpdateTask([FromBody] UpdateTaskRequest request)
+	{
+		var result = await taskService.UpdateAsync(request);
+
+		return Ok(MbResultFactory.WithSuccess(result));
+	}
 }

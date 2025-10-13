@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ProjectTracker.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,7 +51,8 @@ namespace ProjectTracker.Infrastructure.Migrations
                     name = table.Column<string>(type: "text", nullable: false),
                     description = table.Column<string>(type: "text", nullable: true),
                     project_manager_id = table.Column<long>(type: "bigint", nullable: false),
-                    manager_id = table.Column<long>(type: "bigint", nullable: true)
+                    manager_id = table.Column<long>(type: "bigint", nullable: true),
+                    task_flow_id = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -81,8 +82,9 @@ namespace ProjectTracker.Infrastructure.Migrations
                     group_id = table.Column<long>(type: "bigint", nullable: true),
                     deadline = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    status = table.Column<string>(type: "text", nullable: false),
-                    priority = table.Column<string>(type: "text", nullable: false)
+                    task_flow_node_id = table.Column<long>(type: "bigint", nullable: false),
+                    priority = table.Column<string>(type: "text", nullable: false),
+                    xmin = table.Column<uint>(type: "xid", rowVersion: true, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -148,6 +150,70 @@ namespace ProjectTracker.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "task_flow",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    project_deletable_status_id = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_task_flow", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "task_flow_node",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    name = table.Column<string>(type: "text", nullable: false),
+                    task_flow_id = table.Column<long>(type: "bigint", nullable: false),
+                    status = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_task_flow_node", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_task_flow_node_task_flow_task_flow_id",
+                        column: x => x.task_flow_id,
+                        principalTable: "task_flow",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "task_flow_edge",
+                columns: table => new
+                {
+                    id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    from_node_id = table.Column<long>(type: "bigint", nullable: true),
+                    to_node_id = table.Column<long>(type: "bigint", nullable: true),
+                    task_flow_id = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_task_flow_edge", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_task_flow_edge_task_flow_node_from_node_id",
+                        column: x => x.from_node_id,
+                        principalTable: "task_flow_node",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_task_flow_edge_task_flow_node_to_node_id",
+                        column: x => x.to_node_id,
+                        principalTable: "task_flow_node",
+                        principalColumn: "id");
+                    table.ForeignKey(
+                        name: "FK_task_flow_edge_task_flow_task_flow_id",
+                        column: x => x.task_flow_id,
+                        principalTable: "task_flow",
+                        principalColumn: "id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_project_manager_id",
                 table: "project",
@@ -157,6 +223,11 @@ namespace ProjectTracker.Infrastructure.Migrations
                 name: "IX_project_project_manager_id",
                 table: "project",
                 column: "project_manager_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_project_task_flow_id",
+                table: "project",
+                column: "task_flow_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_task_group_id",
@@ -169,6 +240,37 @@ namespace ProjectTracker.Infrastructure.Migrations
                 column: "project_id");
 
             migrationBuilder.CreateIndex(
+                name: "IX_task_task_flow_node_id",
+                table: "task",
+                column: "task_flow_node_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_task_flow_project_deletable_status_id",
+                table: "task_flow",
+                column: "project_deletable_status_id",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_task_flow_edge_from_node_id",
+                table: "task_flow_edge",
+                column: "from_node_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_task_flow_edge_task_flow_id",
+                table: "task_flow_edge",
+                column: "task_flow_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_task_flow_edge_to_node_id",
+                table: "task_flow_edge",
+                column: "to_node_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_task_flow_node_task_flow_id",
+                table: "task_flow_node",
+                column: "task_flow_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_task_observer_EmployeeId",
                 table: "task_observer",
                 column: "EmployeeId");
@@ -177,11 +279,41 @@ namespace ProjectTracker.Infrastructure.Migrations
                 name: "IX_task_performer_EmployeeId",
                 table: "task_performer",
                 column: "EmployeeId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_project_task_flow_task_flow_id",
+                table: "project",
+                column: "task_flow_id",
+                principalTable: "task_flow",
+                principalColumn: "id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_task_task_flow_node_task_flow_node_id",
+                table: "task",
+                column: "task_flow_node_id",
+                principalTable: "task_flow_node",
+                principalColumn: "id",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_task_flow_task_flow_node_project_deletable_status_id",
+                table: "task_flow",
+                column: "project_deletable_status_id",
+                principalTable: "task_flow_node",
+                principalColumn: "id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_task_flow_node_task_flow_task_flow_id",
+                table: "task_flow_node");
+
+            migrationBuilder.DropTable(
+                name: "task_flow_edge");
+
             migrationBuilder.DropTable(
                 name: "task_observer");
 
@@ -199,6 +331,12 @@ namespace ProjectTracker.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "employee");
+
+            migrationBuilder.DropTable(
+                name: "task_flow");
+
+            migrationBuilder.DropTable(
+                name: "task_flow_node");
         }
     }
 }
