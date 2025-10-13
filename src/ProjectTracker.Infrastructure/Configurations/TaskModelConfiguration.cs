@@ -34,7 +34,7 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 		builder
 			.HasMany(x => x.Performers)
 			.WithMany(x => x.PerformedTasks)
-			.UsingEntity<PerformerTask>(
+			.UsingEntity<PerformerTaskModel>(
 				x => x
 					.HasOne(x => x.Employee)
 					.WithMany()
@@ -52,7 +52,7 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 		builder
 			.HasMany(x => x.Observers)
 			.WithMany(x => x.ObservedTasks)
-			.UsingEntity<ObserverTask>(
+			.UsingEntity<ObserverTaskModel>(
 				x => x
 					.HasOne(x => x.Employee)
 					.WithMany()
@@ -66,6 +66,12 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 					x.ToTable("task_observer");
 					x.HasKey(x => new { x.TaskId, x.EmployeeId });
 				});
+
+		builder
+			.HasOne(x => x.Status)
+			.WithMany(x => x.TaskModels)
+			.HasForeignKey(x => x.TaskFlowNodeId);
+
 	}
 
 	private static void BindingColumns(EntityTypeBuilder<TaskModel> builder)
@@ -101,10 +107,16 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 			.HasColumnName("created_at");
 
 		builder
-			.Property(x => x.Status)
+			.Property(x => x.TaskFlowNodeId)
 			.IsRequired()
-			.HasColumnName("status")
-			.HasConversion<string>();
+			.HasColumnName("task_flow_node_id");
+
+		builder
+			.Property(x => x.Version)
+			.HasColumnName("xmin")
+			.HasColumnType("xid")
+			.ValueGeneratedOnAddOrUpdate()
+			.IsConcurrencyToken();
 
 		builder
 			.Property(x => x.Priority)

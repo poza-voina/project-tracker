@@ -5,22 +5,27 @@ using ProjectTracker.Infrastructure.Repositories.Interfaces;
 
 namespace ProjectTracker.Infrastructure.Repositories;
 
-/// <inheritdoc/>
-public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TModel> where TModel : class, IDatabaseModel<long>
+public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TModel> where TModel : class, IDatabaseModel
 {
-	/// <inheritdoc/>
+	//TODO возможно нужно сделать проверку внешних ключей
 	public async Task<TModel> AddAsync(TModel entity, CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(entity);
 
-		await dbContext.AddAsync(entity, cancellationToken);
-		await dbContext.SaveChangesAsync(cancellationToken);
-		dbContext.Entry(entity).State = EntityState.Detached;
+		try
+		{
+			await dbContext.AddAsync(entity, cancellationToken);
+			await dbContext.SaveChangesAsync(cancellationToken);
+			dbContext.Entry(entity).State = EntityState.Detached;
+		}
+		catch (DbUpdateException ex)
+		{
+			throw new ConflictException("Такая сущность существует", ex);
+		}
 
 		return entity;
 	}
 
-	/// <inheritdoc/>
 	public async Task AddRangeAsync(
 		IEnumerable<TModel> entities,
 		CancellationToken cancellationToken = default)
@@ -36,15 +41,12 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		}
 	}
 
-	/// <inheritdoc/>
 	public async Task AddRangeAsync(params TModel[] entities) =>
 		await AddRangeAsync(entities.AsEnumerable());
 
-	/// <inheritdoc/>
 	public Task<bool> CanConnectToDbAsync(CancellationToken cancellationToken = default) =>
 		dbContext.Database.CanConnectAsync(cancellationToken);
 
-	/// <inheritdoc/>
 	public async Task DeleteAsync(
 		long id,
 		CancellationToken cancellationToken = default)
@@ -54,7 +56,6 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		await DeleteAsync(entity, cancellationToken);
 	}
 
-	/// <inheritdoc/>
 	public async Task DeleteAsync(
 		TModel entity,
 		CancellationToken cancellationToken = default)
@@ -66,7 +67,6 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		dbContext.Entry(entity).State = EntityState.Detached;
 	}
 
-	/// <inheritdoc/>
 	public async Task DeleteRangeAsync(params TModel[] entities)
 	{
 		if (entities.Length > 0)
@@ -81,13 +81,11 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		}
 	}
 
-	/// <inheritdoc/>
 	public async Task<int> ExecuteSqlAsync(
 		FormattableString sqlQuery,
 		CancellationToken cancellationToken = default) =>
 		await dbContext.Database.ExecuteSqlAsync(sqlQuery, cancellationToken);
 
-	/// <inheritdoc/>
 	public async Task<TModel> FindAsync(params object[] objects)
 	{
 		ArgumentNullException.ThrowIfNull(objects);
@@ -98,13 +96,10 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		return entity;
 	}
 
-	/// <inheritdoc/>
 	public IQueryable<TModel> GetAll() =>
 		dbContext
-			.Set<TModel>()
-			.AsNoTracking();
+			.Set<TModel>();
 
-	/// <inheritdoc/>
 	public async Task<TModel> UpdateAsync(
 		TModel entity,
 		CancellationToken cancellationToken = default)
@@ -123,7 +118,6 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		return entity;
 	}
 
-	/// <inheritdoc/>
 	public async Task UpdateRangeAsync(params TModel[] entities)
 	{
 		foreach (TModel entity in entities)

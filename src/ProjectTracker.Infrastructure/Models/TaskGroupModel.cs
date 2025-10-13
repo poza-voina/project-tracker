@@ -1,6 +1,6 @@
 ﻿namespace ProjectTracker.Infrastructure.Models;
 
-public class TaskGroupModel : IDatabaseModel<long>
+public class TaskGroupModel : IDatabaseModel
 {
 	public long Id { get; set; }
 	public required string Name { get; set; }

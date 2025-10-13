@@ -1,6 +1,6 @@
 ﻿namespace ProjectTracker.Infrastructure.Models;
 
-public abstract class EmployeeTaskBaseModel
+public abstract class EmployeeTaskBaseModel : IDatabaseModel
 {
 	public long TaskId { get; set; }
 	public virtual TaskModel? Task { get; set; }

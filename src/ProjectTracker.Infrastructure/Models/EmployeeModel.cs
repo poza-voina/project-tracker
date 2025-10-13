@@ -2,7 +2,7 @@
 
 namespace ProjectTracker.Infrastructure.Models;
 
-public class EmployeeModel : IDatabaseModel<long>
+public class EmployeeModel : IDatabaseModel
 {
 	public long Id { get; set; }
 	public required string LastName { get; set; }
