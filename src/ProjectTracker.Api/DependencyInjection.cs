@@ -94,6 +94,7 @@ public static class DependencyInjection
 		services.AddScoped<IEmployeeService, EmployeeService>();
 		services.AddScoped<ITaskService, TaskService>();
 		services.AddScoped<IProjectService, ProjectService>();
+		services.AddScoped<IGroupService, GroupService>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)

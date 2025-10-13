@@ -2,11 +2,11 @@ using FluentValidation;
 using Microsoft.AspNetCore.Authentication;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Api;
+using ProjectTracker.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
-
 
 services.AddCorsConfiguration();
 
@@ -20,7 +20,7 @@ services.AddEndpointsApiExplorer();
 
 services.AddSwaggerGenConfiguration(configuration);
 
-services.AddValidationConfiguration(); // TODO: посмотреть будут ли работать
+services.AddValidationConfiguration(); // TODO: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 services.AddRepositories();
 
@@ -33,8 +33,15 @@ var app = builder.Build();
 app.UseExceptionHandler(_ => { });
 app.MapControllers();
 
+//TODO: РЎРґРµР»Р°С‚СЊ РєР°Рє СЏ РѕР±С‹С‡РЅРѕ РїРѕСЃС‚СѓРїР°Р» С‚.Рµ РЎРґРµР»Р°С‚СЊ С‚Р°РєР¶Рµ РєР°Рє Рё MigrationRunner РЅРѕ Seeder
+using var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+await DatabaseSeeder.TrySeedAsync(context);
+
+
 app.UseSwagger();
 
 app.UseSwaggerUI();
+
 
 app.Run();
