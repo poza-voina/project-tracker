@@ -1,9 +1,11 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
 using ProjectTracker.Abstractions.Exceptions;
+using ProjectTracker.Contracts.Events.PublishEvents.Task;
 using ProjectTracker.Contracts.ViewModels.Shared.Pagination;
 using ProjectTracker.Contracts.ViewModels.Task;
 using ProjectTracker.Core.Extensions;
+using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services.Interfaces;
 using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
@@ -16,16 +18,41 @@ public class TaskService(
 	IRepository<TaskFlowEdgeModel> edgeRepository,
 	IRepository<PerformerTaskModel> performerRepository,
 	IRepository<ObserverTaskModel> observerRepository,
-	IRepository<ProjectModel> projectRepository) : ITaskService
+	IRepository<ProjectModel> projectRepository,
+	IEventCollector eventCollector) : ITaskService
 {
 	public async Task AddObserverAsync(AddTaskObserverRequest request)
 	{
-		await observerRepository.AddAsync(request.Adapt<ObserverTaskModel>());
+		var taskModel = await taskRepository.FindAsync(request.TaskId);
+
+		var employeeModel = await observerRepository.AddAsync(request.Adapt<ObserverTaskModel>());
+
+		var @event = new AddObserverEvent
+		{
+			EmployeeId = employeeModel.EmployeeId,
+			TaskId = taskModel.Id,
+			ProjectId = taskModel.ProjectId,
+			GroupId = taskModel.ProjectId
+		};
+
+		eventCollector.Add(@event);
 	}
 
 	public async Task AddPerformerAsync(AddTaskPerformerRequest request)
 	{
-		await performerRepository.AddAsync(request.Adapt<PerformerTaskModel>());
+		var taskModel = await taskRepository.FindAsync(request.TaskId);
+
+		var employeeModel = await performerRepository.AddAsync(request.Adapt<PerformerTaskModel>());
+
+		var @event = new AddPerformerEvent
+		{
+			EmployeeId = employeeModel.EmployeeId,
+			TaskId = taskModel.Id,
+			ProjectId = taskModel.ProjectId,
+			GroupId = taskModel.ProjectId
+		};
+
+		eventCollector.Add(@event);
 	}
 
 	public async Task<TaskWithStatusEmployeesReponse> ChangeStatusAsync(ChangeTaskStatusRequest request)
@@ -54,6 +81,17 @@ public class TaskService(
 		await taskRepository.UpdateAsync(taskModel);
 
 		taskModel.Status = toEdge.ToNode;
+
+		var @event = new ChangeStatusEvent
+		{
+			TaskId = taskModel.Id,
+			ProjectId = taskModel.ProjectId,
+			GroupId = taskModel.GroupId,
+			Status = taskModel.Status.Name
+		};
+
+		eventCollector.Add(@event);
+
 		return taskModel.Adapt<TaskWithStatusEmployeesReponse>();
 	}
 
@@ -82,6 +120,15 @@ public class TaskService(
 			.Include(x => x.Status)
 			.First(x => x.Id == taskId);
 
+		var @event = new CreateTaskEvent
+		{
+			TaskId = model.Id,
+			ProjectId = model.ProjectId,
+			GroupId = model.GroupId
+		};
+
+		eventCollector.Add(@event);
+
 		return model.Adapt<TaskWithStatusResponse>();
 	}
 
@@ -97,6 +144,15 @@ public class TaskService(
 		{
 			throw new UnprocessableException("Невозможно удалить задачу не в конечном статусе");
 		}
+
+		var @event = new DeleteTaskEvent //TODO возможно нужно дополнить
+		{
+			TaskId = taskModel.Id,
+			ProjectId = taskModel.ProjectId,
+			GroupId = taskModel.GroupId
+		};
+
+		eventCollector.Add(@event);
 
 		await taskRepository.DeleteAsync(id);
 	}
@@ -154,6 +210,15 @@ public class TaskService(
 		request.Adapt(model);
 
 		model = await taskRepository.UpdateAsync(model);
+
+		var @event = new UpdateTaskEvent //TODO возможно нужно дополнить
+		{
+			TaskId = model.Id,
+			ProjectId = model.ProjectId,
+			GroupId = model.GroupId
+		};
+
+		eventCollector.Add(@event);
 
 		return model.Adapt<TaskWithStatusResponse>();
 	}

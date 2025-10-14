@@ -1,22 +1,79 @@
 ﻿using FluentValidation;
+using MassTransit;
+using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
+using ProjectTracker.Api.ObjectStorage.Middlewares;
+using ProjectTracker.Contracts.Events.PublishEvents.Shared;
+using ProjectTracker.Core.ObjectStorage;
+using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
+using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
 using ProjectTracker.Infrastructure;
 using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
+using RabbitMQ.Client;
+using Serilog;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Text.Json.Serialization;
-using Serilog;
 
 namespace ProjectTracker.Api;
 
 public static class DependencyInjection
 {
+	public static void AddMasstransitConfiguration(this IServiceCollection services, IConfiguration configuration)
+	{
+		var rabbitMqOptions = GetRabbitMqConfiguration(configuration);
+
+		services.AddMassTransit
+		(
+			x => x.UsingRabbitMq(
+				(context, configuration) =>
+				{
+					configuration.Host(rabbitMqOptions.Host, rabbitMqOptions.VirtualHost,
+						x =>
+						{
+							x.Username(rabbitMqOptions.Username);
+							x.Password(rabbitMqOptions.Password);
+						});
+
+					configuration.Message<EventWrapper>(
+						x =>
+						{
+							x.SetEntityName(rabbitMqOptions.DefaultEndpoint.Name);
+						});
+
+					configuration.Publish<EventWrapper>(
+						x =>
+						{
+							x.ExchangeType = ExchangeType.Topic;
+							x.AutoDelete = true;
+						});
+
+					configuration.ReceiveEndpoint(rabbitMqOptions.HistoryEndpoint.Name,
+						x =>
+						{
+							x.Bind<EventWrapper>(s =>
+							{
+								s.RoutingKey = rabbitMqOptions.HistoryEndpoint.RoutingKey;
+								s.ExchangeType = ExchangeType.Topic;
+							});
+						}
+					);
+				})
+		);
+	}
+
+	public static void AddSigletonConfigurations(this IServiceCollection services, IConfiguration configuration)
+	{
+		services.AddSingleton(x => GetRabbitMqConfiguration(configuration));
+	}
+
 	public static void AddDbContextConfiguration(this IServiceCollection services, IConfiguration configuration)
 	{
 		var connectionSection = configuration.GetRequiredSection(EnvironmentConstants.ConnectionSection);
@@ -81,8 +138,8 @@ public static class DependencyInjection
 			//TODO: сделать/ посмотреть добавить фильтр для параметров а то они с большой буквы
 			//x.OperationFilterDescriptors.Add(new FilterDescriptor
 			//{
-				//Type = typeof(RemoveQueryParameters<GetStatementQuery>),
-				//Arguments = [new[] { nameof(GetStatementQuery.AccountId) }]
+			//Type = typeof(RemoveQueryParameters<GetStatementQuery>),
+			//Arguments = [new[] { nameof(GetStatementQuery.AccountId) }]
 			//});
 
 			//x.OperationFilter<CamelCaseQueryParametersFilter>();
@@ -95,6 +152,8 @@ public static class DependencyInjection
 		services.AddScoped<ITaskService, TaskService>();
 		services.AddScoped<IProjectService, ProjectService>();
 		services.AddScoped<IGroupService, GroupService>();
+		services.AddScoped<IEventCollector, EventCollector>();
+		services.AddScoped<IEventDispatcher, EventDispatcher>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)
@@ -107,5 +166,17 @@ public static class DependencyInjection
 
 		builder.Host.UseSerilog((context, configuration) =>
 			configuration.ReadFrom.Configuration(context.Configuration));
+	}
+
+	public static void AddMiddlewares(this IServiceCollection services)
+	{
+		services.AddScoped<EventMiddleware>();
+	}
+
+	private static RabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
+	{
+		return configuration
+			.GetRequiredSection(EnvironmentConstants.RabbitMqKey)
+			.GetRequired<RabbitMqConfiguration>();
 	}
 }
