@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Mapster" Version="7.4.0" />
+		<PackageReference Include="MassTransit" Version="8.5.4" />
 	</ItemGroup>
 
 </Project>
