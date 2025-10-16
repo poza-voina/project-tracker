@@ -1,15 +1,12 @@
 ﻿using FluentValidation;
 using MassTransit;
-using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
-using ProjectTracker.Contracts.Events.PublishEvents.Shared;
+using ProjectTracker.Contracts.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage;
-using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
@@ -18,7 +15,6 @@ using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
 using RabbitMQ.Client;
 using Serilog;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
@@ -42,25 +38,46 @@ public static class DependencyInjection
 							x.Password(rabbitMqOptions.Password);
 						});
 
-					configuration.Message<EventWrapper>(
+					configuration.Message<IEventWrapper>(
 						x =>
 						{
 							x.SetEntityName(rabbitMqOptions.DefaultEndpoint.Name);
 						});
 
-					configuration.Publish<EventWrapper>(
+					configuration.Publish<IEventWrapper>(
 						x =>
 						{
 							x.ExchangeType = ExchangeType.Topic;
-							x.AutoDelete = true;
 						});
 
 					configuration.ReceiveEndpoint(rabbitMqOptions.HistoryEndpoint.Name,
 						x =>
 						{
-							x.Bind<EventWrapper>(s =>
+							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
 							{
 								s.RoutingKey = rabbitMqOptions.HistoryEndpoint.RoutingKey;
+								s.ExchangeType = ExchangeType.Topic;
+							});
+						}
+					);
+
+					configuration.ReceiveEndpoint(rabbitMqOptions.ReportInputEndpoint.Name,
+						x =>
+						{
+							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
+							{
+								s.RoutingKey = rabbitMqOptions.ReportInputEndpoint.RoutingKey;
+								s.ExchangeType = ExchangeType.Topic;
+							});
+						}
+					);
+
+					configuration.ReceiveEndpoint(rabbitMqOptions.ReportResultEndpoint.Name,
+						x =>
+						{
+							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
+							{
+								s.RoutingKey = rabbitMqOptions.ReportResultEndpoint.RoutingKey;
 								s.ExchangeType = ExchangeType.Topic;
 							});
 						}
@@ -151,9 +168,12 @@ public static class DependencyInjection
 		services.AddScoped<IEmployeeService, EmployeeService>();
 		services.AddScoped<ITaskService, TaskService>();
 		services.AddScoped<IProjectService, ProjectService>();
+		services.AddScoped<IReportService, ReportService>();
 		services.AddScoped<IGroupService, GroupService>();
 		services.AddScoped<IEventCollector, EventCollector>();
 		services.AddScoped<IEventDispatcher, EventDispatcher>();
+		services.AddSingleton<IReportEventAwaiter, ReportEventAwaiter>();
+		services.AddScoped<IEventPublisher, EventPublisher>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)
@@ -173,10 +193,10 @@ public static class DependencyInjection
 		services.AddScoped<EventMiddleware>();
 	}
 
-	private static RabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
+	private static ProjectTrackerRabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
 	{
 		return configuration
 			.GetRequiredSection(EnvironmentConstants.RabbitMqKey)
-			.GetRequired<RabbitMqConfiguration>();
+			.GetRequired<ProjectTrackerRabbitMqConfiguration>();
 	}
 }
