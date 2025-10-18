@@ -1,6 +1,6 @@
 ﻿namespace ProjectTracker.Abstractions.ConfigurationObjects;
 
-public class RabbitMqFanoutBinding
+public class RabbitMqEndpointBinding
 {
 	public required string Name { get; set; }
 }

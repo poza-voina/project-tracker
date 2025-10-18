@@ -1,13 +1,10 @@
 ﻿using MassTransit;
 using Minio;
-using Minio.DataModel.Notification;
-using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
 using ProjectTracker.PdfReport.ObjectStorage.Consumers;
 using ProjectTracker.PdfReport.ObjectStorage.Data;
 using ProjectTracker.PdfReport.ObjectStorage.Services;
 using ProjectTracker.PdfReport.ObjectStorage.Services.Interfaces;
-using System.Net.Http.Headers;
 
 namespace ProjectTracker.PdfReport;
 

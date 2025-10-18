@@ -1,7 +1,4 @@
 using MassTransit;
-using ProjectTracker.Abstractions.ConfigurationObjects;
-using ProjectTracker.Contracts.Events.Interfaces;
-using ProjectTracker.Contracts.Events.PublishEvents.Shared;
 using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 

@@ -9,7 +9,7 @@ public class ReportInputTaskEventConsumer(
 	IGeneratePdfService generatePdfService,
 	IPublishEndpoint publishEndpoint) : IConsumer<ReportInputTaskEvent>
 {
-	public async Task Consume(ConsumeContext<ReportInputTaskEvent> context) //TODO доделать
+	public async Task Consume(ConsumeContext<ReportInputTaskEvent> context)
 	{
 		var message = context.Message;
 		try
