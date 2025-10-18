@@ -1,19 +1,23 @@
-﻿namespace ProjectTracker.Contracts.Events.PublishEvents.Shared;
+﻿using ProjectTracker.Contracts.Events.Interfaces;
+using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 
-public sealed class EventWrapper
+namespace ProjectTracker.Contracts.Events.PublishEvents.Shared;
+
+// TODO посмотреть и убрать я перестал использовать
+public sealed class EventWrapper<TEvent> : IEventWrapper
 {
 	public Guid EventId { get; init; }
 	public required string EventType { get; init; }
 	public DateTimeOffset CreatedAt { get; init; }
-	public required object Event { get; init; }
+	public required TEvent Event { get; init; }
 
-	public static EventWrapper Wrap(object @event)
+	public static EventWrapper<TEvent> Wrap(TEvent @event)
 	{
 		if (@event == null) throw new ArgumentNullException(nameof(@event));
 
 		var type = @event.GetType().FullName ?? @event.GetType().Name;
 
-		return new EventWrapper
+		return new EventWrapper<TEvent>
 		{
 			EventId = Guid.NewGuid(),
 			EventType = type,

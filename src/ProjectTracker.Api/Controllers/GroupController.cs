@@ -8,7 +8,7 @@ using GroupErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbR
 using GroupResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.TaskGroup.TaskGroupBaseResponse>;
 
 namespace ProjectTracker.Api.Controllers;
-
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("/api/groups")]
 public class GroupController(IGroupService groupService) : ControllerBase
 {
@@ -57,5 +57,13 @@ public class GroupController(IGroupService groupService) : ControllerBase
 		await groupService.DeleteAsync(id);
 
 		return Ok();
+	}
+
+	[HttpGet("informations/{id:long}")]
+	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] long id)
+	{
+		var result = await groupService.GetReportInformationAsync(id);
+
+		return Ok(MbResultFactory.WithSuccess(result));
 	}
 }

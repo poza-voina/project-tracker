@@ -68,6 +68,19 @@ public class GroupService(
 		return model.Adapt<TaskGroupBaseResponse>();
 	}
 
+	public async Task<TaskGroupInformationResponse> GetReportInformationAsync(long id)
+	{
+		var model = await groupRepository
+			.GetAll()
+			.Include(x => x.Tasks)
+				.ThenInclude(x => x.Status)
+			.Include(x => x.Tasks)
+				.ThenInclude(x => x.Performers)
+			.FirstOrDefaultAsync(x => x.Id == id) ?? throw new NotFoundException($"Группа с id = {id} не найдена");
+
+		return model.Adapt<TaskGroupInformationResponse>();
+	}
+
 	public async Task<TaskGroupBaseResponse> UpdateAsync(UpdateTaskGroupRequest request)
 	{
 		var model = await groupRepository.FindAsync(request.Id);

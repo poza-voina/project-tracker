@@ -1,4 +1,5 @@
 ﻿
+using ProjectTracker.Contracts.ViewModels.Report;
 using ProjectTracker.Contracts.ViewModels.Shared.Pagination;
 using ProjectTracker.Contracts.ViewModels.Task;
 
@@ -14,4 +15,5 @@ public interface ITaskService
 	Task<TaskWithStatusEmployeesReponse> ChangeStatusAsync(ChangeTaskStatusRequest request);
 	Task AddPerformerAsync(AddTaskPerformerRequest request);
 	Task AddObserverAsync(AddTaskObserverRequest request);
+	Task<TaskReportInformationResponse> GetReportInformationAsync(long taskId);
 }

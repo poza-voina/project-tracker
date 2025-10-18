@@ -1,15 +1,14 @@
 ﻿using FluentValidation;
 using MassTransit;
-using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
+using Npgsql.Replication.PgOutput.Messages;
 using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
+using ProjectTracker.Api.ObjectStorage.Consumers;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
-using ProjectTracker.Contracts.Events.PublishEvents.Shared;
+using ProjectTracker.Contracts.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage;
-using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
@@ -18,7 +17,6 @@ using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
 using RabbitMQ.Client;
 using Serilog;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text.Json.Serialization;
 
@@ -32,7 +30,13 @@ public static class DependencyInjection
 
 		services.AddMassTransit
 		(
-			x => x.UsingRabbitMq(
+
+			x =>
+			{
+				x.AddConsumer<ReportResultConsumer>();
+				x.AddConsumer<ReportErrorConsumer>();
+
+				x.UsingRabbitMq(
 				(context, configuration) =>
 				{
 					configuration.Host(rabbitMqOptions.Host, rabbitMqOptions.VirtualHost,
@@ -42,30 +46,23 @@ public static class DependencyInjection
 							x.Password(rabbitMqOptions.Password);
 						});
 
-					configuration.Message<EventWrapper>(
-						x =>
-						{
-							x.SetEntityName(rabbitMqOptions.DefaultEndpoint.Name);
-						});
-
-					configuration.Publish<EventWrapper>(
-						x =>
-						{
-							x.ExchangeType = ExchangeType.Topic;
-							x.AutoDelete = true;
-						});
-
-					configuration.ReceiveEndpoint(rabbitMqOptions.HistoryEndpoint.Name,
-						x =>
-						{
-							x.Bind<EventWrapper>(s =>
+					configuration.ReceiveEndpoint(
+						rabbitMqOptions.ReportResultEndpoint.Name,
+							x =>
 							{
-								s.RoutingKey = rabbitMqOptions.HistoryEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
-						}
-					);
-				})
+								x.ConfigureConsumer<ReportResultConsumer>(context);
+							}
+						);
+
+					configuration.ReceiveEndpoint(
+						rabbitMqOptions.ReportErrorEndpoint.Name,
+							x =>
+							{
+								x.ConfigureConsumer<ReportErrorConsumer>(context);
+							}
+						);
+				});
+			}
 		);
 	}
 
@@ -103,7 +100,6 @@ public static class DependencyInjection
 
 	public static void AddValidationConfiguration(this IServiceCollection services)
 	{
-		//TODO проверить валидацию будет ли работать без Mediator pipeline может что-то еще нужно дописать на текущем моменте не возможно проверить
 		ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
 		ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
 		services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
@@ -151,9 +147,12 @@ public static class DependencyInjection
 		services.AddScoped<IEmployeeService, EmployeeService>();
 		services.AddScoped<ITaskService, TaskService>();
 		services.AddScoped<IProjectService, ProjectService>();
+		services.AddScoped<IReportService, ReportService>();
 		services.AddScoped<IGroupService, GroupService>();
 		services.AddScoped<IEventCollector, EventCollector>();
 		services.AddScoped<IEventDispatcher, EventDispatcher>();
+		services.AddSingleton<IReportEventAwaiter, ReportEventAwaiter>();
+		services.AddScoped<IEventPublisher, EventPublisher>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)
@@ -173,10 +172,10 @@ public static class DependencyInjection
 		services.AddScoped<EventMiddleware>();
 	}
 
-	private static RabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
+	private static ProjectTrackerRabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
 	{
 		return configuration
 			.GetRequiredSection(EnvironmentConstants.RabbitMqKey)
-			.GetRequired<RabbitMqConfiguration>();
+			.GetRequired<ProjectTrackerRabbitMqConfiguration>();
 	}
 }

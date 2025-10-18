@@ -9,6 +9,7 @@ using ProjectResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResu
 
 namespace ProjectTracker.Api.Controllers;
 
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("/api/projects")]
 public class ProjectController(IProjectService projectService) : ControllerBase
 {

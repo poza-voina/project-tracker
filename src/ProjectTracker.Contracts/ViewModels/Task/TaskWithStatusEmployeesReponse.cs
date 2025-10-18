@@ -1,6 +1,5 @@
 ﻿using ProjectTracker.Contracts.ViewModels.Employee;
 using ProjectTracker.Contracts.ViewModels.TaskFlowNode;
-using ProjectTracker.Infrastructure.Models;
 
 namespace ProjectTracker.Contracts.ViewModels.Task;
 

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>dotnet-ProjectTracker.PdfReport-4fcf4a64-5d90-481f-9b9a-a528a9d0e64f</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MassTransit" Version="8.5.4" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.5.4" />
+		<PackageReference Include="MassTransit.Abstractions" Version="8.5.4" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.10" />
+		<PackageReference Include="Minio" Version="6.0.5" />
+		<PackageReference Include="Mapster" Version="7.4.0" />
+		<PackageReference Include="QuestPDF" Version="2025.7.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ProjectTracker.Abstractions\ProjectTracker.Abstractions.csproj" />
+		<ProjectReference Include="..\ProjectTracker.Contracts\ProjectTracker.Contracts.csproj" />
+	</ItemGroup>
+</Project>
