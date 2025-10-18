@@ -8,23 +8,18 @@ using ProjectTracker.Core.ObjectStorage.Interfaces;
 namespace ProjectTracker.Core.ObjectStorage;
 
 public class EventDispatcher(
-	ProjectTrackerRabbitMqConfiguration rabbitMqConfiguration,
 	IEventCollector eventCollector,
-	IEventPublisher publisher) : IEventDispatcher
+	IPublishEndpoint endpoint) : IEventDispatcher
 {
 	public async Task DispatchAllAsync()
 	{
 		var historyEvents = eventCollector
 			.GetEvents()
-			.Where(x => x is ITaskEvent)
-			.Select(EventWrapper<object>.Wrap);
+			.Where(x => x is IHistoryTaskEvent);
 
 		foreach (var item in historyEvents)
 		{
-			await publisher.Publish(
-				item,
-				rabbitMqConfiguration.HistoryEndpoint.RoutingKey,
-				rabbitMqConfiguration.DefaultEndpoint.Name);
+			await endpoint.Publish<IHistoryTaskEvent>(item);
 		}
 	}
 }

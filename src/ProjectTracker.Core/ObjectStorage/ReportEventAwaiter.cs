@@ -7,18 +7,19 @@ using System.Collections.Concurrent;
 
 namespace ProjectTracker.Core.ObjectStorage;
 
+//TODO сделать нормальную ошибку тут сложно
 public class ReportEventAwaiter : IReportEventAwaiter
 {
-	private readonly ConcurrentDictionary<Guid, TaskCompletionSource<string>> _waiters = new();
+	private readonly ConcurrentDictionary<Guid, TaskCompletionSource<string?>> _waiters = new();
 
 	public ReportEventAwaiter AddReportId(Guid reportId)
 	{
-		_waiters[reportId] = new TaskCompletionSource<string>(TaskCreationOptions.RunContinuationsAsynchronously);
+		_waiters[reportId] = new TaskCompletionSource<string?>(TaskCreationOptions.RunContinuationsAsynchronously);
 		
 		return this;
 	}
 
-	public async Task<string> WaitEvent(Guid reportId, TimeSpan? timeout = null)
+	public async Task<string?> WaitEvent(Guid reportId, TimeSpan? timeout = null)
 	{
 		if (!_waiters.TryGetValue(reportId, out var tcs))
 		{
@@ -45,6 +46,18 @@ public class ReportEventAwaiter : IReportEventAwaiter
 		if (_waiters.TryRemove(@event.ReportId, out var tcs))
 		{
 			tcs.TrySetResult(@event.Url);
+		}
+		else
+		{
+			throw new UnprocessableException($"reportId = {@event.ReportId} не найден");
+		}
+	}
+
+	public void ProcessErrorEvent(ReportErrorEvent @event)
+	{
+		if(_waiters.TryRemove(@event.ReportId, out var tcs))
+		{
+			tcs.TrySetResult(null);
 		}
 		else
 		{

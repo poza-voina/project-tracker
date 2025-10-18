@@ -58,4 +58,12 @@ public class GroupController(IGroupService groupService) : ControllerBase
 
 		return Ok();
 	}
+
+	[HttpGet("informations/{id:long}")]
+	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] long id)
+	{
+		var result = await groupService.GetReportInformationAsync(id);
+
+		return Ok(MbResultFactory.WithSuccess(result));
+	}
 }

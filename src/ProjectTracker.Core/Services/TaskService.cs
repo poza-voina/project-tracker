@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectTracker.Abstractions.Exceptions;
 using ProjectTracker.Contracts.Events.PublishEvents.Task;
+using ProjectTracker.Contracts.ViewModels.Report;
 using ProjectTracker.Contracts.ViewModels.Shared.Pagination;
 using ProjectTracker.Contracts.ViewModels.Task;
 using ProjectTracker.Core.Extensions;
@@ -221,5 +222,28 @@ public class TaskService(
 		eventCollector.Add(@event);
 
 		return model.Adapt<TaskWithStatusResponse>();
+	}
+
+	public async Task<TaskReportInformationResponse> GetReportInformationAsync(long taskId)
+	{
+		var task = await taskRepository
+			.GetAll()
+			.Include(x => x.Project)
+			.Include(x => x.TaskGroup)
+			.Include(x => x.Performers)
+			.Include(x => x.Observers)
+			.FirstOrDefaultAsync(x => x.Id == taskId)
+			?? throw new NotFoundException($"Задача не найдена с id = {taskId}");
+
+		var project = await projectRepository
+			.GetAll()
+			.Include(x => x.ProjectManager)
+			.Include(x => x.Manager)
+			.FirstOrDefaultAsync(x => x.Id == task.ProjectId)
+			?? throw new NotFoundException($"Проект не найден c id = {task.ProjectId}");
+
+		task.Project = project;
+
+		return task.Adapt<TaskReportInformationResponse>();
 	}
 }

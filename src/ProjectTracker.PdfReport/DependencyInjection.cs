@@ -1,14 +1,13 @@
 ﻿using MassTransit;
-using ProjectTracker.Abstractions.ConfigurationObjects;
+using Minio;
+using Minio.DataModel.Notification;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
-using ProjectTracker.Contracts.Events.Interfaces;
-using ProjectTracker.Contracts.Events.PublishEvents.Shared;
-using ProjectTracker.Contracts.Events.Reports;
-using ProjectTracker.PdfReport.Data;
-using ProjectTracker.PdfReport.Services;
-using ProjectTracker.PdfReport.Services.Interfaces;
-using RabbitMQ.Client;
+using ProjectTracker.PdfReport.ObjectStorage.Consumers;
+using ProjectTracker.PdfReport.ObjectStorage.Data;
+using ProjectTracker.PdfReport.ObjectStorage.Services;
+using ProjectTracker.PdfReport.ObjectStorage.Services.Interfaces;
+using System.Net.Http.Headers;
 
 namespace ProjectTracker.PdfReport;
 
@@ -23,6 +22,7 @@ public static class DependencyInjection
 			x =>
 			{
 				x.AddConsumer<ReportInputTaskEventConsumer>();
+				x.AddConsumer<ReportInputTaskGroupEventConsumer>();
 
 				x.UsingRabbitMq(
 				(context, configuration) =>
@@ -34,39 +34,17 @@ public static class DependencyInjection
 							x.Password(rabbitMqOptions.Password);
 						});
 
-					configuration.Message<IEventWrapper>(
+					configuration.ReceiveEndpoint(rabbitMqOptions.ReportInputTaskEndpoint.Name,
 						x =>
 						{
-							x.SetEntityName(rabbitMqOptions.DefaultEndpoint.Name);
-						});
-
-					configuration.Publish<IEventWrapper>(
-						x =>
-						{
-							x.ExchangeType = ExchangeType.Topic;
-						});
-
-					configuration.ReceiveEndpoint(rabbitMqOptions.ReportInputTaskEventEndpoint.Name,
-						x =>
-						{
-							x.Bind(rabbitMqOptions.ReportInputEndpoint.Name, s =>
-							{
-								s.RoutingKey = rabbitMqOptions.ReportInputEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
-
 							x.ConfigureConsumer<ReportInputTaskEventConsumer>(context);
 						}
 					);
 
-					configuration.ReceiveEndpoint(rabbitMqOptions.ReportResultEndpoint.Name,
+					configuration.ReceiveEndpoint(rabbitMqOptions.ReportInputTaskGroupEndpoint.Name,
 						x =>
 						{
-							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
-							{
-								s.RoutingKey = rabbitMqOptions.ReportResultEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
+							x.ConfigureConsumer<ReportInputTaskGroupEventConsumer>(context);
 						}
 					);
 				});
@@ -78,6 +56,29 @@ public static class DependencyInjection
 	{
 		services.AddScoped<IGeneratePdfService, GeneratePdfService>();
 		services.AddScoped<IMinioService, MinioService>();
+		services.AddScoped<IProjectTrackerClient, ProjectTrackerClient>();
+	}
+
+	public static void AddMinioConfiguration(this IServiceCollection services, IConfiguration configuration)
+	{
+		var minioConfiguration = GetMinioConfiguration(configuration);
+
+		services.AddSingleton<IMinioClient>(
+			x => new MinioClient()
+				.WithEndpoint(minioConfiguration.Endpoint)
+				.WithCredentials(
+					minioConfiguration.AccessKey,
+					minioConfiguration.SecretKey
+				)
+				.Build()
+			);
+	}
+
+	public static void AddSignletonConfigurations(this IServiceCollection services, IConfiguration configuration)
+	{
+		services.AddSingleton(x => GetRabbitMqConfiguration(configuration));
+		services.AddSingleton(x => GetMinioConfiguration(configuration));
+		services.AddSingleton(x => GetProjectTrackerClientConfiguration(configuration));
 	}
 
 	private static PdfReportRabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
@@ -85,5 +86,19 @@ public static class DependencyInjection
 		return configuration
 			.GetRequiredSection(EnvironmentConstants.RabbitMqKey)
 			.GetRequired<PdfReportRabbitMqConfiguration>();
+	}
+
+	private static MinioConfiguration GetMinioConfiguration(IConfiguration configuration) 
+	{
+		return configuration
+			.GetRequiredSection(EnvironmentConstants.MinioKey)
+			.GetRequired<MinioConfiguration>();
+	}
+
+	private static ProjectTrackerClientConfiguration GetProjectTrackerClientConfiguration(IConfiguration configuration) 
+	{
+		return configuration
+			.GetRequiredSection(EnvironmentConstants.ProjectTrackerClientKey)
+			.GetRequired<ProjectTrackerClientConfiguration>();
 	}
 }

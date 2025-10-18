@@ -5,6 +5,6 @@ namespace ProjectTracker.Core.Services.Interfaces;
 
 public interface IReportService
 {
-	Task<ReportResponse> GenerateTaskReportAsync(long taskId);
-	Task<ReportResponse> GenerateGroupReportAsync(long groupId);
+	Task<ReportResponse> GenerateTaskReportAsync(TaskReportRequest request);
+	Task<ReportResponse> GenerateGroupReportAsync(TaskGroupReportRequest request);
 }

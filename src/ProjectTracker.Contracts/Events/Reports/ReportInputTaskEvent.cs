@@ -4,5 +4,3 @@ public class ReportInputTaskEvent : ReportInputEventBase
 {
 	public long TaskId { get; set; }
 }
-
-

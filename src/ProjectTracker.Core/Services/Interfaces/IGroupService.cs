@@ -9,5 +9,6 @@ public interface IGroupService
 	Task DeleteAsync(long id);
 	Task<PaginationResponse<TaskGroupBaseResponse>> GetAllAsync(PaginationRequest request);
 	Task<TaskGroupBaseResponse> GetAsync(long id);
+	Task<TaskGroupInformationResponse> GetReportInformationAsync(long id);
 	Task<TaskGroupBaseResponse> UpdateAsync(UpdateTaskGroupRequest request);
 }

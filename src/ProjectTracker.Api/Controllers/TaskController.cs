@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectTracker.Api.ObjectStorage.Data.ViewModels.Shared.Result;
+using ProjectTracker.Contracts.ViewModels.Report;
+using ProjectTracker.Contracts.ViewModels.Shared.Result;
 using ProjectTracker.Contracts.ViewModels.Task;
+using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
 using AllTaskWithEmployesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationResponse<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse>>;
 using TaskErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskBaseReponse>;
@@ -80,5 +83,13 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		var result = await taskService.UpdateAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(result));
+	}
+
+	[HttpGet("informations/{taskId:long}")]
+	public async Task<IActionResult> GetTaskReportInformation([FromRoute] long taskId)
+	{
+		var response = await taskService.GetReportInformationAsync(taskId);
+
+		return Ok(MbResultFactory.WithSuccess(response));
 	}
 }

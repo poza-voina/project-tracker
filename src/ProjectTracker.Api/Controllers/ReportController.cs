@@ -12,20 +12,20 @@ public class ReportController(IReportService reportService) : ControllerBase
 {
 	[ProducesResponseType(typeof(MbResult<ReportResponse>), 200)]
 	[ProducesResponseType(typeof(MbResult<object>), 400)]
-	[HttpPost("task/{taskId:long}")]
-	public async Task<IActionResult> GenerateTaskReport([FromRoute] long taskId)
+	[HttpPost("task")]
+	public async Task<IActionResult> GenerateTaskReport([FromBody] TaskReportRequest request)
 	{
-		var response = await reportService.GenerateTaskReportAsync(taskId);
+		var response = await reportService.GenerateTaskReportAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(response));
 	}
 
 	[ProducesResponseType(typeof(MbResult<ReportResponse>), 200)]
 	[ProducesResponseType(typeof(MbResult<object>), 400)]
-	[HttpPost("group/{groupId:long}")]
-	public async Task<IActionResult> GenerateGroupReport([FromRoute] long groupId)
+	[HttpPost("group")]
+	public async Task<IActionResult> GenerateGroupReport([FromBody] TaskGroupReportRequest request)
 	{
-		var response = await reportService.GenerateGroupReportAsync(groupId);
+		var response = await reportService.GenerateGroupReportAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(response));
 	}

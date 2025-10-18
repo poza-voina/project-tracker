@@ -1,9 +1,11 @@
 ﻿using FluentValidation;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Npgsql.Replication.PgOutput.Messages;
 using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
+using ProjectTracker.Api.ObjectStorage.Consumers;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
 using ProjectTracker.Contracts.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage;
@@ -28,7 +30,13 @@ public static class DependencyInjection
 
 		services.AddMassTransit
 		(
-			x => x.UsingRabbitMq(
+
+			x =>
+			{
+				x.AddConsumer<ReportResultConsumer>();
+				x.AddConsumer<ReportErrorConsumer>();
+
+				x.UsingRabbitMq(
 				(context, configuration) =>
 				{
 					configuration.Host(rabbitMqOptions.Host, rabbitMqOptions.VirtualHost,
@@ -38,51 +46,23 @@ public static class DependencyInjection
 							x.Password(rabbitMqOptions.Password);
 						});
 
-					configuration.Message<IEventWrapper>(
-						x =>
-						{
-							x.SetEntityName(rabbitMqOptions.DefaultEndpoint.Name);
-						});
-
-					configuration.Publish<IEventWrapper>(
-						x =>
-						{
-							x.ExchangeType = ExchangeType.Topic;
-						});
-
-					configuration.ReceiveEndpoint(rabbitMqOptions.HistoryEndpoint.Name,
-						x =>
-						{
-							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
+					configuration.ReceiveEndpoint(
+						rabbitMqOptions.ReportResultEndpoint.Name,
+							x =>
 							{
-								s.RoutingKey = rabbitMqOptions.HistoryEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
-						}
-					);
+								x.ConfigureConsumer<ReportResultConsumer>(context);
+							}
+						);
 
-					configuration.ReceiveEndpoint(rabbitMqOptions.ReportInputEndpoint.Name,
-						x =>
-						{
-							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
+					configuration.ReceiveEndpoint(
+						rabbitMqOptions.ReportErrorEndpoint.Name,
+							x =>
 							{
-								s.RoutingKey = rabbitMqOptions.ReportInputEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
-						}
-					);
-
-					configuration.ReceiveEndpoint(rabbitMqOptions.ReportResultEndpoint.Name,
-						x =>
-						{
-							x.Bind(rabbitMqOptions.DefaultEndpoint.Name, s =>
-							{
-								s.RoutingKey = rabbitMqOptions.ReportResultEndpoint.RoutingKey;
-								s.ExchangeType = ExchangeType.Topic;
-							});
-						}
-					);
-				})
+								x.ConfigureConsumer<ReportErrorConsumer>(context);
+							}
+						);
+				});
+			}
 		);
 	}
 
@@ -120,7 +100,6 @@ public static class DependencyInjection
 
 	public static void AddValidationConfiguration(this IServiceCollection services)
 	{
-		//TODO проверить валидацию будет ли работать без Mediator pipeline может что-то еще нужно дописать на текущем моменте не возможно проверить
 		ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
 		ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
 		services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

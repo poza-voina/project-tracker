@@ -2,7 +2,7 @@ namespace ProjectTracker.Contracts.Events.PublishEvents.Task;
 
 using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 
-public abstract class TaskEventBase : ITaskEvent
+public abstract class TaskEventBase : IHistoryTaskEvent
 {
 	public long TaskId { get; set; }
 	public long ProjectId { get; set; }
