@@ -1,6 +1,7 @@
 ﻿
 namespace ProjectTracker.Abstractions.ConfigurationObjects;
 
+//TODO RabbitMqTopicBinding переделать уже другой смысл несет
 public class ProjectTrackerRabbitMqConfiguration : RabbitMqConfigurationBase
 {
 	public required RabbitMqTopicBinding ReportErrorEndpoint { get; set; }

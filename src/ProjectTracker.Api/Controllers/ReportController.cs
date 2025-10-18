@@ -7,6 +7,7 @@ using ProjectTracker.Core.Services.Interfaces;
 
 namespace ProjectTracker.Api.Controllers;
 
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/reports")]
 public class ReportController(IReportService reportService) : ControllerBase
 {

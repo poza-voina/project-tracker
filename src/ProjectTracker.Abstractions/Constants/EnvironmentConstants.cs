@@ -1,5 +1,6 @@
 ﻿namespace ProjectTracker.Abstractions.Constants;
 
+//TODO надо перенести как-то Abstractions не должны зависить от объекта
 public class EnvironmentConstants
 {
 	public const string ConnectionSection = "ConnectionStrings";

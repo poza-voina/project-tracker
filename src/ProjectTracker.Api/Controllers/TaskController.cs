@@ -12,6 +12,7 @@ using TaskWithEmployesResponse = ProjectTracker.Contracts.ViewModels.Shared.Resu
 
 namespace ProjectTracker.Api.Controllers;
 
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/tasks")]
 public class TaskController(ITaskService taskService) : ControllerBase
 {

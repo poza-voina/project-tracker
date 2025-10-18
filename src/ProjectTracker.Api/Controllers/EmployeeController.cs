@@ -8,6 +8,7 @@ using EmployeesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbRe
 
 namespace ProjectTracker.Api.Controllers;
 
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/employees")]
 public class EmployeeController(IEmployeeService employeeService) : ControllerBase
 {

@@ -4,6 +4,7 @@ using ProjectTracker.Core.ObjectStorage.Interfaces;
 
 namespace ProjectTracker.Core.ObjectStorage;
 
+// TODO посмотреть убрать из-за ненадобности
 public class EventPublisher(ISendEndpointProvider endpointProvider) : IEventPublisher
 {
 	public async Task Publish(object @event, string routingKey, string exchangeName)

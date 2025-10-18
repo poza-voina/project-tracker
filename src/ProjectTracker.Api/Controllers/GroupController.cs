@@ -8,7 +8,7 @@ using GroupErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbR
 using GroupResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.TaskGroup.TaskGroupBaseResponse>;
 
 namespace ProjectTracker.Api.Controllers;
-
+//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("/api/groups")]
 public class GroupController(IGroupService groupService) : ControllerBase
 {

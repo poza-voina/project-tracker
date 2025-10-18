@@ -3,6 +3,7 @@ using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
 
 namespace ProjectTracker.Contracts.Events.PublishEvents.Shared;
 
+// TODO посмотреть и убрать я перестал использовать
 public sealed class EventWrapper<TEvent> : IEventWrapper
 {
 	public Guid EventId { get; init; }

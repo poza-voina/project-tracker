@@ -2,6 +2,7 @@
 
 namespace ProjectTracker.PdfReport.ObjectStorage.Data;
 
+//TODO Binding нужно пересмотреть
 public class PdfReportRabbitMqConfiguration : RabbitMqConfigurationBase
 {
 	public required RabbitMqFanoutBinding DefaultEndpoint { get; set; }
