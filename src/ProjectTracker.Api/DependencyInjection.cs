@@ -1,13 +1,11 @@
 ﻿using FluentValidation;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using Npgsql.Replication.PgOutput.Messages;
 using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
 using ProjectTracker.Api.ObjectStorage.Consumers;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
-using ProjectTracker.Contracts.Events.Interfaces;
 using ProjectTracker.Core.ObjectStorage;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services;
@@ -15,7 +13,6 @@ using ProjectTracker.Core.Services.Interfaces;
 using ProjectTracker.Infrastructure;
 using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
-using RabbitMQ.Client;
 using Serilog;
 using System.Reflection;
 using System.Text.Json.Serialization;
@@ -152,7 +149,6 @@ public static class DependencyInjection
 		services.AddScoped<IEventCollector, EventCollector>();
 		services.AddScoped<IEventDispatcher, EventDispatcher>();
 		services.AddSingleton<IReportEventAwaiter, ReportEventAwaiter>();
-		services.AddScoped<IEventPublisher, EventPublisher>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)

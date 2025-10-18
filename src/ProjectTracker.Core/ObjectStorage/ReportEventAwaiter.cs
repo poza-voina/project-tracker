@@ -1,6 +1,4 @@
-﻿using MassTransit;
-using ProjectTracker.Abstractions.Exceptions;
-using ProjectTracker.Contracts.Events.PublishEvents.Shared;
+﻿using ProjectTracker.Abstractions.Exceptions;
 using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using System.Collections.Concurrent;
