@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjectTracker.Abstractions.Exceptions;
+using ProjectTracker.Infrastructure.DatabaseConstants;
 using ProjectTracker.Infrastructure.Models;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
+using System.ComponentModel;
 
 namespace ProjectTracker.Infrastructure.Repositories;
 
 public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TModel> where TModel : class, IDatabaseModel
 {
-	//TODO возможно нужно сделать проверку внешних ключей
 	public async Task<TModel> AddAsync(TModel entity, CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(entity);
@@ -20,10 +21,25 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 		}
 		catch (DbUpdateException ex)
 		{
-			throw new ConflictException("Такая сущность существует", ex);
+			ProcessDatabaseException(ex.InnerException);
+
+			throw;
 		}
 
 		return entity;
+	}
+
+	private void ProcessDatabaseException(Exception? ex)
+	{
+		if (ex is Npgsql.PostgresException postgresException)
+		{
+			var newException = postgresException.SqlState switch
+			{
+				PostgresStates.FkError => throw new BadRequestException("Несуществующий внешний ключ"),
+				PostgresStates.UniqueError => throw new BadRequestException("Сущность уже существует"),
+				_ => new InvalidEnumArgumentException($"Нет обработчика для sqlState = {postgresException.SqlState}")
+			};
+		}
 	}
 
 	public async Task AddRangeAsync(
@@ -106,14 +122,21 @@ public class Repository<TModel>(ApplicationDbContext dbContext) : IRepository<TM
 	{
 		ArgumentNullException.ThrowIfNull(entity);
 
-		if (dbContext.Entry(entity).State is EntityState.Detached)
+		try
 		{
-			dbContext.Entry(entity).State = EntityState.Modified;
-		}
+			if (dbContext.Entry(entity).State is EntityState.Detached)
+			{
+				dbContext.Entry(entity).State = EntityState.Modified;
+			}
 
-		dbContext.Update(entity);
-		await dbContext.SaveChangesAsync(cancellationToken);
-		dbContext.Entry(entity).State = EntityState.Detached;
+			dbContext.Update(entity);
+			await dbContext.SaveChangesAsync(cancellationToken);
+			dbContext.Entry(entity).State = EntityState.Detached;
+		}
+		catch (DbUpdateException ex)
+		{
+			ProcessDatabaseException(ex.InnerException);
+		}
 
 		return entity;
 	}
