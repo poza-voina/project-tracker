@@ -1,17 +1,29 @@
 ﻿using MassTransit;
 using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
+using ProjectTracker.Core.Services.Interfaces;
 
 namespace ProjectTracker.Api.ObjectStorage.Consumers;
 
-public class ReportErrorConsumer(IReportEventAwaiter awaiter, ILogger<ReportErrorEvent> logger) : IConsumer<ReportErrorEvent>
+public class ReportErrorConsumer(
+	IReportEventAwaiter awaiter,
+	ILogger<ReportErrorEvent> logger,
+	IReportService reportService
+	) : IConsumer<ReportErrorEvent>
 {
-	public Task Consume(ConsumeContext<ReportErrorEvent> context)
+	public async Task Consume(ConsumeContext<ReportErrorEvent> context)
 	{
 		logger.LogInformation("event received {data}", context.Message);
 
-		awaiter.ProcessErrorEvent(context.Message);
+		try
+		{
+			awaiter.ProcessErrorEvent(context.Message);
+		}
+		catch (Exception)
+		{
+		}
 
-		return Task.CompletedTask;
+		await reportService.ProcessReportErrorAsync(context.Message.ReportId);
+		
 	}
 }

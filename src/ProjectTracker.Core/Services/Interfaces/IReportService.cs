@@ -7,4 +7,7 @@ public interface IReportService
 {
 	Task<ReportResponse> GenerateTaskReportAsync(TaskReportRequest request);
 	Task<ReportResponse> GenerateGroupReportAsync(TaskGroupReportRequest request);
+	Task ProcessReportResultAsync(ReportResultEvent resultEvent);
+	Task ProcessReportErrorAsync(Guid reportId);
+	Task<ReportResponse> GetReportAsync(Guid reportId);
 }

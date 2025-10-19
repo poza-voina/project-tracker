@@ -3,6 +3,7 @@ using ProjectTracker.Api.ObjectStorage.Data.ViewModels.Shared.Result;
 using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.Contracts.ViewModels.Report;
 using ProjectTracker.Contracts.ViewModels.Shared.Result;
+using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
 
 namespace ProjectTracker.Api.Controllers;
@@ -27,6 +28,14 @@ public class ReportController(IReportService reportService) : ControllerBase
 	public async Task<IActionResult> GenerateGroupReport([FromBody] TaskGroupReportRequest request)
 	{
 		var response = await reportService.GenerateGroupReportAsync(request);
+
+		return Ok(MbResultFactory.WithSuccess(response));
+	}
+
+	[HttpGet("{reportId:guid}")]
+	public async Task<IActionResult> GetReport([FromRoute] Guid reportId)
+	{
+		var response = await reportService.GetReportAsync(reportId);
 
 		return Ok(MbResultFactory.WithSuccess(response));
 	}

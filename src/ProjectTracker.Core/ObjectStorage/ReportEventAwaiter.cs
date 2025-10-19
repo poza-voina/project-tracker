@@ -62,4 +62,9 @@ public class ReportEventAwaiter : IReportEventAwaiter
 			throw new UnprocessableException($"reportId = {@event.ReportId} не найден");
 		}
 	}
+
+	public bool IsExists(Guid reportId)
+	{
+		return _waiters.ContainsKey(reportId);
+	}
 }
