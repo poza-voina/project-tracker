@@ -1,6 +1,55 @@
 version: "3.8"
 
 services:
+  project-tracker.api:
+    image: project-tracker.api
+    build:
+      context: .
+      dockerfile: src/ProjectTracker.Api/Dockerfile
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    ports:
+        - "${PROJECT_TRACKER_API_PORT}:80"
+    environment:
+      - ConnectionStrings__PostgreSqlConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      - RabbitMQ__Host=${RABBITMQ_HOST}
+      - RabbitMQ__VirtualHost=${RABBITMQ_VHOST}
+      - RabbitMQ__Username=${RABBITMQ_USERNAME}
+      - RabbitMQ__Password=${RABBITMQ_PASSWORD}
+
+  project-tracker.pdf-report:
+    image: project-tracker.pdf-report
+    build:
+      context: .
+      dockerfile: src/ProjectTracker.PdfReport/Dockerfile
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      - RabbitMQ__Host=${RABBITMQ_HOST}
+      - RabbitMQ__VirtualHost=${RABBITMQ_VHOST}
+      - RabbitMQ__Username=${RABBITMQ_USERNAME}
+      - RabbitMQ__Password=${RABBITMQ_PASSWORD}
+
+      - Minio__AccessKey=${MINIO_ACCESS_KEY}
+      - Minio__SecretKey=${MINIO_SECRET_KEY}
+      - Minio__Endpoint=${MINIO_ENDPOINT}
+      - Minio__ReportBucket__BucketName=${MINIO_REPORT_BUCKET}
+      - Minio__ReportBucket__ContentType=${MINIO_REPORT_CONTENT_TYPE}
+
+      - ProjectTrackerClient__TasksBasePath=${TASKS_BASE_PATH}
+      - ProjectTrackerClient__TaskGroupsBasePath=${TASK_GROUPS_BASE_PATH}
+      - ProjectTrackerClient__DefaultUri=${PROJECT_TRACKER_URI}
+
+  project-tracker.migration-runner:
+    image: project-tracker.migration-runner
+    build:
+      context: .
+      dockerfile: src/ProjectTracker.MigrationRunner/Dockerfile
+    environment:
+      - ConnectionStrings__PostgreSqlConnection=Host=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+
   postgres:
     image: postgres:16
     container_name: project-tracker-postgres
@@ -38,8 +87,8 @@ services:
     image: minio/minio:RELEASE.2025-04-22T22-12-26Z
     container_name: project-tracker-minio
     environment:
-      - MINIO_ROOT_USER=username
-      - MINIO_ROOT_PASSWORD=password
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -51,6 +100,20 @@ services:
       interval: 30s
       timeout: 20s
       retries: 3
+
+  minio-setup:
+    build:
+      context: .
+      dockerfile: Dockerfile.minio-setup
+    volumes:
+      - ./minio-policy.json:/scripts/minio-policy.json
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+    depends_on:
+      minio:
+        condition: service_healthy
+  
 
 volumes:
   postgres_data:

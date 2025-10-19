@@ -1,0 +1,10 @@
+FROM alpine:latest
+
+RUN apk add --no-cache curl
+
+RUN curl -L https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc && \
+    chmod +x /usr/local/bin/mc
+
+COPY minio_setup.sh /minio_setup.sh
+
+ENTRYPOINT ["/bin/sh", "/minio_setup.sh"]
