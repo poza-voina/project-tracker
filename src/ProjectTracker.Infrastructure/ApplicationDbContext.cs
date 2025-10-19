@@ -14,6 +14,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 	public DbSet<TaskFlowModel> TaskFlows => Set<TaskFlowModel>();
 	public DbSet<TaskFlowNodeModel> TaskFlowNodes => Set<TaskFlowNodeModel>();
 	public DbSet<TaskFlowEdgeModel> TaskFlowEdges => Set<TaskFlowEdgeModel>();
+	public DbSet<ReportModel> ReportModels => Set<ReportModel>();
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{

@@ -1,8 +1,8 @@
 ﻿using ProjectTracker.Infrastructure.Enums;
 
-namespace ProjectTracker.Contracts.ViewModels.Report;
+namespace ProjectTracker.Infrastructure.Models;
 
-public class ReportResponse
+public class ReportModel : IDatabaseModel
 {
 	public Guid Id { get; set; }
 	public string? Url { get; set; }

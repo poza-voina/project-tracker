@@ -23,6 +23,8 @@ public class MinioService(IMinioClient minioClient) : IMinioService
 
 	public async Task<string> GetFileUrl(BucketConfiguration bucketConfiguration, string objectName, int expirySeconds)
 	{
+		expirySeconds = expirySeconds == 0 ? 1 : expirySeconds;
+
 		var presignedUrl = await minioClient.PresignedGetObjectAsync(
 			new PresignedGetObjectArgs()
 				.WithBucket(bucketConfiguration.BucketName)

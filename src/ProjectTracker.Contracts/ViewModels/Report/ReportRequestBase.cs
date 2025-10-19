@@ -3,4 +3,5 @@
 public class ReportRequestBase
 {
 	public int ExpirySeconds { get; set; }
+	public TimeSpan? Timeout { get; set; }
 }
