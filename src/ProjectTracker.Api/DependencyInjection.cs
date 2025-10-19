@@ -15,6 +15,7 @@ using ProjectTracker.Infrastructure.Repositories;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
 using Serilog;
 using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace ProjectTracker.Api;

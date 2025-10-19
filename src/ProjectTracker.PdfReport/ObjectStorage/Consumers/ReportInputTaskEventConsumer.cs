@@ -1,5 +1,4 @@
 ﻿using MassTransit;
-using ProjectTracker.Abstractions.Exceptions;
 using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.PdfReport.ObjectStorage.Services.Interfaces;
 
@@ -7,6 +6,7 @@ namespace ProjectTracker.PdfReport.ObjectStorage.Consumers;
 
 public class ReportInputTaskEventConsumer(
 	IGeneratePdfService generatePdfService,
+	ILogger<ReportInputTaskEventConsumer> logger,
 	IPublishEndpoint publishEndpoint) : IConsumer<ReportInputTaskEvent>
 {
 	public async Task Consume(ConsumeContext<ReportInputTaskEvent> context)
@@ -24,8 +24,10 @@ public class ReportInputTaskEventConsumer(
 
 			await publishEndpoint.Publish(@event);
 		}
-		catch (NotFoundException ex)
+		catch (Exception ex)
 		{
+			logger.LogError("Ошибка создания отчета id = {reportId} Exception = {ex}", message.ReportId, ex);
+
 			await publishEndpoint.Publish(
 				new ReportErrorEvent
 				{

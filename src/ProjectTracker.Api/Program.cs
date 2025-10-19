@@ -40,12 +40,6 @@ app.UseMiddleware<EventMiddleware>();
 
 app.MapControllers();
 
-//TODO: Сделать как я обычно поступал т.е Сделать также как и MigrationRunner но Seeder
-using var scope = app.Services.CreateScope();
-var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-await DatabaseSeeder.TrySeedAsync(context);
-
-
 app.UseSwagger();
 
 app.UseSwaggerUI();
