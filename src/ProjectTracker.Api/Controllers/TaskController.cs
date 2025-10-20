@@ -1,22 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjectTracker.Api.ObjectStorage.Data.ViewModels.Shared.Result;
-using ProjectTracker.Contracts.ViewModels.Report;
-using ProjectTracker.Contracts.ViewModels.Shared.Result;
 using ProjectTracker.Contracts.ViewModels.Task;
-using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
-using AllTaskWithEmployesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Shared.Pagination.PaginationResponse<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse>>;
-using TaskErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskBaseReponse>;
-using TaskResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse>;
-using TaskWithEmployesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse>;
-
+using TaskErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<object>;
+using TaskReportResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskReportInformationResponse>;
+using TaskWithEmployeesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusEmployeesReponse>;
+using TaskWithStatusResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Task.TaskWithStatusResponse>;
 namespace ProjectTracker.Api.Controllers;
 
-//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/tasks")]
 public class TaskController(ITaskService taskService) : ControllerBase
 {
-	[ProducesResponseType(typeof(TaskWithEmployesResponse), 200)]
+	[ProducesResponseType(typeof(TaskWithEmployeesResponse), 200)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
 	[HttpGet("{id:long}")]
 	public async Task<IActionResult> GetTask([FromRoute] long id)
@@ -26,7 +21,9 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
-	[ProducesResponseType(typeof(AllTaskWithEmployesResponse), 200)]
+	[ProducesResponseType(typeof(TaskWithEmployeesResponse), 200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 400)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpGet]
 	public async Task<IActionResult> GetAllTask([FromQuery] GetPaginationTasksRequest request)
 	{
@@ -35,8 +32,9 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
-	[ProducesResponseType(typeof(TaskResponse), 200)]
+	[ProducesResponseType(typeof(TaskWithStatusResponse), 200)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 400)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpPost]
 	public async Task<IActionResult> CreateTask([FromBody] CreateTaskRequest request)
 	{
@@ -45,7 +43,10 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
-	[ProducesResponseType(404)]
+	[ProducesResponseType(typeof(TaskWithEmployeesResponse), 200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 400)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpDelete("{id:long}")]
 	public async Task<IActionResult> DeleteTaskAsync([FromRoute] long id)
 	{
@@ -54,6 +55,8 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok();
 	}
 
+	[ProducesResponseType(200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpPatch("change-status")]
 	public async Task<IActionResult> ChangeStatus([FromBody] ChangeTaskStatusRequest request)
 	{
@@ -62,6 +65,8 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
+	[ProducesResponseType(200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpPost("add-performer")]
 	public async Task<IActionResult> AddPerformer([FromBody] AddTaskPerformerRequest request)
 	{
@@ -70,6 +75,9 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok();
 	}
 
+
+	[ProducesResponseType(200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpPost("add-observer")]
 	public async Task<IActionResult> AddObserver([FromBody] AddTaskObserverRequest request)
 	{
@@ -77,7 +85,7 @@ public class TaskController(ITaskService taskService) : ControllerBase
 
 		return Ok();
 	}
-
+	
 	[HttpPut]
 	public async Task<IActionResult> UpdateTask([FromBody] UpdateTaskRequest request)
 	{
@@ -86,6 +94,10 @@ public class TaskController(ITaskService taskService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
+	[ProducesResponseType(typeof(TaskReportResponse), 200)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 400)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
+	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpGet("informations/{taskId:long}")]
 	public async Task<IActionResult> GetTaskReportInformation([FromRoute] long taskId)
 	{

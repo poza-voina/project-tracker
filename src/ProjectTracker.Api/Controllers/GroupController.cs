@@ -8,11 +8,12 @@ using GroupErrorResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbR
 using GroupResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.TaskGroup.TaskGroupBaseResponse>;
 
 namespace ProjectTracker.Api.Controllers;
-//TODO [ProducesResponseType()] сделать везде или убрать
+
 [Route("/api/groups")]
 public class GroupController(IGroupService groupService) : ControllerBase
 {
 	[ProducesResponseType(typeof(AllGroupsResponse), 200)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 400)]
 	[HttpGet]
 	public async Task<IActionResult> GetAllGroups([FromQuery] PaginationRequest request)
 	{
@@ -33,6 +34,7 @@ public class GroupController(IGroupService groupService) : ControllerBase
 
 	[ProducesResponseType(typeof(GroupResponse), 200)]
 	[ProducesResponseType(typeof(GroupErrorResponse), 400)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 422)]
 	[HttpPost]
 	public async Task<IActionResult> CreateGroup([FromBody] CreateTaskGroupRequest request)
 	{
@@ -42,6 +44,8 @@ public class GroupController(IGroupService groupService) : ControllerBase
 	}
 
 	[ProducesResponseType(typeof(GroupResponse), 200)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 422)]
 	[HttpPut]
 	public async Task<IActionResult> UpdateGroup([FromBody] UpdateTaskGroupRequest request)
 	{
@@ -50,7 +54,9 @@ public class GroupController(IGroupService groupService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
 
-	[ProducesResponseType(404)]
+	[ProducesResponseType(200)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 422)]
 	[HttpDelete("{id:long}")]
 	public async Task<IActionResult> DeleteGroup([FromRoute] long id)
 	{
@@ -59,6 +65,8 @@ public class GroupController(IGroupService groupService) : ControllerBase
 		return Ok();
 	}
 
+	[ProducesResponseType(typeof(TaskGroupInformationResponse), 200)]
+	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
 	[HttpGet("informations/{id:long}")]
 	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] long id)
 	{

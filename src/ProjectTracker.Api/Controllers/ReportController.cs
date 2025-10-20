@@ -1,18 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectTracker.Api.ObjectStorage.Data.ViewModels.Shared.Result;
-using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.Contracts.ViewModels.Report;
 using ProjectTracker.Contracts.ViewModels.Shared.Result;
-using ProjectTracker.Core.Services;
 using ProjectTracker.Core.Services.Interfaces;
+using ReportResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResult<ProjectTracker.Contracts.ViewModels.Report.ReportResponse>;
 
 namespace ProjectTracker.Api.Controllers;
 
-//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/reports")]
 public class ReportController(IReportService reportService) : ControllerBase
 {
-	[ProducesResponseType(typeof(MbResult<ReportResponse>), 200)]
+	[ProducesResponseType(typeof(ReportResponse), 200)]
 	[ProducesResponseType(typeof(MbResult<object>), 400)]
 	[HttpPost("task")]
 	public async Task<IActionResult> GenerateTaskReport([FromBody] TaskReportRequest request)
