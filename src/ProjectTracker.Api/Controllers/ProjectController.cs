@@ -9,11 +9,11 @@ using ProjectResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbResu
 
 namespace ProjectTracker.Api.Controllers;
 
-//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("/api/projects")]
 public class ProjectController(IProjectService projectService) : ControllerBase
 {
 	[ProducesResponseType(typeof(AllProjectsResponse), 200)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 400)]
 	[HttpGet]
 	public async Task<IActionResult> GetAllProjects([FromQuery] PaginationRequest request)
 	{
@@ -34,6 +34,7 @@ public class ProjectController(IProjectService projectService) : ControllerBase
 
 	[ProducesResponseType(typeof(ProjectResponse), 200)]
 	[ProducesResponseType(typeof(ProjectErrorResponse), 400)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 422)]
 	[HttpPost]
 	public async Task<IActionResult> CreateProject([FromBody] CreateProjectRequest request)
 	{
@@ -43,6 +44,9 @@ public class ProjectController(IProjectService projectService) : ControllerBase
 	}
 
 	[ProducesResponseType(typeof(ProjectResponse), 200)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 400)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 422)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 404)]
 	[HttpPut]
 	public async Task<IActionResult> UpdateProject([FromBody] UpdateProjectRequest request)
 	{
@@ -52,6 +56,7 @@ public class ProjectController(IProjectService projectService) : ControllerBase
 	}
 
 	[ProducesResponseType(404)]
+	[ProducesResponseType(typeof(ProjectErrorResponse), 400)]
 	[HttpDelete("{id:long}")]
 	public async Task<IActionResult> DeleteProject([FromRoute] long id)
 	{

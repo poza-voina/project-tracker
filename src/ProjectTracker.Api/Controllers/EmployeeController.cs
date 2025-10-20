@@ -8,11 +8,11 @@ using EmployeesResponse = ProjectTracker.Contracts.ViewModels.Shared.Result.MbRe
 
 namespace ProjectTracker.Api.Controllers;
 
-//TODO [ProducesResponseType()] сделать везде или убрать
 [Route("api/employees")]
 public class EmployeeController(IEmployeeService employeeService) : ControllerBase
 {
 	[ProducesResponseType(typeof(EmployeeResponse), 200)]
+	[ProducesResponseType(typeof(EmployeeErrorResponse), 400)]
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 404)]
 	[HttpGet("{id:long}")]
 	public async Task<IActionResult> GetEmployee([FromRoute] long id)
@@ -23,6 +23,7 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 	}
 
 	[ProducesResponseType(typeof(EmployeesResponse), 200)]
+	[ProducesResponseType(typeof(EmployeeErrorResponse), 400)]
 	[HttpGet]
 	public async Task<IActionResult> GetAllEmployee([FromQuery] PaginationRequest request)
 	{
@@ -33,6 +34,7 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 
 	[ProducesResponseType(typeof(EmployeeResponse), 200)]
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 400)]
+	[ProducesResponseType(typeof(EmployeeErrorResponse), 422)]
 	[HttpPost]
 	public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeRequest request)
 	{
