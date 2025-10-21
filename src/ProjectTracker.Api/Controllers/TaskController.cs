@@ -14,9 +14,9 @@ public class TaskController(ITaskService taskService) : ControllerBase
 	[ProducesResponseType(typeof(TaskWithEmployeesResponse), 200)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
 	[HttpGet("{id:long}")]
-	public async Task<IActionResult> GetTask([FromRoute] long id)
+	public async Task<IActionResult> GetTask([FromRoute] GetTaskRequest request)
 	{
-		var result = await taskService.GetAsync(id);
+		var result = await taskService.GetAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
@@ -48,9 +48,9 @@ public class TaskController(ITaskService taskService) : ControllerBase
 	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
 	[HttpDelete("{id:long}")]
-	public async Task<IActionResult> DeleteTaskAsync([FromRoute] long id)
+	public async Task<IActionResult> DeleteTaskAsync([FromRoute] DeleteTaskRequest request)
 	{
-		await taskService.DeleteAsync(id);
+		await taskService.DeleteAsync(request);
 
 		return Ok();
 	}

@@ -24,11 +24,11 @@ public class GroupService(
 		return model.Adapt<TaskGroupBaseResponse>();
 	}
 
-	public async Task DeleteAsync(long id)
+	public async Task DeleteAsync(DeleteGroupRequest request)
 	{
 		var tasks = await taskRepository
 			.GetAll()
-			.Where(x => x.GroupId == id)
+			.Where(x => x.GroupId == request.Id)
 			.Include(x => x.Status)
 			.ToListAsync();
 
@@ -42,7 +42,7 @@ public class GroupService(
 			throw new UnprocessableException("Невозможно удалить группу: есть задачи не в конечном статусе");
 		}
 
-		await groupRepository.DeleteAsync(id);
+		await groupRepository.DeleteAsync(request.Id);
 	}
 
 	public async Task<PaginationResponse<TaskGroupBaseResponse>> GetAllAsync(PaginationRequest request)
@@ -61,14 +61,14 @@ public class GroupService(
 		};
 	}
 
-	public async Task<TaskGroupBaseResponse> GetAsync(long id)
+	public async Task<TaskGroupBaseResponse> GetAsync(GetGroupRequest request)
 	{
-		var model = await groupRepository.FindAsync(id);
+		var model = await groupRepository.FindAsync(request.Id);
 
 		return model.Adapt<TaskGroupBaseResponse>();
 	}
 
-	public async Task<TaskGroupInformationResponse> GetReportInformationAsync(long id)
+	public async Task<TaskGroupInformationResponse> GetReportInformationAsync(GetGroupReportInforamationRequest request)
 	{
 		var model = await groupRepository
 			.GetAll()
@@ -76,7 +76,8 @@ public class GroupService(
 				.ThenInclude(x => x.Status)
 			.Include(x => x.Tasks)
 				.ThenInclude(x => x.Performers)
-			.FirstOrDefaultAsync(x => x.Id == id) ?? throw new NotFoundException($"Группа с id = {id} не найдена");
+			.FirstOrDefaultAsync(x => x.Id == request.Id)
+			?? throw new NotFoundException($"Группа с id = {request.Id} не найдена");
 
 		return model.Adapt<TaskGroupInformationResponse>();
 	}

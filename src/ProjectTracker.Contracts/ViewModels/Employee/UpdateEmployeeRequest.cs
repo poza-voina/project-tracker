@@ -9,5 +9,5 @@ public class UpdateEmployeeRequest
 	public required string FirstName { get; set; }
 	public string? Patronymic { get; set; }
 	public required string Username { get; set; }
-	public EmployeeRole Role { get; set; }
+	public required EmployeeRole Role { get; set; }
 }

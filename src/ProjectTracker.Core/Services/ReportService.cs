@@ -112,9 +112,9 @@ public class ReportService(
 		return null;
 	}
 
-	public async Task<ReportResponse> GetReportAsync(Guid reportId)
+	public async Task<ReportResponse> GetReportAsync(GetReportRequest request)
 	{
-		var model = await reportRepository.FindAsync(reportId);
+		var model = await reportRepository.FindAsync(request.Id);
 
 		return model.Adapt<ReportResponse>();
 	}

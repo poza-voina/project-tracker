@@ -6,9 +6,9 @@ namespace ProjectTracker.Core.Services.Interfaces;
 public interface IGroupService
 {
 	Task<TaskGroupBaseResponse> CreateAsync(CreateTaskGroupRequest request);
-	Task DeleteAsync(long id);
+	Task DeleteAsync(DeleteGroupRequest request);
 	Task<PaginationResponse<TaskGroupBaseResponse>> GetAllAsync(PaginationRequest request);
-	Task<TaskGroupBaseResponse> GetAsync(long id);
-	Task<TaskGroupInformationResponse> GetReportInformationAsync(long id);
+	Task<TaskGroupBaseResponse> GetAsync(GetGroupRequest request);
+	Task<TaskGroupInformationResponse> GetReportInformationAsync(GetGroupReportInforamationRequest request);
 	Task<TaskGroupBaseResponse> UpdateAsync(UpdateTaskGroupRequest request);
 }

@@ -20,9 +20,9 @@ public class EmployeeService(IRepository<EmployeeModel> employeeRepository) : IE
 		return result.Adapt<EmployeeBaseResponse>();
 	}
 
-	public async Task DeleteAsync(long id)
+	public async Task DeleteAsync(DeleteEmployeeRequest request)
 	{
-		await employeeRepository.DeleteAsync(id);
+		await employeeRepository.DeleteAsync(request.Id);
 	}
 
 	public async Task<PaginationResponse<EmployeeBaseResponse>> GetAllAsync(PaginationRequest request)
@@ -43,9 +43,9 @@ public class EmployeeService(IRepository<EmployeeModel> employeeRepository) : IE
 		};
 	}
 
-	public async Task<EmployeeBaseResponse> GetAsync(long id)
+	public async Task<EmployeeBaseResponse> GetAsync(GetEmployeeRequest request)
 	{
-		var model = await employeeRepository.FindAsync(id);
+		var model = await employeeRepository.FindAsync(request.Id);
 
 		return model.Adapt<EmployeeBaseResponse>();
 	}

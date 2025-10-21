@@ -5,6 +5,7 @@ using ProjectTracker.Abstractions.ConfigurationObjects;
 using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
 using ProjectTracker.Api.ObjectStorage.Consumers;
+using ProjectTracker.Api.ObjectStorage.FilterActions;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
 using ProjectTracker.Core.ObjectStorage;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
@@ -105,7 +106,10 @@ public static class DependencyInjection
 
 	public static void AddControllerConfiguration(this IServiceCollection services)
 	{
-		services.AddControllers()
+		services
+			.AddControllers(
+				options => options.Filters.Add<FluentValidationFilter>()
+			)
 			.AddJsonOptions(options =>
 			{
 				options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
