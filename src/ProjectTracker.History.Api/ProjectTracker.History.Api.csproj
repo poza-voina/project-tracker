@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MassTransit" Version="8.5.4" />
+		<PackageReference Include="MassTransit.Abstractions" Version="8.5.4" />
+		<PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.5.4" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.5.4" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ProjectTracker.Abstractions\ProjectTracker.Abstractions.csproj" />
+		<ProjectReference Include="..\ProjectTracker.Contracts\ProjectTracker.Contracts.csproj" />
+		<ProjectReference Include="..\ProjectTracker.History.Contracts\ProjectTracker.History.Contracts.csproj" />
+		<ProjectReference Include="..\ProjectTracker.History.Core\ProjectTracker.History.Core.csproj" />
+		<ProjectReference Include="..\ProjectTracker.History.Infrastructure\ProjectTracker.History.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>

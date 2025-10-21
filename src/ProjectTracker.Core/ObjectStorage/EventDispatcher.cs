@@ -1,5 +1,5 @@
 using MassTransit;
-using ProjectTracker.Core.ObjectStorage.Events.Interfaces;
+using ProjectTracker.Contracts.Events.HistoryEvents;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 
 namespace ProjectTracker.Core.ObjectStorage;
@@ -12,11 +12,11 @@ public class EventDispatcher(
 	{
 		var historyEvents = eventCollector
 			.GetEvents()
-			.Where(x => x is IHistoryTaskEvent);
+			.Where(x => x is HistoryEvent);
 
 		foreach (var item in historyEvents)
 		{
-			await endpoint.Publish<IHistoryTaskEvent>(item);
+			await endpoint.Publish<HistoryEvent>(item);
 		}
 	}
 }
