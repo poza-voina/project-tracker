@@ -1,16 +1,19 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using ProjectTracker.Abstractions.Exceptions;
-using ProjectTracker.Contracts.Events.PublishEvents.Task;
-using ProjectTracker.Contracts.ViewModels.Report;
+using ProjectTracker.Contracts.Events.HistoryEvents;
 using ProjectTracker.Contracts.ViewModels.Shared.Pagination;
 using ProjectTracker.Contracts.ViewModels.Task;
 using ProjectTracker.Core.Extensions;
+using ProjectTracker.Core.ObjectStorage;
+using ProjectTracker.Core.ObjectStorage.Dtos.History.Task;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services.Interfaces;
 using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ProjectTracker.Core.Services;
 
@@ -20,38 +23,53 @@ public class TaskService(
 	IRepository<PerformerTaskModel> performerRepository,
 	IRepository<ObserverTaskModel> observerRepository,
 	IRepository<ProjectModel> projectRepository,
+	IHistoryEventProcessor historyEventProcessor,
 	IEventCollector eventCollector) : ITaskService
 {
 	public async Task AddObserverAsync(AddTaskObserverRequest request)
 	{
-		var taskModel = await taskRepository.FindAsync(request.TaskId);
+		List<long> existingIds = await GetObserverIdsAsync(request.TaskId);
 
-		var employeeModel = await observerRepository.AddAsync(request.Adapt<ObserverTaskModel>());
+		await observerRepository.AddAsync(request.Adapt<ObserverTaskModel>());
 
-		var @event = new AddObserverEvent
-		{
-			EmployeeId = employeeModel.EmployeeId,
-			TaskId = taskModel.Id,
-			ProjectId = taskModel.ProjectId,
-			GroupId = taskModel.ProjectId
-		};
+		var @event = historyEventProcessor.CreateHistoryEventOrDefault(
+			new TaskObserversDto { ObserverIds = existingIds },
+			new TaskObserversDto { ObserverIds = existingIds.Append(request.EmployeeId).ToList() },
+			HistoryEventMeta.CreateMeta(request.TaskId, HistoryEventType.TaskAddObserver)
+		);
 
 		eventCollector.Add(@event);
 	}
 
+	private async Task<List<long>> GetObserverIdsAsync(long taskId)
+	{
+		return await observerRepository
+			.GetAll()
+			.Where(x => x.TaskId == taskId)
+			.Select(x => x.EmployeeId)
+			.ToListAsync();
+	}
+
+	private async Task<List<long>> GetPerformerIdsAsync(long taskId)
+	{
+		return await performerRepository
+			.GetAll()
+			.Where(x => x.TaskId == taskId)
+			.Select(x => x.EmployeeId)
+			.ToListAsync();
+	}
+
 	public async Task AddPerformerAsync(AddTaskPerformerRequest request)
 	{
-		var taskModel = await taskRepository.FindAsync(request.TaskId);
+		var existingIds = await GetPerformerIdsAsync(request.TaskId);
 
-		var employeeModel = await performerRepository.AddAsync(request.Adapt<PerformerTaskModel>());
+		await performerRepository.AddAsync(request.Adapt<PerformerTaskModel>());
 
-		var @event = new AddPerformerEvent
-		{
-			EmployeeId = employeeModel.EmployeeId,
-			TaskId = taskModel.Id,
-			ProjectId = taskModel.ProjectId,
-			GroupId = taskModel.ProjectId
-		};
+		var @event = historyEventProcessor.CreateHistoryEventOrDefault(
+			new TaskPerformersDto { PerformerIds = existingIds },
+			new TaskPerformersDto { PerformerIds = existingIds.Append(request.EmployeeId).ToList() },
+			HistoryEventMeta.CreateMeta(request.TaskId, HistoryEventType.TaskAddPerformer)
+		);
 
 		eventCollector.Add(@event);
 	}
@@ -61,8 +79,6 @@ public class TaskService(
 		var taskModel = await taskRepository
 			.GetAll()
 			.Include(x => x.Status)
-			.Include(x => x.Performers)
-			.Include(x => x.Observers)
 			.FirstOrDefaultAsync(x => x.Id == request.TaskId)
 			?? throw new NotFoundException($"Задача с id = {request.TaskId} не найдена");
 
@@ -78,18 +94,20 @@ public class TaskService(
 				x.ToNodeId == request.TaskFlowNodeId)
 			?? throw new NotFoundException("Статус не найден или не является следующим");
 
+		var old = new TaskStatusHistoryDto { TaskFlowNodeId = taskModel.TaskFlowNodeId };
+
 		taskModel.TaskFlowNodeId = toEdge.ToNode!.Id; //TODO !!!
+
+		var current = new TaskStatusHistoryDto { TaskFlowNodeId =  toEdge.ToNode!.Id };
+
 		await taskRepository.UpdateAsync(taskModel);
 
 		taskModel.Status = toEdge.ToNode;
 
-		var @event = new ChangeStatusEvent
-		{
-			TaskId = taskModel.Id,
-			ProjectId = taskModel.ProjectId,
-			GroupId = taskModel.GroupId,
-			Status = taskModel.Status.Name
-		};
+		var @event = historyEventProcessor.CreateHistoryEventOrDefault(
+				old, current,
+				HistoryEventMeta.CreateMeta(request.TaskId, HistoryEventType.TaskChangeStatus)
+			);
 
 		eventCollector.Add(@event);
 
@@ -121,12 +139,12 @@ public class TaskService(
 			.Include(x => x.Status)
 			.First(x => x.Id == taskId);
 
-		var @event = new CreateTaskEvent
-		{
-			TaskId = model.Id,
-			ProjectId = model.ProjectId,
-			GroupId = model.GroupId
-		};
+		var @event = historyEventProcessor
+			.CreateHistoryEventOrDefault(
+				null,
+				model.Adapt<TaskHistoryDto>(),
+				HistoryEventMeta.CreateMeta(model.Id, HistoryEventType.TaskCreate)
+			);
 
 		eventCollector.Add(@event);
 
@@ -146,12 +164,12 @@ public class TaskService(
 			throw new UnprocessableException("Невозможно удалить задачу не в конечном статусе");
 		}
 
-		var @event = new DeleteTaskEvent //TODO возможно нужно дополнить
-		{
-			TaskId = taskModel.Id,
-			ProjectId = taskModel.ProjectId,
-			GroupId = taskModel.GroupId
-		};
+		var @event = historyEventProcessor
+			.CreateHistoryEventOrDefault(
+				taskModel.Adapt<TaskHistoryDto>(),
+				null,
+				HistoryEventMeta.CreateMeta(taskModel.Id, HistoryEventType.TaskDelete)
+			);
 
 		eventCollector.Add(@event);
 
@@ -205,21 +223,19 @@ public class TaskService(
 	{
 		var model = await taskRepository
 			.GetAll()
-			.Include(x => x.Status).FirstOrDefaultAsync(x => x.Id == request.Id)
+			.Include(x => x.Status)
+			.FirstOrDefaultAsync(x => x.Id == request.Id)
 			?? throw new NotFoundException($"Задача с id = {request.Id} не найдена");
+
+		var old = model.Adapt<TaskHistoryDto>();
 
 		request.Adapt(model);
 
 		model = await taskRepository.UpdateAsync(model);
 
-		var @event = new UpdateTaskEvent //TODO возможно нужно дополнить
-		{
-			TaskId = model.Id,
-			ProjectId = model.ProjectId,
-			GroupId = model.GroupId
-		};
+		var current = model.Adapt<TaskHistoryDto>();
 
-		eventCollector.Add(@event);
+		eventCollector.Add(historyEventProcessor.CreateHistoryEventOrDefault(old, current, HistoryEventMeta.CreateMeta(model.Id, HistoryEventType.TaskUpdate)));
 
 		return model.Adapt<TaskWithStatusResponse>();
 	}

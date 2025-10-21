@@ -1,0 +1,172 @@
+2025-10-21 14:22:47.757 +03:00 [INF] Configured endpoint task-events-history, Consumer: ProjectTracker.History.Api.ObjectStorate.Consumers.HistoryConsumer
+2025-10-21 14:22:49.089 +03:00 [INF] Now listening on: https://localhost:7019
+2025-10-21 14:22:49.160 +03:00 [INF] Now listening on: http://localhost:5215
+2025-10-21 14:22:49.277 +03:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-10-21 14:22:49.353 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-21 14:22:49.354 +03:00 [INF] Hosting environment: Development
+2025-10-21 14:22:49.355 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.History.Api
+2025-10-21 14:23:34.111 +03:00 [INF] Configured endpoint task-events-history, Consumer: ProjectTracker.History.Api.ObjectStorate.Consumers.HistoryConsumer
+2025-10-21 14:23:34.516 +03:00 [INF] Now listening on: https://localhost:7019
+2025-10-21 14:23:34.517 +03:00 [INF] Now listening on: http://localhost:5215
+2025-10-21 14:23:34.615 +03:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-10-21 14:23:34.633 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-21 14:23:34.633 +03:00 [INF] Hosting environment: Development
+2025-10-21 14:23:34.634 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.History.Api
+2025-10-21 14:24:02.308 +03:00 [INF] Configured endpoint task-events-history, Consumer: ProjectTracker.History.Api.ObjectStorate.Consumers.HistoryConsumer
+2025-10-21 14:24:02.695 +03:00 [INF] Now listening on: https://localhost:7019
+2025-10-21 14:24:02.696 +03:00 [INF] Now listening on: http://localhost:5215
+2025-10-21 14:24:02.877 +03:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-10-21 14:24:02.888 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-21 14:24:02.894 +03:00 [INF] Hosting environment: Development
+2025-10-21 14:24:02.894 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.History.Api
+2025-10-21 14:24:27.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/ - null null
+2025-10-21 14:24:27.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/ - 404 0 null 121.7619ms
+2025-10-21 14:24:27.248 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/, Response status code: 404
+2025-10-21 14:24:32.855 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:24:32.881 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 26.1322ms
+2025-10-21 14:24:32.884 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:24:58.409 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:24:58.415 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 5.7209ms
+2025-10-21 14:24:58.418 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:24:59.270 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:24:59.274 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 3.9204ms
+2025-10-21 14:24:59.279 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:24:59.552 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:24:59.558 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 6.572ms
+2025-10-21 14:24:59.561 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:25:07.354 +03:00 [INF] Configured endpoint task-events-history, Consumer: ProjectTracker.History.Api.ObjectStorate.Consumers.HistoryConsumer
+2025-10-21 14:25:07.740 +03:00 [INF] Now listening on: https://localhost:7019
+2025-10-21 14:25:07.742 +03:00 [INF] Now listening on: http://localhost:5215
+2025-10-21 14:25:07.866 +03:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-10-21 14:25:07.899 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-21 14:25:07.900 +03:00 [INF] Hosting environment: Development
+2025-10-21 14:25:07.901 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.History.Api
+2025-10-21 14:25:09.951 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:25:10.057 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 111.2408ms
+2025-10-21 14:25:10.066 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:27:00.686 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:27:00.701 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 404 0 null 14.8142ms
+2025-10-21 14:27:00.729 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/swagger, Response status code: 404
+2025-10-21 14:27:03.483 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/ - null null
+2025-10-21 14:27:03.490 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/ - 404 0 null 6.8727ms
+2025-10-21 14:27:03.494 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/, Response status code: 404
+2025-10-21 14:27:08.538 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/tasks - null null
+2025-10-21 14:27:08.544 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/tasks - 404 0 null 6.0896ms
+2025-10-21 14:27:08.549 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/tasks, Response status code: 404
+2025-10-21 14:27:32.753 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/tasks - null null
+2025-10-21 14:27:32.763 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/tasks - 404 0 null 10.2876ms
+2025-10-21 14:27:32.766 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/tasks, Response status code: 404
+2025-10-21 14:27:51.153 +03:00 [INF] Configured endpoint task-events-history, Consumer: ProjectTracker.History.Api.ObjectStorate.Consumers.HistoryConsumer
+2025-10-21 14:27:51.582 +03:00 [INF] Now listening on: https://localhost:7019
+2025-10-21 14:27:51.584 +03:00 [INF] Now listening on: http://localhost:5215
+2025-10-21 14:27:51.622 +03:00 [INF] Bus started: "rabbitmq://localhost/"
+2025-10-21 14:27:51.634 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-10-21 14:27:51.635 +03:00 [INF] Hosting environment: Development
+2025-10-21 14:27:51.636 +03:00 [INF] Content root path: E:\projects\dotnet\project-tracker\src\ProjectTracker.History.Api
+2025-10-21 14:27:51.684 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/tasks - null null
+2025-10-21 14:27:51.864 +03:00 [INF] Executing endpoint 'ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api)'
+2025-10-21 14:27:51.886 +03:00 [INF] Route matched with {action = "GetAllTaskHistories", controller = "TaskHistory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTaskHistories(ProjectTracker.History.Contracts.ViewModels.TaskHistory.GetTasksHistoryRequest) on controller ProjectTracker.History.Api.Controllers.TaskHistoryController (ProjectTracker.History.Api).
+2025-10-21 14:27:52.671 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-10-21 14:27:53.223 +03:00 [INF] dbug: 21.10.2025 14:27:53.221 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-21 14:27:53.242 +03:00 [INF] dbug: 21.10.2025 14:27:53.242 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (22ms).
+2025-10-21 14:27:53.244 +03:00 [INF] dbug: 21.10.2025 14:27:53.244 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (32ms).
+2025-10-21 14:27:53.251 +03:00 [INF] dbug: 21.10.2025 14:27:53.251 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.change_event_type, t.created_at, t.meta_id, t.new_value, t.old_value, t.property
+      FROM task_history_record AS t
+2025-10-21 14:27:53.283 +03:00 [INF] info: 21.10.2025 14:27:53.283 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.change_event_type, t.created_at, t.meta_id, t.new_value, t.old_value, t.property
+      FROM task_history_record AS t
+2025-10-21 14:27:53.442 +03:00 [INF] dbug: 21.10.2025 14:27:53.442 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker-history' on server 'tcp://localhost:5432'.
+2025-10-21 14:27:53.450 +03:00 [INF] dbug: 21.10.2025 14:27:53.450 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker-history' on server 'tcp://localhost:5432' is being disposed after spending 161ms reading results.
+2025-10-21 14:27:53.659 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ProjectTracker.History.Infrastructure.Models.TaskHistoryRecordModel, ProjectTracker.History.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ProjectTracker.History.Contracts.ViewModels.TaskHistory.GetTasksHistoryResponse, ProjectTracker.History.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-21 14:27:53.684 +03:00 [INF] Executed action ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api) in 1790.6832ms
+2025-10-21 14:27:53.693 +03:00 [INF] Executed endpoint 'ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api)'
+2025-10-21 14:27:53.712 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/tasks - 200 null application/json; charset=utf-8 2031.7643ms
+2025-10-21 14:27:53.869 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/favicon.ico - null null
+2025-10-21 14:27:53.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/favicon.ico - 404 0 null 7.2397ms
+2025-10-21 14:27:53.881 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5215/favicon.ico, Response status code: 404
+2025-10-21 14:28:02.121 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger - null null
+2025-10-21 14:28:02.137 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger - 301 0 null 16.2053ms
+2025-10-21 14:28:02.142 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/index.html - null null
+2025-10-21 14:28:02.263 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/index.html - 200 null text/html;charset=utf-8 114.865ms
+2025-10-21 14:28:02.264 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui.css - null null
+2025-10-21 14:28:02.268 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/index.css - null null
+2025-10-21 14:28:02.268 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui-standalone-preset.js - null null
+2025-10-21 14:28:02.268 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/index.js - null null
+2025-10-21 14:28:02.271 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui-bundle.js - null null
+2025-10-21 14:28:02.291 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/index.js - 200 null application/javascript;charset=utf-8 22.6637ms
+2025-10-21 14:28:02.295 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/_vs/browserLink - null null
+2025-10-21 14:28:02.297 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-10-21 14:28:02.300 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/index.css - 200 202 text/css 31.7358ms
+2025-10-21 14:28:02.324 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.7648ms
+2025-10-21 14:28:02.329 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-10-21 14:28:02.329 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-10-21 14:28:02.331 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui.css - 200 154949 text/css 66.8587ms
+2025-10-21 14:28:02.332 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 64.1293ms
+2025-10-21 14:28:02.375 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-10-21 14:28:02.376 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 104.9652ms
+2025-10-21 14:28:02.379 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/_framework/aspnetcore-browser-refresh.js - null null
+2025-10-21 14:28:02.383 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/_framework/aspnetcore-browser-refresh.js - 200 16537 application/javascript; charset=utf-8 3.9297ms
+2025-10-21 14:28:02.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/favicon-32x32.png - null null
+2025-10-21 14:28:02.736 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/swagger/v1/swagger.json - null null
+2025-10-21 14:28:02.739 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-10-21 14:28:02.751 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/favicon-32x32.png - 200 628 image/png 14.8474ms
+2025-10-21 14:28:03.114 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 377.7691ms
+2025-10-21 14:28:07.133 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5215/tasks?TaskId=25 - null null
+2025-10-21 14:28:07.136 +03:00 [INF] Executing endpoint 'ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api)'
+2025-10-21 14:28:07.138 +03:00 [INF] Route matched with {action = "GetAllTaskHistories", controller = "TaskHistory"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllTaskHistories(ProjectTracker.History.Contracts.ViewModels.TaskHistory.GetTasksHistoryRequest) on controller ProjectTracker.History.Api.Controllers.TaskHistoryController (ProjectTracker.History.Api).
+2025-10-21 14:28:07.363 +03:00 [INF] dbug: 21.10.2025 14:28:07.363 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-21 14:28:07.365 +03:00 [INF] dbug: 21.10.2025 14:28:07.365 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-21 14:28:07.378 +03:00 [INF] dbug: 21.10.2025 14:28:07.378 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (14ms).
+2025-10-21 14:28:07.383 +03:00 [INF] dbug: 21.10.2025 14:28:07.383 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_TaskId_0='25' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.task_id
+      FROM task_history_meta AS t
+      WHERE t.task_id = @__request_TaskId_0
+      LIMIT 1
+2025-10-21 14:28:07.406 +03:00 [INF] info: 21.10.2025 14:28:07.406 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (26ms) [Parameters=[@__request_TaskId_0='25' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.task_id
+      FROM task_history_meta AS t
+      WHERE t.task_id = @__request_TaskId_0
+      LIMIT 1
+2025-10-21 14:28:07.416 +03:00 [INF] dbug: 21.10.2025 14:28:07.416 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker-history' on server 'tcp://localhost:5432'.
+2025-10-21 14:28:07.418 +03:00 [INF] dbug: 21.10.2025 14:28:07.418 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker-history' on server 'tcp://localhost:5432' is being disposed after spending 8ms reading results.
+2025-10-21 14:28:07.425 +03:00 [INF] dbug: 21.10.2025 14:28:07.425 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+2025-10-21 14:28:07.427 +03:00 [INF] dbug: 21.10.2025 14:28:07.427 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+2025-10-21 14:28:07.428 +03:00 [INF] dbug: 21.10.2025 14:28:07.428 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-10-21 14:28:07.429 +03:00 [INF] dbug: 21.10.2025 14:28:07.429 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__meta_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.change_event_type, t.created_at, t.meta_id, t.new_value, t.old_value, t.property
+      FROM task_history_record AS t
+      WHERE t.meta_id = @__meta_Id_0
+2025-10-21 14:28:07.433 +03:00 [INF] info: 21.10.2025 14:28:07.433 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__meta_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.change_event_type, t.created_at, t.meta_id, t.new_value, t.old_value, t.property
+      FROM task_history_record AS t
+      WHERE t.meta_id = @__meta_Id_0
+2025-10-21 14:28:07.460 +03:00 [INF] dbug: 21.10.2025 14:28:07.460 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'project-tracker-history' on server 'tcp://localhost:5432'.
+2025-10-21 14:28:07.461 +03:00 [INF] dbug: 21.10.2025 14:28:07.461 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'project-tracker-history' on server 'tcp://localhost:5432' is being disposed after spending 26ms reading results.
+2025-10-21 14:28:07.462 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[ProjectTracker.History.Infrastructure.Models.TaskHistoryRecordModel, ProjectTracker.History.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[ProjectTracker.History.Contracts.ViewModels.TaskHistory.GetTasksHistoryResponse, ProjectTracker.History.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-10-21 14:28:07.465 +03:00 [INF] Executed action ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api) in 324.2706ms
+2025-10-21 14:28:07.467 +03:00 [INF] Executed endpoint 'ProjectTracker.History.Api.Controllers.TaskHistoryController.GetAllTaskHistories (ProjectTracker.History.Api)'
+2025-10-21 14:28:07.468 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5215/tasks?TaskId=25 - 200 null application/json; charset=utf-8 334.8862ms
+2025-10-21 14:32:00.448 +03:00 [INF] Application is shutting down...
+2025-10-21 14:32:00.654 +03:00 [INF] Bus stopped: "rabbitmq://localhost/"

@@ -7,8 +7,12 @@ public class EventCollector : IEventCollector
 {
 	private readonly List<IEvent> _events = new();
 
-	public EventCollector Add(IEvent @event)
+	public EventCollector Add(IEvent? @event)
 	{
+		if (@event is null)
+		{
+			return this;
+		}
 		_events.Add(@event);
 		return this;
 	}

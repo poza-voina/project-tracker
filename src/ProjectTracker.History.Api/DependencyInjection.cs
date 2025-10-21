@@ -1,24 +1,18 @@
-﻿using FluentValidation;
-using MassTransit;
+﻿using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using ProjectTracker.Abstractions.ConfigurationObjects;
-using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
-using ProjectTracker.Api.ObjectStorage.Consumers;
-using ProjectTracker.Api.ObjectStorage.Middlewares;
-using ProjectTracker.Core.ObjectStorage;
-using ProjectTracker.Core.ObjectStorage.Interfaces;
-using ProjectTracker.Core.Services;
-using ProjectTracker.Core.Services.Interfaces;
-using ProjectTracker.Infrastructure;
-using ProjectTracker.Infrastructure.Repositories;
-using ProjectTracker.Infrastructure.Repositories.Interfaces;
+using ProjectTracker.History.Api.ObjectStorate.Configuration;
+using ProjectTracker.History.Api.ObjectStorate.Consumers;
+using ProjectTracker.History.Core.Services;
+using ProjectTracker.History.Core.Services.Interfaces;
+using ProjectTracker.History.Infrastructure;
+using ProjectTracker.History.Infrastructure.Repositories;
+using ProjectTracker.History.Infrastructure.Repositories.Interfaces;
 using Serilog;
 using System.Reflection;
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ProjectTracker.Api;
+namespace ProjectTracker.History.Api;
 
 public static class DependencyInjection
 {
@@ -28,11 +22,9 @@ public static class DependencyInjection
 
 		services.AddMassTransit
 		(
-
 			x =>
 			{
-				x.AddConsumer<ReportResultConsumer>();
-				x.AddConsumer<ReportErrorConsumer>();
+				x.AddConsumer<HistoryConsumer>();
 
 				x.UsingRabbitMq(
 				(context, configuration) =>
@@ -44,20 +36,10 @@ public static class DependencyInjection
 							x.Password(rabbitMqOptions.Password);
 						});
 
-					configuration.ReceiveEndpoint(
-						rabbitMqOptions.ReportResultEndpoint.Name,
-							x =>
-							{
-								x.ConfigureConsumer<ReportResultConsumer>(context);
-							}
-						);
-
-					configuration.ReceiveEndpoint(
-						rabbitMqOptions.ReportErrorEndpoint.Name,
-							x =>
-							{
-								x.ConfigureConsumer<ReportErrorConsumer>(context);
-							}
+					configuration
+						.ReceiveEndpoint(
+							rabbitMqOptions.HistoryEndpoint.Name,
+							x => x.ConfigureConsumer<HistoryConsumer>(context)
 						);
 				});
 			}
@@ -94,13 +76,6 @@ public static class DependencyInjection
 					.AllowAnyHeader();
 			});
 		});
-	}
-
-	public static void AddValidationConfiguration(this IServiceCollection services)
-	{
-		ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Continue;
-		ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
-		services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 	}
 
 	public static void AddControllerConfiguration(this IServiceCollection services)
@@ -142,15 +117,7 @@ public static class DependencyInjection
 
 	public static void AddServices(this IServiceCollection services)
 	{
-		services.AddScoped<IEmployeeService, EmployeeService>();
-		services.AddScoped<ITaskService, TaskService>();
-		services.AddScoped<IProjectService, ProjectService>();
-		services.AddScoped<IReportService, ReportService>();
-		services.AddScoped<IGroupService, GroupService>();
-		services.AddScoped<IEventCollector, EventCollector>();
-		services.AddScoped<IEventDispatcher, EventDispatcher>();
-		services.AddSingleton<IReportEventAwaiter, ReportEventAwaiter>();
-		services.AddScoped<IHistoryEventProcessor, HistoryEventProcessor>();
+		services.AddScoped<ITaskHistoryService, TaskHistoryService>();
 	}
 
 	public static void AddRepositories(this IServiceCollection services)
@@ -165,15 +132,10 @@ public static class DependencyInjection
 			configuration.ReadFrom.Configuration(context.Configuration));
 	}
 
-	public static void AddMiddlewares(this IServiceCollection services)
-	{
-		services.AddScoped<EventMiddleware>();
-	}
-
-	private static ProjectTrackerRabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
+	private static HistoryRabbitMqConfiguration GetRabbitMqConfiguration(IConfiguration configuration)
 	{
 		return configuration
 			.GetRequiredSection(EnvironmentConstants.RabbitMqKey)
-			.GetRequired<ProjectTrackerRabbitMqConfiguration>();
+			.GetRequired<HistoryRabbitMqConfiguration>();
 	}
 }

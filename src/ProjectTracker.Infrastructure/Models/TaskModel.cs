@@ -15,8 +15,8 @@ public class TaskModel : IDatabaseModel, IConcurrencyModel
 	public TaskPriority Priority { get; set; }
 	public uint Version { get; set; }
 	public virtual TaskFlowNodeModel? Status { get; set; }
-	public virtual ICollection<EmployeeModel>? Performers { get; set; }
-	public virtual ICollection<EmployeeModel>? Observers { get; set; }
+	public virtual ICollection<EmployeeModel> Performers { get; set; } = [];
+	public virtual ICollection<EmployeeModel> Observers { get; set; } = [];
 	public virtual TaskGroupModel? TaskGroup { get; set; }
 	public virtual ProjectModel? Project { get; set; }
 }
