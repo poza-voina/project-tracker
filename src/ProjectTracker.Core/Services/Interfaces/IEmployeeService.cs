@@ -6,7 +6,7 @@ namespace ProjectTracker.Core.Services.Interfaces;
 public interface IEmployeeService
 {
 	Task<EmployeeBaseResponse> CreateAsync(CreateEmployeeRequest request);
-	Task DeleteAsync(long id);
+	Task DeleteAsync(DeleteEmployeeRequest request);
 	Task<PaginationResponse<EmployeeBaseResponse>> GetAllAsync(PaginationRequest request);
-	Task<EmployeeBaseResponse> GetAsync(long id);
+	Task<EmployeeBaseResponse> GetAsync(GetEmployeeRequest request);
 }

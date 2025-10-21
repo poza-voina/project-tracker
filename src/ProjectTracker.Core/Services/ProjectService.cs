@@ -23,8 +23,10 @@ public class ProjectService(
 		return model.Adapt<ProjectBaseResponse>();
 	}
 
-	public async Task DeleteAsync(long id)
+	public async Task DeleteAsync(DeleteProjectRequest request)
 	{
+		var id = request.Id;
+
 		var project = await projectRepository
 			.GetAll()
 			.Include(x => x.TaskFlow)
@@ -61,9 +63,9 @@ public class ProjectService(
 		};
 	}
 
-	public async Task<ProjectBaseResponse> GetAsync(long id)
+	public async Task<ProjectBaseResponse> GetAsync(GetProjectRequest request)
 	{
-		var model = await projectRepository.FindAsync(id);
+		var model = await projectRepository.FindAsync(request.Id);
 
 		return model.Adapt<ProjectBaseResponse>();
 	}

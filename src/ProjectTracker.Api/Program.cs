@@ -22,7 +22,7 @@ services.AddEndpointsApiExplorer();
 
 services.AddSwaggerGenConfiguration(configuration);
 
-services.AddValidationConfiguration(); // TODO: ���������� ����� �� ��������
+services.AddValidationConfiguration();
 
 services.AddRepositories();
 

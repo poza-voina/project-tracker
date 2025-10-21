@@ -15,9 +15,9 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 400)]
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 404)]
 	[HttpGet("{id:long}")]
-	public async Task<IActionResult> GetEmployee([FromRoute] long id)
+	public async Task<IActionResult> GetEmployee([FromRoute] GetEmployeeRequest request)
 	{
-		var result = await employeeService.GetAsync(id);
+		var result = await employeeService.GetAsync(request);
 
 		return Ok(result);
 	}
@@ -45,9 +45,9 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 404)]
 	[HttpDelete("{id:long}")]
-	public async Task<IActionResult> DeleteEmployeeAsync([FromRoute] long id)
+	public async Task<IActionResult> DeleteEmployeeAsync([FromRoute] DeleteEmployeeRequest request)
 	{
-		await employeeService.DeleteAsync(id);
+		await employeeService.DeleteAsync(request);
 
 		return Ok();
 	}

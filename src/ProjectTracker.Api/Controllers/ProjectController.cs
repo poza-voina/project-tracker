@@ -25,9 +25,9 @@ public class ProjectController(IProjectService projectService) : ControllerBase
 	[ProducesResponseType(typeof(ProjectResponse), 200)]
 	[ProducesResponseType(typeof(ProjectErrorResponse), 404)]
 	[HttpGet("{id:long}")]
-	public async Task<IActionResult> GetProject([FromRoute] long id)
+	public async Task<IActionResult> GetProject([FromRoute] GetProjectRequest request)
 	{
-		var result = await projectService.GetAsync(id);
+		var result = await projectService.GetAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
@@ -58,9 +58,9 @@ public class ProjectController(IProjectService projectService) : ControllerBase
 	[ProducesResponseType(404)]
 	[ProducesResponseType(typeof(ProjectErrorResponse), 400)]
 	[HttpDelete("{id:long}")]
-	public async Task<IActionResult> DeleteProject([FromRoute] long id)
+	public async Task<IActionResult> DeleteProject([FromRoute] DeleteProjectRequest request)
 	{
-		await projectService.DeleteAsync(id);
+		await projectService.DeleteAsync(request);
 
 		return Ok();
 	}

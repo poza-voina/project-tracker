@@ -7,11 +7,11 @@ namespace ProjectTracker.Core.Services.Interfaces;
 
 public interface ITaskService
 {
-	Task<TaskWithStatusEmployeesReponse> GetAsync(long id);
+	Task<TaskWithStatusEmployeesReponse> GetAsync(GetTaskRequest request);
 	Task<PaginationResponse<TaskWithStatusEmployeesReponse>> GetAllAsync(GetPaginationTasksRequest request);
 	Task<TaskWithStatusResponse> CreateAsync(CreateTaskRequest request);
 	Task<TaskWithStatusResponse> UpdateAsync(UpdateTaskRequest request);
-	Task DeleteAsync(long id);
+	Task DeleteAsync(DeleteTaskRequest request);
 	Task<TaskWithStatusEmployeesReponse> ChangeStatusAsync(ChangeTaskStatusRequest request);
 	Task AddPerformerAsync(AddTaskPerformerRequest request);
 	Task AddObserverAsync(AddTaskObserverRequest request);

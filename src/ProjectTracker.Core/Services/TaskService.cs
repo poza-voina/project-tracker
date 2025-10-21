@@ -151,13 +151,13 @@ public class TaskService(
 		return model.Adapt<TaskWithStatusResponse>();
 	}
 
-	public async Task DeleteAsync(long id)
+	public async Task DeleteAsync(DeleteTaskRequest request)
 	{
 		var taskModel = await taskRepository
 			.GetAll()
 			.Include(x => x.Status)
-			.FirstOrDefaultAsync(x => x.Id == id)
-			?? throw new NotFoundException($"Задача с id = {id} не найдена");
+			.FirstOrDefaultAsync(x => x.Id == request.Id)
+			?? throw new NotFoundException($"Задача с id = {request.Id} не найдена");
 
 		if (taskModel.Status!.Status != TaskFlowNodeStatus.Final) //TODO !!!!
 		{
@@ -173,7 +173,7 @@ public class TaskService(
 
 		eventCollector.Add(@event);
 
-		await taskRepository.DeleteAsync(id);
+		await taskRepository.DeleteAsync(request.Id);
 	}
 
 	public async Task<PaginationResponse<TaskWithStatusEmployeesReponse>> GetAllAsync(GetPaginationTasksRequest request)
@@ -206,15 +206,15 @@ public class TaskService(
 		};
 	}
 
-	public async Task<TaskWithStatusEmployeesReponse> GetAsync(long id)
+	public async Task<TaskWithStatusEmployeesReponse> GetAsync(GetTaskRequest request)
 	{
 		var model = await taskRepository
 			.GetAll()
 			.Include(x => x.Status)
 			.Include(x => x.Observers)
 			.Include(x => x.Performers)
-			.FirstOrDefaultAsync(x => x.Id == id)
-			?? throw new NotFoundException($"Задача с id = {id} не найдена");
+			.FirstOrDefaultAsync(x => x.Id == request.Id)
+			?? throw new NotFoundException($"Задача с id = {request.Id} не найдена");
 
 		return model.Adapt<TaskWithStatusEmployeesReponse>();
 	}

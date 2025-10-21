@@ -25,9 +25,9 @@ public class GroupController(IGroupService groupService) : ControllerBase
 	[ProducesResponseType(typeof(GroupResponse), 200)]
 	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
 	[HttpGet("{id:long}")]
-	public async Task<IActionResult> GetGroup([FromRoute] long id)
+	public async Task<IActionResult> GetGroup([FromRoute] GetGroupRequest request)
 	{
-		var result = await groupService.GetAsync(id);
+		var result = await groupService.GetAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(result));
 	}
@@ -58,9 +58,9 @@ public class GroupController(IGroupService groupService) : ControllerBase
 	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
 	[ProducesResponseType(typeof(GroupErrorResponse), 422)]
 	[HttpDelete("{id:long}")]
-	public async Task<IActionResult> DeleteGroup([FromRoute] long id)
+	public async Task<IActionResult> DeleteGroup([FromRoute] DeleteGroupRequest request)
 	{
-		await groupService.DeleteAsync(id);
+		await groupService.DeleteAsync(request);
 
 		return Ok();
 	}
@@ -68,9 +68,9 @@ public class GroupController(IGroupService groupService) : ControllerBase
 	[ProducesResponseType(typeof(TaskGroupInformationResponse), 200)]
 	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
 	[HttpGet("informations/{id:long}")]
-	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] long id)
+	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] GetGroupReportInforamationRequest request)
 	{
-		var result = await groupService.GetReportInformationAsync(id);
+		var result = await groupService.GetReportInformationAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(result));
 	}

@@ -33,8 +33,4 @@
 		<ProjectReference Include="..\ProjectTracker.Core\ProjectTracker.Core.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="ObjectStorage\Validators\" />
-	</ItemGroup>
-
 </Project>

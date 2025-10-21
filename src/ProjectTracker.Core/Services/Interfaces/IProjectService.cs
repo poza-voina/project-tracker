@@ -6,8 +6,8 @@ namespace ProjectTracker.Core.Services.Interfaces;
 public interface IProjectService
 {
 	Task<ProjectBaseResponse> CreateAsync(CreateProjectRequest request);
-	Task DeleteAsync(long id);
+	Task DeleteAsync(DeleteProjectRequest id);
 	Task<PaginationResponse<ProjectBaseResponse>> GetAllAsync(PaginationRequest request);
-	Task<ProjectBaseResponse> GetAsync(long id);
+	Task<ProjectBaseResponse> GetAsync(GetProjectRequest request);
 	Task<ProjectBaseResponse> UpdateAsync(UpdateProjectRequest request);
 }
