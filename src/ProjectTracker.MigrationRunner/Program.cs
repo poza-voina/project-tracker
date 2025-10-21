@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using ProjectTracker.Abstractions.Constants;
 using ProjectTracker.Abstractions.Extensions;
-using ProjectTracker.Infrastructure;
+using Tracker = ProjectTracker.Infrastructure;
+using History = ProjectTracker.History.Infrastructure;
 
 namespace MigrationRunner;
 
@@ -15,23 +15,46 @@ public class Program
 			.AddEnvironmentVariables()
 			.Build();
 
+		await ProcessProjectTrackerMigration(configuration);
+
+		await ProcessProjectTrackerHistoryMigration(configuration);
+	}
+
+	private static async Task ProcessProjectTrackerHistoryMigration(IConfigurationRoot configuration)
+	{
 		var connectionSection = configuration.GetRequiredSection(EnvironmentConstants.ConnectionSection);
-		var connectionString = connectionSection.GetRequiredValue<string>(EnvironmentConstants.DefaultConnectionStringKey);
+		var projectTrackerConnectionString = connectionSection.GetRequiredValue<string>(EnvironmentConstants.ProjectTrackerHistoryConnectionKey);
 
-		Console.WriteLine(connectionString);
+		Console.WriteLine(projectTrackerConnectionString);
 
-		var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-		optionsBuilder.UseNpgsql(connectionString);
+		var optionsBuilder = new DbContextOptionsBuilder<History.ApplicationDbContext>();
+		optionsBuilder.UseNpgsql(projectTrackerConnectionString);
 
-		await using var context = new ApplicationDbContext(optionsBuilder.Options);
+		await using var context = new History.ApplicationDbContext(optionsBuilder.Options);
+
+		Console.WriteLine("Applying migrations...");
+		await context.Database.MigrateAsync();
+		Console.WriteLine("Migrations applied successfully.");
+	}
+
+	private static async Task ProcessProjectTrackerMigration(IConfigurationRoot configuration)
+	{
+		var connectionSection = configuration.GetRequiredSection(EnvironmentConstants.ConnectionSection);
+		var projectTrackerConnectionString = connectionSection.GetRequiredValue<string>(EnvironmentConstants.ProjectTrackerConnectionKey);
+
+		Console.WriteLine(projectTrackerConnectionString);
+
+		var optionsBuilder = new DbContextOptionsBuilder<Tracker.ApplicationDbContext>();
+		optionsBuilder.UseNpgsql(projectTrackerConnectionString);
+
+		await using var context = new Tracker.ApplicationDbContext(optionsBuilder.Options);
 
 		Console.WriteLine("Applying migrations...");
 		await context.Database.MigrateAsync();
 		Console.WriteLine("Migrations applied successfully.");
 
-		await using var seederContext = new ApplicationDbContext(optionsBuilder.Options);
+		await using var seederContext = new Tracker.ApplicationDbContext(optionsBuilder.Options);
 
-		await DatabaseSeeder.TrySeedAsync(context);
-
+		await Tracker.DatabaseSeeder.TrySeedAsync(context);
 	}
 }
