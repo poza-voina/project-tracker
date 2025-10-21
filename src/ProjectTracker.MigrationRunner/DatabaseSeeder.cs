@@ -22,6 +22,15 @@ public static class DatabaseSeeder
 		await AddEmployees(dbContext, cancellationToken);
 		await AddProjects(dbContext, cancellationToken);
 		await AddTasks(dbContext, cancellationToken);
+
+		await dbContext.Database.ExecuteSqlRawAsync(
+			@"select setval('employee_id_seq', 50);
+			select setval('project_id_seq', 50);
+			select setval('task_flow_edge_id_seq', 50);
+			select setval('task_flow_id_seq', 50);
+			select setval('task_flow_node_id_seq', 50);
+			select setval('task_group_id_seq', 50);
+			select setval('task_id_seq', 50);");
 	}
 
 	private static async Task AddTaskFlow(ApplicationDbContext dbContext, CancellationToken cancellationToken)
