@@ -14,7 +14,7 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 	[ProducesResponseType(typeof(EmployeeResponse), 200)]
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 400)]
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 404)]
-	[HttpGet("{id:long}")]
+	[HttpGet("{Id:long}")]
 	public async Task<IActionResult> GetEmployee([FromRoute] GetEmployeeRequest request)
 	{
 		var result = await employeeService.GetAsync(request);
@@ -44,7 +44,7 @@ public class EmployeeController(IEmployeeService employeeService) : ControllerBa
 	}
 
 	[ProducesResponseType(typeof(EmployeeErrorResponse), 404)]
-	[HttpDelete("{id:long}")]
+	[HttpDelete("{Id:long}")]
 	public async Task<IActionResult> DeleteEmployeeAsync([FromRoute] DeleteEmployeeRequest request)
 	{
 		await employeeService.DeleteAsync(request);
