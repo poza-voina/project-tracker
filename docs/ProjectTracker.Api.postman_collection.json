@@ -1,0 +1,3784 @@
+{
+	"info": {
+		"_postman_id": "06b513a4-3cb2-4f1e-b6a4-69294bc29945",
+		"name": "ProjectTracker.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27661032"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "/api/employees/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/employees/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"username\": \"string\",\n    \"id\": 8836,\n    \"patronymic\": \"string\",\n    \"role\": \"Manager\"\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 3064\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/employees/:Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/employees/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/employees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/employees?PageNumber=5889&PageSize=5889",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "5889"
+								},
+								{
+									"key": "PageSize",
+									"value": "5889"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"values\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 4583,\n        \"patronymic\": \"string\",\n        \"role\": \"Manager\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 2049,\n        \"patronymic\": \"string\",\n        \"role\": \"Tester\"\n      }\n    ],\n    \"totalPages\": 1571\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 4057\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/employees?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/employees",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"role\": \"Tester\",\n  \"username\": \"string\",\n  \"patronymic\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/employees",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"role\": \"Tester\",\n  \"username\": \"string\",\n  \"patronymic\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/employees",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"username\": \"string\",\n    \"id\": 8836,\n    \"patronymic\": \"string\",\n    \"role\": \"Manager\"\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 3064\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"role\": \"Tester\",\n  \"username\": \"string\",\n  \"patronymic\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/employees",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"role\": \"Tester\",\n  \"username\": \"string\",\n  \"patronymic\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/employees",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"employees"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "/api/groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/groups?PageNumber=5889&PageSize=5889",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "5889"
+								},
+								{
+									"key": "PageSize",
+									"value": "5889"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"values\": [\n      {\n        \"name\": \"string\",\n        \"id\": 5309\n      },\n      {\n        \"name\": \"string\",\n        \"id\": 7826\n      }\n    ],\n    \"totalPages\": 7904\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 8472\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/groups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/groups",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"id\": 3765\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 3765\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 3765\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 3765\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/groups",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/groups/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/groups/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/groups/:Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/groups/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/groups/informations/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/groups/informations/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"groups",
+								"informations",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"string\",\n  \"id\": 3658,\n  \"tasks\": [\n    {\n      \"name\": \"string\",\n      \"status\": {\n        \"name\": \"string\",\n        \"id\": 4432,\n        \"taskFlowId\": 8388\n      },\n      \"id\": 2231,\n      \"description\": \"string\",\n      \"projectId\": 1679,\n      \"groupId\": 7022,\n      \"deadline\": \"1994-05-23T01:56:47.672Z\",\n      \"createdAt\": \"2018-11-16T19:46:20.509Z\",\n      \"priority\": \"Critical\",\n      \"version\": 2877,\n      \"performers\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 1413,\n          \"patronymic\": \"string\",\n          \"role\": \"Manager\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 9908,\n          \"patronymic\": \"string\",\n          \"role\": \"Analyst\"\n        }\n      ],\n      \"observers\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 7210,\n          \"patronymic\": \"string\",\n          \"role\": \"Tester\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 716,\n          \"patronymic\": \"string\",\n          \"role\": \"Analyst\"\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"status\": {\n        \"name\": \"string\",\n        \"id\": 9362,\n        \"taskFlowId\": 376\n      },\n      \"id\": 6890,\n      \"description\": \"string\",\n      \"projectId\": 4852,\n      \"groupId\": 6985,\n      \"deadline\": \"1986-11-22T06:18:57.842Z\",\n      \"createdAt\": \"1961-02-07T20:01:54.548Z\",\n      \"priority\": \"High\",\n      \"version\": 431,\n      \"performers\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 6688,\n          \"patronymic\": \"string\",\n          \"role\": \"Manager\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 5371,\n          \"patronymic\": \"string\",\n          \"role\": \"Developer\"\n        }\n      ],\n      \"observers\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 7891,\n          \"patronymic\": \"string\",\n          \"role\": \"Developer\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"username\": \"string\",\n          \"id\": 3924,\n          \"patronymic\": \"string\",\n          \"role\": \"Analyst\"\n        }\n      ]\n    }\n  ]\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/groups/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"groups",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 2567\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9277\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "/api/projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/projects?PageNumber=5889&PageSize=5889",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "5889"
+								},
+								{
+									"key": "PageSize",
+									"value": "5889"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"values\": [\n      {\n        \"name\": \"string\",\n        \"id\": 9503,\n        \"description\": \"string\",\n        \"projectManagerId\": 3690,\n        \"managerId\": 3500,\n        \"taskFlowId\": 4414\n      },\n      {\n        \"name\": \"string\",\n        \"id\": 8041,\n        \"description\": \"string\",\n        \"projectManagerId\": 9545,\n        \"managerId\": 4997,\n        \"taskFlowId\": 5285\n      }\n    ],\n    \"totalPages\": 2197\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9773\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects?PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									],
+									"query": [
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/projects",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectManagerId\": 3401,\n  \"managerId\": 6870,\n  \"taskFlowId\": 7352\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/projects",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectManagerId\": 3401,\n  \"managerId\": 6870,\n  \"taskFlowId\": 7352\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectManagerId\": 3401,\n  \"managerId\": 6870,\n  \"taskFlowId\": 7352\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectManagerId\": 3401,\n  \"managerId\": 6870,\n  \"taskFlowId\": 7352\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/projects",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"id\": 5145,\n  \"description\": \"string\",\n  \"projectManagerId\": 8225,\n  \"managerId\": 2351,\n  \"taskFlowId\": 3979\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/projects",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 5145,\n  \"description\": \"string\",\n  \"projectManagerId\": 8225,\n  \"managerId\": 2351,\n  \"taskFlowId\": 3979\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 5145,\n  \"description\": \"string\",\n  \"projectManagerId\": 8225,\n  \"managerId\": 2351,\n  \"taskFlowId\": 3979\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 5145,\n  \"description\": \"string\",\n  \"projectManagerId\": 8225,\n  \"managerId\": 2351,\n  \"taskFlowId\": 3979\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 5145,\n  \"description\": \"string\",\n  \"projectManagerId\": 8225,\n  \"managerId\": 2351,\n  \"taskFlowId\": 3979\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/projects",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/projects/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/projects/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/projects/:Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/projects/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"projects",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"id\": 5633,\n    \"description\": \"string\",\n    \"projectManagerId\": 2711,\n    \"managerId\": 7175,\n    \"taskFlowId\": 3168\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 7469\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/projects/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"projects",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "/api/reports/task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"expirySeconds\": 9091,\n  \"timeout\": \"00:00:00\",\n  \"taskId\": 1204\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/task",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"task"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expirySeconds\": 9091,\n  \"timeout\": \"00:00:00\",\n  \"taskId\": 1204\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reports/task",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports",
+										"task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"id\": \"7d125ee4-cce1-5923-7529-25f1a82a9dfc\",\n    \"url\": \"string\",\n    \"type\": \"TaskGroup\",\n    \"createdAt\": \"1978-03-17T04:02:31.303Z\",\n    \"status\": \"Default\"\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 8437\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expirySeconds\": 9091,\n  \"timeout\": \"00:00:00\",\n  \"taskId\": 1204\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reports/task",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports",
+										"task"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/reports/group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"expirySeconds\": 4967,\n  \"timeout\": \"00:00:00\",\n  \"groupId\": 6714\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/group",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"group"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expirySeconds\": 4967,\n  \"timeout\": \"00:00:00\",\n  \"groupId\": 6714\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reports/group",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports",
+										"group"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"result\": {\n      \"id\": \"53f753a6-e6bd-fc47-5399-a921bc94240d\",\n      \"url\": \"string\",\n      \"type\": \"Task\",\n      \"createdAt\": \"1984-09-13T23:47:46.556Z\",\n      \"status\": \"Completed\"\n    },\n    \"operationError\": {\n      \"message\": \"string\",\n      \"stackTrace\": \"string\",\n      \"exceptionType\": \"string\"\n    },\n    \"validationErrors\": [\n      {\n        \"field\": \"string\",\n        \"message\": \"string\"\n      },\n      {\n        \"field\": \"string\",\n        \"message\": \"string\"\n      }\n    ],\n    \"statusCode\": 5271\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9693\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"expirySeconds\": 4967,\n  \"timeout\": \"00:00:00\",\n  \"groupId\": 6714\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reports/group",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports",
+										"group"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/reports/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								},
+								{
+									"key": "Id",
+									"value": "70fe8b4e-47b2-e628-8ed8-cee2c75575cf"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/reports/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "/api/tasks/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"status\": {\n      \"name\": \"string\",\n      \"id\": 490,\n      \"taskFlowId\": 114\n    },\n    \"id\": 8844,\n    \"description\": \"string\",\n    \"projectId\": 1868,\n    \"groupId\": 1466,\n    \"deadline\": \"1951-06-19T00:50:03.032Z\",\n    \"createdAt\": \"1956-05-07T08:49:34.017Z\",\n    \"priority\": \"High\",\n    \"version\": 8506,\n    \"performers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 6143,\n        \"patronymic\": \"string\",\n        \"role\": \"Manager\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 9715,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ],\n    \"observers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 4951,\n        \"patronymic\": \"string\",\n        \"role\": \"Developer\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 5044,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ]\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 8625\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks/:Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"status\": {\n      \"name\": \"string\",\n      \"id\": 490,\n      \"taskFlowId\": 114\n    },\n    \"id\": 8844,\n    \"description\": \"string\",\n    \"projectId\": 1868,\n    \"groupId\": 1466,\n    \"deadline\": \"1951-06-19T00:50:03.032Z\",\n    \"createdAt\": \"1956-05-07T08:49:34.017Z\",\n    \"priority\": \"High\",\n    \"version\": 8506,\n    \"performers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 6143,\n        \"patronymic\": \"string\",\n        \"role\": \"Manager\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 9715,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ],\n    \"observers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 4951,\n        \"patronymic\": \"string\",\n        \"role\": \"Developer\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 5044,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ]\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 8625\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks?ProjectId=9691&GroupId=9691&EmployeeId=9691&PageNumber=5889&PageSize=5889",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "ProjectId",
+									"value": "9691"
+								},
+								{
+									"key": "GroupId",
+									"value": "9691"
+								},
+								{
+									"key": "EmployeeId",
+									"value": "9691"
+								},
+								{
+									"key": "PageNumber",
+									"value": "5889"
+								},
+								{
+									"key": "PageSize",
+									"value": "5889"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks?ProjectId=9691&GroupId=9691&EmployeeId=9691&PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "ProjectId",
+											"value": "9691"
+										},
+										{
+											"key": "GroupId",
+											"value": "9691"
+										},
+										{
+											"key": "EmployeeId",
+											"value": "9691"
+										},
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"status\": {\n      \"name\": \"string\",\n      \"id\": 490,\n      \"taskFlowId\": 114\n    },\n    \"id\": 8844,\n    \"description\": \"string\",\n    \"projectId\": 1868,\n    \"groupId\": 1466,\n    \"deadline\": \"1951-06-19T00:50:03.032Z\",\n    \"createdAt\": \"1956-05-07T08:49:34.017Z\",\n    \"priority\": \"High\",\n    \"version\": 8506,\n    \"performers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 6143,\n        \"patronymic\": \"string\",\n        \"role\": \"Manager\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 9715,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ],\n    \"observers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 4951,\n        \"patronymic\": \"string\",\n        \"role\": \"Developer\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 5044,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      }\n    ]\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 8625\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks?ProjectId=9691&GroupId=9691&EmployeeId=9691&PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "ProjectId",
+											"value": "9691"
+										},
+										{
+											"key": "GroupId",
+											"value": "9691"
+										},
+										{
+											"key": "EmployeeId",
+											"value": "9691"
+										},
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks?ProjectId=9691&GroupId=9691&EmployeeId=9691&PageNumber=5889&PageSize=5889",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "ProjectId",
+											"value": "9691"
+										},
+										{
+											"key": "GroupId",
+											"value": "9691"
+										},
+										{
+											"key": "EmployeeId",
+											"value": "9691"
+										},
+										{
+											"key": "PageNumber",
+											"value": "5889"
+										},
+										{
+											"key": "PageSize",
+											"value": "5889"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectId\": 9282,\n  \"groupId\": 4798,\n  \"deadline\": \"2010-02-27T17:29:08.168Z\",\n  \"taskFlowNodeId\": 8747,\n  \"priority\": \"High\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectId\": 9282,\n  \"groupId\": 4798,\n  \"deadline\": \"2010-02-27T17:29:08.168Z\",\n  \"taskFlowNodeId\": 8747,\n  \"priority\": \"High\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"status\": {\n      \"name\": \"string\",\n      \"id\": 388,\n      \"taskFlowId\": 4877\n    },\n    \"id\": 6862,\n    \"description\": \"string\",\n    \"projectId\": 9115,\n    \"groupId\": 1127,\n    \"deadline\": \"2007-11-09T19:47:09.084Z\",\n    \"createdAt\": \"1976-04-16T21:43:37.705Z\",\n    \"priority\": \"Critical\",\n    \"version\": 2053\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9727\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectId\": 9282,\n  \"groupId\": 4798,\n  \"deadline\": \"2010-02-27T17:29:08.168Z\",\n  \"taskFlowNodeId\": 8747,\n  \"priority\": \"High\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"projectId\": 9282,\n  \"groupId\": 4798,\n  \"deadline\": \"2010-02-27T17:29:08.168Z\",\n  \"taskFlowNodeId\": 8747,\n  \"priority\": \"High\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"id\": 5366,\n  \"description\": \"string\",\n  \"projectId\": 2490,\n  \"groupId\": 1580,\n  \"deadline\": \"1990-12-20T03:52:02.706Z\",\n  \"priority\": \"Low\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"string\",\n  \"id\": 5366,\n  \"description\": \"string\",\n  \"projectId\": 2490,\n  \"groupId\": 1580,\n  \"deadline\": \"1990-12-20T03:52:02.706Z\",\n  \"priority\": \"Low\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/api/tasks/change-status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"taskId\": 5432,\n  \"taskFlowNodeId\": 6143,\n  \"taskVersion\": 5245\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/change-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"change-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"taskId\": 5432,\n  \"taskFlowNodeId\": 6143,\n  \"taskVersion\": 5245\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/change-status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"change-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"taskId\": 5432,\n  \"taskFlowNodeId\": 6143,\n  \"taskVersion\": 5245\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/change-status",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"change-status"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks/add-performer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/add-performer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"add-performer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/add-performer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"add-performer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/add-performer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"add-performer"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks/add-observer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/add-observer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"add-observer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/add-observer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"add-observer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"employeeId\": 8645,\n  \"taskId\": 4036\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/add-observer",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"add-observer"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/api/tasks/informations/:Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tasks/informations/:Id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"informations",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "9691"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"name\": \"string\",\n    \"observers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 6335,\n        \"patronymic\": \"string\",\n        \"role\": \"Analyst\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 147,\n        \"patronymic\": \"string\",\n        \"role\": \"Developer\"\n      }\n    ],\n    \"performers\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 3625,\n        \"patronymic\": \"string\",\n        \"role\": \"Tester\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 2949,\n        \"patronymic\": \"string\",\n        \"role\": \"Tester\"\n      }\n    ],\n    \"project\": {\n      \"name\": \"string\",\n      \"projectManager\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 1425,\n        \"patronymic\": \"string\",\n        \"role\": \"Manager\"\n      },\n      \"id\": 1607,\n      \"description\": \"string\",\n      \"projectManagerId\": 7823,\n      \"managerId\": 1149,\n      \"taskFlowId\": 3144,\n      \"manager\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"username\": \"string\",\n        \"id\": 1431,\n        \"patronymic\": \"string\",\n        \"role\": \"Tester\"\n      }\n    },\n    \"id\": 4072,\n    \"description\": \"string\",\n    \"projectId\": 3994,\n    \"groupId\": 1506,\n    \"deadline\": \"1959-03-29T00:58:02.980Z\",\n    \"createdAt\": \"2021-09-08T16:36:56.897Z\",\n    \"priority\": \"Blocker\",\n    \"version\": 8911,\n    \"group\": {\n      \"name\": \"string\",\n      \"id\": 7849\n    }\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 9475\n}"
+						},
+						{
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						},
+						{
+							"name": "Unprocessable Content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/tasks/informations/:Id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"informations",
+										":Id"
+									],
+									"variable": [
+										{
+											"key": "Id"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"result\": {\n    \"nullable\": true\n  },\n  \"operationError\": {\n    \"message\": \"string\",\n    \"stackTrace\": \"string\",\n    \"exceptionType\": \"string\"\n  },\n  \"validationErrors\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"statusCode\": 403\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
