@@ -7,6 +7,7 @@ using ProjectTracker.Abstractions.Extensions;
 using ProjectTracker.Api.ObjectStorage.Consumers;
 using ProjectTracker.Api.ObjectStorage.FilterActions;
 using ProjectTracker.Api.ObjectStorage.Middlewares;
+using ProjectTracker.Api.ObjectStorage.SwaggerFilters;
 using ProjectTracker.Core.ObjectStorage;
 using ProjectTracker.Core.ObjectStorage.Interfaces;
 using ProjectTracker.Core.Services;
@@ -132,6 +133,8 @@ public static class DependencyInjection
 			var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
 			x.IncludeXmlComments(xmlPath);
+
+			x.SchemaFilter<TimeSpanFilter>();
 
 			//TODO: сделать/ посмотреть добавить фильтр для параметров а то они с большой буквы
 			//x.OperationFilterDescriptors.Add(new FilterDescriptor

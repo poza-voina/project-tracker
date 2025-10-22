@@ -11,6 +11,10 @@ public class UpdateTaskValidator : AbstractValidator<UpdateTaskRequest>
 			.GreaterThan(0)
 			.WithMessage("Идентификатор задачи должен быть больше 0");
 
+		RuleFor(x => x.Name)
+			.NotEmpty()
+			.WithMessage("Название задачи не может быть пустым");
+
 		RuleFor(x => x.ProjectId)
 			.GreaterThan(0)
 			.WithMessage("Идентификатор проекта должен быть больше 0");

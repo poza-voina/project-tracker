@@ -67,7 +67,7 @@ public class GroupController(IGroupService groupService) : ControllerBase
 
 	[ProducesResponseType(typeof(TaskGroupInformationResponse), 200)]
 	[ProducesResponseType(typeof(GroupErrorResponse), 404)]
-	[HttpGet("informations/{id:long}")]
+	[HttpGet("informations/{Id:long}")]
 	public async Task<IActionResult> GetGroupReportInforamation([FromRoute] GetGroupReportInforamationRequest request)
 	{
 		var result = await groupService.GetReportInformationAsync(request);

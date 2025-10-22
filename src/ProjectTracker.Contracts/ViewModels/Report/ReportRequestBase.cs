@@ -1,4 +1,6 @@
-﻿namespace ProjectTracker.Contracts.ViewModels.Report;
+﻿using Swashbuckle.AspNetCore.Annotations;
+
+namespace ProjectTracker.Contracts.ViewModels.Report;
 
 public class ReportRequestBase
 {

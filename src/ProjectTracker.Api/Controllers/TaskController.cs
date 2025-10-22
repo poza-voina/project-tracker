@@ -98,10 +98,10 @@ public class TaskController(ITaskService taskService) : ControllerBase
 	[ProducesResponseType(typeof(TaskErrorResponse), 400)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 404)]
 	[ProducesResponseType(typeof(TaskErrorResponse), 422)]
-	[HttpGet("informations/{taskId:long}")]
-	public async Task<IActionResult> GetTaskReportInformation([FromRoute] long taskId)
+	[HttpGet("informations/{Id:long}")]
+	public async Task<IActionResult> GetTaskReportInformation([FromRoute] GetTaskReportRequest request)
 	{
-		var response = await taskService.GetReportInformationAsync(taskId);
+		var response = await taskService.GetReportInformationAsync(request);
 
 		return Ok(MbResultFactory.WithSuccess(response));
 	}

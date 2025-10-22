@@ -1,11 +1,11 @@
-﻿using FluentValidation;
+using FluentValidation;
 using ProjectTracker.Contracts.ViewModels.TaskGroup;
 
 namespace ProjectTracker.Api.ObjectStorage.Validators.Group;
 
-public class GetGroupValidator : AbstractValidator<GetGroupRequest>
+public class DeleteGroupValidator : AbstractValidator<DeleteGroupRequest>
 {
-	public GetGroupValidator()
+	public DeleteGroupValidator()
 	{
 		RuleFor(x => x.Id)
 			.GreaterThan(0)
