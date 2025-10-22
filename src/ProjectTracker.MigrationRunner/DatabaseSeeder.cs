@@ -1,3 +1,4 @@
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
@@ -110,12 +111,45 @@ public static class DatabaseSeeder
 	{
 		if (!await dbContext.Employees.AnyAsync(cancellationToken))
 		{
-			dbContext.Employees.AddRange(
+			var employees = new List<EmployeeModel>();
+
+			employees.AddRange(new[]
+			{
 				new EmployeeModel { FirstName = "Alex", LastName = "Ivanov", Username = "a.ivanov", Role = EmployeeRole.Manager },
+				new EmployeeModel { FirstName = "Dmitry", LastName = "Petrov", Username = "d.petrov", Role = EmployeeRole.Manager },
+				new EmployeeModel { FirstName = "Anna", LastName = "Smirnova", Username = "a.smirnova", Role = EmployeeRole.Manager },
+				new EmployeeModel { FirstName = "Sergey", LastName = "Volkov", Username = "s.volkov", Role = EmployeeRole.Manager },
+				new EmployeeModel { FirstName = "Olga", LastName = "Morozova", Username = "o.morozova", Role = EmployeeRole.Manager }
+			});
+
+			employees.AddRange(new[]
+			{
 				new EmployeeModel { FirstName = "Elena", LastName = "Sidorova", Username = "e.sidorova", Role = EmployeeRole.Analyst },
+				new EmployeeModel { FirstName = "Vladimir", LastName = "Kozlov", Username = "v.kozlov", Role = EmployeeRole.Analyst },
+				new EmployeeModel { FirstName = "Tatiana", LastName = "Novikova", Username = "t.novikova", Role = EmployeeRole.Analyst },
+				new EmployeeModel { FirstName = "Andrey", LastName = "Fedorov", Username = "a.fedorov", Role = EmployeeRole.Analyst },
+				new EmployeeModel { FirstName = "Natalia", LastName = "Orlova", Username = "n.orlova", Role = EmployeeRole.Analyst }
+			});
+
+			employees.AddRange(new[]
+			{
 				new EmployeeModel { FirstName = "Maria", LastName = "Petrova", Username = "m.petrova", Role = EmployeeRole.Developer },
-				new EmployeeModel { FirstName = "Ivan", LastName = "Kuznetsov", Username = "i.kuznetsov", Role = EmployeeRole.Tester }
-			);
+				new EmployeeModel { FirstName = "Pavel", LastName = "Sokolov", Username = "p.sokolov", Role = EmployeeRole.Developer },
+				new EmployeeModel { FirstName = "Ekaterina", LastName = "Lebedeva", Username = "e.lebedeva", Role = EmployeeRole.Developer },
+				new EmployeeModel { FirstName = "Maxim", LastName = "Popov", Username = "m.popov", Role = EmployeeRole.Developer },
+				new EmployeeModel { FirstName = "Svetlana", LastName = "Vasilieva", Username = "s.vasilieva", Role = EmployeeRole.Developer }
+			});
+
+			employees.AddRange(new[]
+			{
+				new EmployeeModel { FirstName = "Ivan", LastName = "Kuznetsov", Username = "i.kuznetsov", Role = EmployeeRole.Tester },
+				new EmployeeModel { FirstName = "Yulia", LastName = "Stepanova", Username = "y.stepanova", Role = EmployeeRole.Tester },
+				new EmployeeModel { FirstName = "Roman", LastName = "Mikhailov", Username = "r.mikhailov", Role = EmployeeRole.Tester },
+				new EmployeeModel { FirstName = "Larisa", LastName = "Fomina", Username = "l.fomina", Role = EmployeeRole.Tester },
+				new EmployeeModel { FirstName = "Denis", LastName = "Grigoriev", Username = "d.grigoriev", Role = EmployeeRole.Tester }
+			});
+
+			dbContext.Employees.AddRange(employees);
 			await dbContext.SaveChangesAsync(cancellationToken);
 		}
 	}
@@ -161,9 +195,9 @@ public static class DatabaseSeeder
 			await dbContext.SaveChangesAsync(cancellationToken);
 		}
 	}
-    
+
 	private static async Task AddTasks(ApplicationDbContext dbContext, CancellationToken cancellationToken)
-    {
+	{
 		if (await dbContext.Tasks.AnyAsync(cancellationToken))
 			return;
 
@@ -189,64 +223,204 @@ public static class DatabaseSeeder
 		var testingNodeId = GetNodeId("Тестируется");
 		var doneNodeId = GetNodeId("Завершена");
 
-		var now = DateTime.UtcNow;
-
 		var tasksToAdd = new List<TaskModel>();
 
-		foreach (var project in projects)
+		var project = projects.First(x => x.Name == "Задачи со всеми типами статусов");
+		tasksToAdd.Add(new TaskModel
+		{
+			Name = $"[{project.Name}] Бэклог задача",
+			Description = "Seeded task in backlog",
+			ProjectId = project.Id,
+			TaskFlowNodeId = backlogNodeId,
+			Priority = TaskPriority.Low
+		});
+
+		tasksToAdd.Add(new TaskModel
+		{
+			Name = $"[{project.Name}] Текущая задача",
+			Description = "Seeded task in current",
+			ProjectId = project.Id,
+			TaskFlowNodeId = currentNodeId,
+			Priority = TaskPriority.Medium
+		});
+
+		tasksToAdd.Add(new TaskModel
+		{
+			Name = $"[{project.Name}] Активная задача",
+			Description = "Seeded task in active",
+			ProjectId = project.Id,
+			TaskFlowNodeId = activeNodeId,
+			Priority = TaskPriority.High
+		});
+
+		tasksToAdd.Add(new TaskModel
+		{
+			Name = $"[{project.Name}] Тестируемая задача",
+			Description = "Seeded task in testing",
+			ProjectId = project.Id,
+			TaskFlowNodeId = testingNodeId,
+			Priority = TaskPriority.Critical
+		});
+
+		tasksToAdd.Add(new TaskModel
+		{
+			Name = $"[{project.Name}] Завершенная задача",
+			Description = "Seeded task in done",
+			ProjectId = project.Id,
+			TaskFlowNodeId = doneNodeId,
+			Priority = TaskPriority.Blocker
+		});
+
+		project = projects.FirstOrDefault(x => x.Name == "Задачи с начальными статусами");
+		if (project != null)
 		{
 			tasksToAdd.Add(new TaskModel
 			{
-				Name = $"[{project.Name}] Бэклог задача",
-				Description = "Seeded task in backlog",
+				Name = $"[{project.Name}] Задача в бэклоге 1",
+				Description = "Первая задача в бэклоге",
 				ProjectId = project.Id,
-				CreatedAt = now,
 				TaskFlowNodeId = backlogNodeId,
 				Priority = TaskPriority.Low
 			});
 
 			tasksToAdd.Add(new TaskModel
 			{
-				Name = $"[{project.Name}] Текущая задача",
-				Description = "Seeded task in current",
+				Name = $"[{project.Name}] Задача в бэклоге 2",
+				Description = "Вторая задача в бэклоге",
 				ProjectId = project.Id,
-				CreatedAt = now,
-				TaskFlowNodeId = currentNodeId,
+				TaskFlowNodeId = backlogNodeId,
 				Priority = TaskPriority.Medium
 			});
 
 			tasksToAdd.Add(new TaskModel
 			{
-				Name = $"[{project.Name}] Активная задача",
-				Description = "Seeded task in active",
+				Name = $"[{project.Name}] Текущая задача 1",
+				Description = "Первая текущая задача",
 				ProjectId = project.Id,
-				CreatedAt = now,
-				TaskFlowNodeId = activeNodeId,
+				TaskFlowNodeId = currentNodeId,
 				Priority = TaskPriority.High
 			});
 
 			tasksToAdd.Add(new TaskModel
 			{
-				Name = $"[{project.Name}] Тестируемая задача",
-				Description = "Seeded task in testing",
+				Name = $"[{project.Name}] Текущая задача 2",
+				Description = "Вторая текущая задача",
 				ProjectId = project.Id,
-				CreatedAt = now,
+				TaskFlowNodeId = currentNodeId,
+				Priority = TaskPriority.Critical
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Активная задача",
+				Description = "Активная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = activeNodeId,
+				Priority = TaskPriority.Blocker
+			});
+		}
+
+		project = projects.FirstOrDefault(x => x.Name == "Задачи с конечными статусами");
+		if (project != null)
+		{
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Завершенная задача 1",
+				Description = "Первая завершенная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = doneNodeId,
+				Priority = TaskPriority.Low
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Завершенная задача 2",
+				Description = "Вторая завершенная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = doneNodeId,
+				Priority = TaskPriority.Medium
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Завершенная задача 3",
+				Description = "Третья завершенная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = doneNodeId,
+				Priority = TaskPriority.High
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Тестируемая задача 1",
+				Description = "Первая тестируемая задача",
+				ProjectId = project.Id,
 				TaskFlowNodeId = testingNodeId,
 				Priority = TaskPriority.Critical
 			});
 
 			tasksToAdd.Add(new TaskModel
 			{
-				Name = $"[{project.Name}] Завершенная задача",
-				Description = "Seeded task in done",
+				Name = $"[{project.Name}] Тестируемая задача 2",
+				Description = "Вторая тестируемая задача",
 				ProjectId = project.Id,
-				CreatedAt = now,
-				TaskFlowNodeId = doneNodeId,
+				TaskFlowNodeId = testingNodeId,
+				Priority = TaskPriority.Blocker
+			});
+		}
+
+		project = projects.FirstOrDefault(x => x.Name == "Задачи с отменой");
+		if (project != null)
+		{
+			var canceledNodeId = GetNodeId("Отменена");
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Отмененная задача 1",
+				Description = "Первая отмененная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = canceledNodeId,
+				Priority = TaskPriority.Low
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Отмененная задача 2",
+				Description = "Вторая отмененная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = canceledNodeId,
+				Priority = TaskPriority.Medium
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Отмененная задача 3",
+				Description = "Третья отмененная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = canceledNodeId,
+				Priority = TaskPriority.High
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Отмененная задача 4",
+				Description = "Четвертая отмененная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = canceledNodeId,
+				Priority = TaskPriority.Critical
+			});
+
+			tasksToAdd.Add(new TaskModel
+			{
+				Name = $"[{project.Name}] Отмененная задача 5",
+				Description = "Пятая отмененная задача",
+				ProjectId = project.Id,
+				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.Blocker
 			});
 		}
 
 		dbContext.Tasks.AddRange(tasksToAdd);
 		await dbContext.SaveChangesAsync(cancellationToken);
-    }
+	}
 }

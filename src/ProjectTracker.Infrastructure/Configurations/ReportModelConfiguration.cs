@@ -34,7 +34,8 @@ public class ReportModelConfiguration : IEntityTypeConfiguration<ReportModel>
 
 		builder
 			.Property(x => x.CreatedAt)
-			.HasColumnName("created_at");
+			.HasColumnName("created_at")
+			.HasDefaultValueSql("now() at time zone 'utc'");
 
 		builder
 			.Property(x => x.Status)

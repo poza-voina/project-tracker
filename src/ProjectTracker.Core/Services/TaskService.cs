@@ -13,6 +13,7 @@ using ProjectTracker.Core.Services.Interfaces;
 using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
+using System.Diagnostics.CodeAnalysis;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ProjectTracker.Core.Services;
@@ -29,6 +30,17 @@ public class TaskService(
 	public async Task AddObserverAsync(AddTaskObserverRequest request)
 	{
 		List<long> existingIds = await GetObserverIdsAsync(request.TaskId);
+
+		var isObserverExists = existingIds.Any(x => x == request.EmployeeId);
+
+		var isPerformerExists = await performerRepository
+			.GetAll()
+			.AnyAsync(x => x.TaskId == request.TaskId && x.EmployeeId == request.EmployeeId);
+
+		if (isObserverExists || isPerformerExists)
+		{
+			throw new BadRequestException("Сотрудник может быть либо наблюдателем либо исполнителем");
+		}
 
 		await observerRepository.AddAsync(request.Adapt<ObserverTaskModel>());
 
@@ -62,6 +74,17 @@ public class TaskService(
 	public async Task AddPerformerAsync(AddTaskPerformerRequest request)
 	{
 		var existingIds = await GetPerformerIdsAsync(request.TaskId);
+
+		var isPerformerExists = existingIds.Any(x => x == request.EmployeeId);
+
+		var isObserverExists = await observerRepository
+			.GetAll()
+			.AnyAsync(x => x.TaskId == request.TaskId && x.EmployeeId == request.EmployeeId);
+
+		if (isObserverExists || isPerformerExists)
+		{
+			throw new BadRequestException("Сотрудник может быть либо наблюдателем либо исполнителем");
+		}
 
 		await performerRepository.AddAsync(request.Adapt<PerformerTaskModel>());
 
@@ -98,7 +121,7 @@ public class TaskService(
 
 		taskModel.TaskFlowNodeId = toEdge.ToNode!.Id; //TODO !!!
 
-		var current = new TaskStatusHistoryDto { TaskFlowNodeId =  toEdge.ToNode!.Id };
+		var current = new TaskStatusHistoryDto { TaskFlowNodeId = toEdge.ToNode!.Id };
 
 		await taskRepository.UpdateAsync(taskModel);
 
