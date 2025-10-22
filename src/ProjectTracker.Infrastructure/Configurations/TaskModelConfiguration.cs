@@ -24,12 +24,14 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 		builder
 			.HasOne(x => x.TaskGroup)
 			.WithMany(x => x.Tasks)
-			.HasForeignKey(x => x.GroupId);
+			.HasForeignKey(x => x.GroupId)
+			.OnDelete(DeleteBehavior.Cascade);
 
 		builder
 			.HasOne(x => x.Project)
 			.WithMany(x => x.Tasks)
-			.HasForeignKey(x => x.ProjectId);
+			.HasForeignKey(x => x.ProjectId)
+			.OnDelete(DeleteBehavior.Cascade);
 
 		builder
 			.HasMany(x => x.Performers)
@@ -38,11 +40,13 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 				x => x
 					.HasOne(x => x.Employee)
 					.WithMany()
-					.HasForeignKey(x => x.EmployeeId),
+					.HasForeignKey(x => x.EmployeeId)
+					.OnDelete(DeleteBehavior.Cascade),
 				x => x
 					.HasOne(x => x.Task)
 					.WithMany()
-					.HasForeignKey(x => x.TaskId),
+					.HasForeignKey(x => x.TaskId)
+					.OnDelete(DeleteBehavior.Cascade),
 				x =>
 				{
 					x.ToTable("task_performer");
@@ -56,11 +60,13 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 				x => x
 					.HasOne(x => x.Employee)
 					.WithMany()
-					.HasForeignKey(x => x.EmployeeId),
+					.HasForeignKey(x => x.EmployeeId)
+					.OnDelete(DeleteBehavior.Cascade),
 				x => x
 					.HasOne(x => x.Task)
 					.WithMany()
-					.HasForeignKey(x => x.TaskId),
+					.HasForeignKey(x => x.TaskId)
+					.OnDelete(DeleteBehavior.Cascade),
 				x =>
 				{
 					x.ToTable("task_observer");
@@ -104,7 +110,8 @@ public class TaskModelConfiguration : IEntityTypeConfiguration<TaskModel>
 
 		builder
 			.Property(x => x.CreatedAt)
-			.HasColumnName("created_at");
+			.HasColumnName("created_at")
+			.HasDefaultValueSql("now() at time zone 'utc'");
 
 		builder
 			.Property(x => x.TaskFlowNodeId)

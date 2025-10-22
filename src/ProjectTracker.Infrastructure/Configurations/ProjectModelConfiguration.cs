@@ -24,12 +24,14 @@ public class ProjectModelConfiguration : IEntityTypeConfiguration<ProjectModel>
 		builder
 			.HasOne(x => x.ProjectManager)
 			.WithMany(x => x.ManagedProjects)
-			.HasForeignKey(x => x.ProjectManagerId);
+			.HasForeignKey(x => x.ProjectManagerId)
+			.OnDelete(DeleteBehavior.SetNull);
 
 		builder
 			.HasOne(x => x.Manager)
 			.WithMany(x => x.SupervisedProjects)
-			.HasForeignKey(x => x.ManagerId);
+			.HasForeignKey(x => x.ManagerId)
+			.OnDelete(DeleteBehavior.SetNull);
 
 		builder
 			.HasOne(x => x.TaskFlow)
@@ -54,7 +56,6 @@ public class ProjectModelConfiguration : IEntityTypeConfiguration<ProjectModel>
 
 		builder
 			.Property(x => x.ProjectManagerId)
-			.IsRequired()
 			.HasColumnName("project_manager_id");
 
 		builder

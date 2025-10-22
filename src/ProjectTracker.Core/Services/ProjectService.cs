@@ -5,6 +5,7 @@ using ProjectTracker.Contracts.ViewModels.Project;
 using ProjectTracker.Contracts.ViewModels.Shared.Pagination;
 using ProjectTracker.Core.Extensions;
 using ProjectTracker.Core.Services.Interfaces;
+using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
 using ProjectTracker.Infrastructure.Repositories.Interfaces;
 
@@ -12,11 +13,23 @@ namespace ProjectTracker.Core.Services;
 
 public class ProjectService(
 	IRepository<ProjectModel> projectRepository,
+	IRepository<EmployeeModel> employeeRepository,
 	IRepository<TaskModel> taskRepository) : IProjectService
 {
 	public async Task<ProjectBaseResponse> CreateAsync(CreateProjectRequest request)
 	{
 		var model = request.Adapt<ProjectModel>();
+
+		var employees = await employeeRepository
+			.GetAll()
+			.Where(x => x.Id == request.ProjectManagerId || x.Id == request.ManagerId)
+			.Select(x => x.Role)
+			.ToListAsync();
+
+		if (employees.All(x => x != EmployeeRole.Manager))
+		{
+			throw new BadRequestException("Неправильные роли у сотрудников");
+		}
 
 		model = await projectRepository.AddAsync(model);
 
@@ -73,6 +86,17 @@ public class ProjectService(
 	public async Task<ProjectBaseResponse> UpdateAsync(UpdateProjectRequest request)
 	{
 		var model = await projectRepository.FindAsync(request.Id);
+
+		var employees = await employeeRepository
+			.GetAll()
+			.Where(x => x.Id == request.ProjectManagerId || x.Id == request.ManagerId)
+			.Select(x => x.Role)
+			.ToListAsync();
+
+		if (employees.All(x => x != EmployeeRole.Manager))
+		{
+			throw new BadRequestException("Неправильные роли у сотрудников");
+		}
 
 		request.Adapt(model);
 

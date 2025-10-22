@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ProjectTracker.Infrastructure;
@@ -11,9 +12,11 @@ using ProjectTracker.Infrastructure;
 namespace ProjectTracker.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251022110142_AddDefaultTimeAndDelete")]
+    partial class AddDefaultTimeAndDelete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,7 +115,7 @@ namespace ProjectTracker.Infrastructure.Migrations
                         .HasColumnType("text")
                         .HasColumnName("name");
 
-                    b.Property<long?>("ProjectManagerId")
+                    b.Property<long>("ProjectManagerId")
                         .HasColumnType("bigint")
                         .HasColumnName("project_manager_id");
 
@@ -374,7 +377,8 @@ namespace ProjectTracker.Infrastructure.Migrations
                     b.HasOne("ProjectTracker.Infrastructure.Models.EmployeeModel", "ProjectManager")
                         .WithMany("ManagedProjects")
                         .HasForeignKey("ProjectManagerId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
 
                     b.HasOne("ProjectTracker.Infrastructure.Models.TaskFlowModel", "TaskFlow")
                         .WithMany("Projects")
