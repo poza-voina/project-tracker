@@ -8,6 +8,12 @@ docker compose --env-file .env up
 
 ## Чек лист: [Файл](./docs/checklist.md)
 
+## Postman коллекции
+
+- [Main Api](./docs/ProjectTracker.Api.postman_collection.json)
+
+- [History Api](./docs/ProjectTracker.History.Api.postman_collection.json)
+
 ## Пометки:
 
 - `Docker.minio-setup` и `minio-setup.sh` `minio-policy.json` служит только для демонтрации, чтобы хранилище создалось сразу со всем нужным для работы приложения
@@ -15,5 +21,3 @@ docker compose --env-file .env up
 ## Проблемы которые могут возникнуть:
 
 - Получение файла отчета по ссылке может не работать из-за прокси (я его просто выключил)
-
-- `Docker.minio-setup` может не собраться по причине не смог скачать утилиту для работы с minio 
