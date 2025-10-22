@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
 
@@ -27,14 +28,18 @@ public class FluentValidationFilter(IServiceProvider services) : IAsyncActionFil
 			{
 				continue;
 			}
-			else if (item.Name is { } && context.ActionArguments.TryGetValue(item.Name, out var value) && value is { })
+			else if (item.Name is { } && context.ActionArguments.TryGetValue(item.Name, out var value))
 			{
-				var result = await validator.ValidateAsync(new ValidationContext<object>(value));
+				var result = await validator.ValidateAsync(new ValidationContext<object?>(value));
 
 				if (result.Errors.Any())
 				{
 					throw new ValidationException(result.Errors);
 				}
+			}
+			else
+			{
+				throw new ValidationException([new ValidationFailure("request", "Запрос не смог десериализоваться. Пропущены обязательные ключи")]);
 			}
 		}
 

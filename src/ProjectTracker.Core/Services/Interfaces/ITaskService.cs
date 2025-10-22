@@ -15,5 +15,5 @@ public interface ITaskService
 	Task<TaskWithStatusEmployeesReponse> ChangeStatusAsync(ChangeTaskStatusRequest request);
 	Task AddPerformerAsync(AddTaskPerformerRequest request);
 	Task AddObserverAsync(AddTaskObserverRequest request);
-	Task<TaskReportInformationResponse> GetReportInformationAsync(long taskId);
+	Task<TaskReportInformationResponse> GetReportInformationAsync(GetTaskReportRequest request);
 }

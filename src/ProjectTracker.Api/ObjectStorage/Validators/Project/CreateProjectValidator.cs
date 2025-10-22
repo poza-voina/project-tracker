@@ -7,7 +7,13 @@ public class CreateProjectValidator : AbstractValidator<CreateProjectRequest>
 {
 	public CreateProjectValidator()
 	{
+		RuleFor(x => x.Name)
+			.NotEmpty()
+			.WithMessage("Название проекта не может быть пустым");
+
 		RuleFor(x => x.ProjectManagerId)
+			.NotEmpty()
+			.WithMessage("Идентификатор Project-менеджера не может быть пустым")
 			.GreaterThan(0)
 			.WithMessage("Идентификатор Project-менеджера проекта должен быть больше 0");
 

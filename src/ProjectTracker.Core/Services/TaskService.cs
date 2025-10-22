@@ -263,8 +263,10 @@ public class TaskService(
 		return model.Adapt<TaskWithStatusResponse>();
 	}
 
-	public async Task<TaskReportInformationResponse> GetReportInformationAsync(long taskId)
+	public async Task<TaskReportInformationResponse> GetReportInformationAsync(GetTaskReportRequest request)
 	{
+		var taskId = request.Id;
+
 		var task = await taskRepository
 			.GetAll()
 			.Include(x => x.Project)

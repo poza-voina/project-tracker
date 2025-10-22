@@ -7,6 +7,10 @@ public class CreateTaskValidator : AbstractValidator<CreateTaskRequest>
 {
 	public CreateTaskValidator()
 	{
+		RuleFor(x => x.Name)
+			.NotEmpty()
+			.WithMessage("Название задачи не может быть пустым");
+
 		RuleFor(x => x.ProjectId)
 			.GreaterThan(0)
 			.WithMessage("Идентификатор проекта должен быть больше 0");
@@ -21,6 +25,6 @@ public class CreateTaskValidator : AbstractValidator<CreateTaskRequest>
 
 		RuleFor(x => x.TaskFlowNodeId)
 			.GreaterThan(0)
-			.WithMessage("Идентификатор узла потока задач должен быть больше 0");
+			.WithMessage("Идентификатор cтатуса задачи должен быть больше 0");
 	}
 }

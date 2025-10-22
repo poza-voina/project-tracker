@@ -11,6 +11,10 @@ public class UpdateProjectValidator : AbstractValidator<UpdateProjectRequest>
 			.GreaterThan(0)
 			.WithMessage("Идентификатор проекта должен быть больше 0");
 
+		RuleFor(x => x.Name)
+			.NotEmpty()
+			.WithMessage("Название проекта не может быть пустым");
+
 		RuleFor(x => x.ProjectManagerId)
 			.GreaterThan(0)
 			.WithMessage("Идентификатор менеджера проекта должен быть больше 0");

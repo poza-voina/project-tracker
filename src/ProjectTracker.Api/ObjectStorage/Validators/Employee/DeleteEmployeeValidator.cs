@@ -9,6 +9,6 @@ public class DeleteEmployeeValidator : AbstractValidator<DeleteEmployeeRequest>
 	{
 		RuleFor(x => x.Id)
 			.GreaterThan(0)
-			.WithMessage("Идентификатор не может быть меньше 0");
+			.WithMessage("Идентификатор сотрудника должен быть больше 0");
 	}
 }

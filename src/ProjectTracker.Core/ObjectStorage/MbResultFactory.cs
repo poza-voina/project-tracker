@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using ProjectTracker.Contracts.ViewModels.Shared.Result;
+using System.Text.Json;
 
 namespace ProjectTracker.Api.ObjectStorage.Data.ViewModels.Shared.Result;
 
@@ -13,7 +14,7 @@ public static class MbResultFactory
 			ValidationErrors = errors.Select(
 			x => new ValidationError
 			{
-				Field = x.PropertyName,
+				Field = JsonNamingPolicy.CamelCase.ConvertName(x.PropertyName),
 				Message = x.ErrorMessage
 			}),
 			StatusCode = statusCode
