@@ -32,13 +32,13 @@ public class EmployeeService(IRepository<EmployeeModel> employeeRepository) : IE
 
 		var totalPages = await query.GetTotalPagesAsync(request.PageSize);
 
-		var items = query
+		var items = await query
 			.Paginate(request.PageNumber, request.PageSize)
 			.ToListAsync();
 
 		return new PaginationResponse<EmployeeBaseResponse>
 		{
-			Values = query.Adapt<IEnumerable<EmployeeBaseResponse>>(),
+			Values = items.Adapt<IEnumerable<EmployeeBaseResponse>>(),
 			TotalPages = totalPages
 		};
 	}

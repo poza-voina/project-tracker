@@ -10,6 +10,7 @@ using System.Text.Json.Serialization;
 namespace ProjectTracker.PdfReport.ObjectStorage.Services;
 
 public class ProjectTrackerClient(
+	ILogger<ProjectTrackerClient> logger,
 	IHttpClientFactory httpClientFactory,
 	ProjectTrackerClientConfiguration projectTrackerClientConfiguration) : IProjectTrackerClient
 {
@@ -57,6 +58,8 @@ public class ProjectTrackerClient(
 			Path = $"{projectTrackerClientConfiguration.TaskGroupsBasePath}/{taskGroupId}",
 		};
 
+		logger.LogInformation("Отправлен запрос на url = {}", uriBuilder.Uri.ToString());
+
 		var response = await httpClient.GetAsync(uriBuilder.Uri, cancellationToken);
 		response.EnsureSuccessStatusCode();
 
@@ -81,6 +84,8 @@ public class ProjectTrackerClient(
 			Path = $"{projectTrackerClientConfiguration.TasksBasePath}/{taskId}",
 		};
 
+		logger.LogInformation("Отправлен запрос на url = {}", uriBuilder.Uri.ToString());
+
 		var response = await httpClient.GetAsync(uriBuilder.Uri, cancellationToken);
 		response.EnsureSuccessStatusCode();
 
@@ -93,6 +98,8 @@ public class ProjectTrackerClient(
 		var result = await response.Content.ReadFromJsonAsync<MbResult<TaskReportInformationResponse>>(options, cancellationToken);
 
 		ArgumentNullException.ThrowIfNull(result);
+
+		logger.LogWarning("Не удалось десериализовать объект", uriBuilder.Uri.ToString());
 
 		return result;
 	}

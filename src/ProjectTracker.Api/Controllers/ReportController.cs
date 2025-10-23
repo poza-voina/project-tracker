@@ -30,7 +30,7 @@ public class ReportController(IReportService reportService) : ControllerBase
 		return Ok(MbResultFactory.WithSuccess(response));
 	}
 
-	[HttpGet("{id:guid}")]
+	[HttpGet("{Id:guid}")]
 	public async Task<IActionResult> GetReport([FromRoute] GetReportRequest request)
 	{
 		var response = await reportService.GetReportAsync(request);

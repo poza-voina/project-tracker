@@ -212,6 +212,10 @@ public class TaskService(
 		{
 			query = query.Where(x => x.ProjectId == request.ProjectId);
 		}
+		if (request.GroupId is { })
+		{
+			query = query.Where(x => x.GroupId == request.GroupId);
+		}
 		if (request.EmployeeId is { })
 		{
 			query = query.Where(
