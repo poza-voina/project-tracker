@@ -1,5 +1,7 @@
+using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using ProjectTracker.Infrastructure.Enums;
 using ProjectTracker.Infrastructure.Models;
 
@@ -7,6 +9,16 @@ namespace ProjectTracker.Infrastructure;
 
 public static class DatabaseSeeder
 {
+	private const string _backlog = "Бэклог";
+	private const string _current = "Текущая";
+	private const string _active = "Активна";
+	private const string _test = "Тестируется";
+	private const string _end = "Завершена";
+	private const string _allStatus = "Задачи со всеми типами статусов";
+	private const string _startStatus = "Задачи с начальными статусами";
+	private const string _endStatus = "Задачи с конечными статусами";
+	private const string _cancelStatus = "Задачи с отменой";
+
 	public static async Task TrySeedAsync(ApplicationDbContext dbContext, CancellationToken cancellationToken = default)
 	{
 		try
@@ -45,33 +57,33 @@ public static class DatabaseSeeder
 			var backlogNode = new TaskFlowNodeModel
 			{
 				Id = 1,
-				Name = "Бэклог",
+				Name = _backlog,
 				TaskFlowId = defaultFlow.Id,
 				Status = TaskFlowNodeStatus.Start
 			};
 			var currentNode = new TaskFlowNodeModel
 			{
 				Id = 2,
-				Name = "Текущая",
+				Name = _current,
 				TaskFlowId = defaultFlow.Id,
 				Status = TaskFlowNodeStatus.Start
 			};
 			var activeNode = new TaskFlowNodeModel
 			{
 				Id = 3,
-				Name = "Активна",
+				Name = _active,
 				TaskFlowId = defaultFlow.Id
 			};
 			var testingNode = new TaskFlowNodeModel
 			{
 				Id = 4,
-				Name = "Тестируется",
+				Name = _test,
 				TaskFlowId = defaultFlow.Id
 			};
 			var doneNode = new TaskFlowNodeModel
 			{
 				Id = 5,
-				Name = "Завершена",
+				Name = _end,
 				TaskFlowId = defaultFlow.Id,
 				Status = TaskFlowNodeStatus.Final
 			};
@@ -161,15 +173,9 @@ public static class DatabaseSeeder
 			var pmId = await dbContext.Employees.Select(e => e.Id).FirstAsync(cancellationToken);
 			var flowId = await dbContext.TaskFlows.Select(f => f.Id).FirstAsync(cancellationToken);
 
-			var projectNames = new[]
-			{
-				"Задачи со всеми типами статусов",
-				"Задачи с начальными статусами",
-				"Задачи с конечными статусами",
-				"Задачи с отменой"
-			};
+			var _names = GetNames();
 
-			var projects = projectNames.Select((name, idx) => new ProjectModel
+			var projects = _names.Select((name, idx) => new ProjectModel
 			{
 				Id = idx + 1,
 				Name = name,
@@ -184,13 +190,23 @@ public static class DatabaseSeeder
 		}
 	}
 
+	private static IEnumerable<string> GetNames() =>
+		[
+			_allStatus,
+			_startStatus,
+			_endStatus,
+			_cancelStatus
+		];
+
 	private static async Task AddTaskGroups(ApplicationDbContext dbContext, CancellationToken cancellationToken)
 	{
+
+		var _names = GetNames();
+
 		if (!await dbContext.TaskGroups.AnyAsync(cancellationToken))
 		{
 			dbContext.TaskGroups.AddRange(
-				new TaskGroupModel { Name = "Backlog" },
-				new TaskGroupModel { Name = "Sprint 1" }
+				_names.Select(x => new TaskGroupModel { Name = x }).ToList()
 			);
 			await dbContext.SaveChangesAsync(cancellationToken);
 		}
@@ -202,6 +218,11 @@ public static class DatabaseSeeder
 			return;
 
 		var projects = await dbContext.Projects
+			.AsNoTracking()
+			.ToListAsync(cancellationToken);
+
+		var groups = await dbContext
+			.TaskGroups
 			.AsNoTracking()
 			.ToListAsync(cancellationToken);
 
@@ -217,20 +238,22 @@ public static class DatabaseSeeder
 			return nodes.First(n => n.Name == name).Id;
 		}
 
-		var backlogNodeId = GetNodeId("Бэклог");
-		var currentNodeId = GetNodeId("Текущая");
-		var activeNodeId = GetNodeId("Активна");
-		var testingNodeId = GetNodeId("Тестируется");
-		var doneNodeId = GetNodeId("Завершена");
+		var backlogNodeId = GetNodeId(_backlog);
+		var currentNodeId = GetNodeId(_current);
+		var activeNodeId = GetNodeId(_active);
+		var testingNodeId = GetNodeId(_test);
+		var doneNodeId = GetNodeId(_end);
 
 		var tasksToAdd = new List<TaskModel>();
 
-		var project = projects.First(x => x.Name == "Задачи со всеми типами статусов");
+		var project = projects.First(x => x.Name == _allStatus);
+		var group = groups.First(x => x.Name == _allStatus);
 		tasksToAdd.Add(new TaskModel
 		{
 			Name = $"[{project.Name}] Бэклог задача",
 			Description = "Seeded task in backlog",
 			ProjectId = project.Id,
+			GroupId = group.Id,
 			TaskFlowNodeId = backlogNodeId,
 			Priority = TaskPriority.Low
 		});
@@ -240,6 +263,7 @@ public static class DatabaseSeeder
 			Name = $"[{project.Name}] Текущая задача",
 			Description = "Seeded task in current",
 			ProjectId = project.Id,
+			GroupId = group.Id,
 			TaskFlowNodeId = currentNodeId,
 			Priority = TaskPriority.Medium
 		});
@@ -249,6 +273,7 @@ public static class DatabaseSeeder
 			Name = $"[{project.Name}] Активная задача",
 			Description = "Seeded task in active",
 			ProjectId = project.Id,
+			GroupId = group.Id,
 			TaskFlowNodeId = activeNodeId,
 			Priority = TaskPriority.High
 		});
@@ -258,6 +283,7 @@ public static class DatabaseSeeder
 			Name = $"[{project.Name}] Тестируемая задача",
 			Description = "Seeded task in testing",
 			ProjectId = project.Id,
+			GroupId = group.Id,
 			TaskFlowNodeId = testingNodeId,
 			Priority = TaskPriority.Critical
 		});
@@ -267,18 +293,21 @@ public static class DatabaseSeeder
 			Name = $"[{project.Name}] Завершенная задача",
 			Description = "Seeded task in done",
 			ProjectId = project.Id,
+			GroupId = group.Id,
 			TaskFlowNodeId = doneNodeId,
 			Priority = TaskPriority.Blocker
 		});
 
-		project = projects.FirstOrDefault(x => x.Name == "Задачи с начальными статусами");
-		if (project != null)
+		project = projects.FirstOrDefault(x => x.Name == _startStatus);
+		group = groups.FirstOrDefault(x => x.Name == _startStatus);
+		if (project is { } && group is { })
 		{
 			tasksToAdd.Add(new TaskModel
 			{
 				Name = $"[{project.Name}] Задача в бэклоге 1",
 				Description = "Первая задача в бэклоге",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = backlogNodeId,
 				Priority = TaskPriority.Low
 			});
@@ -288,6 +317,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Задача в бэклоге 2",
 				Description = "Вторая задача в бэклоге",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = backlogNodeId,
 				Priority = TaskPriority.Medium
 			});
@@ -297,6 +327,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Текущая задача 1",
 				Description = "Первая текущая задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = currentNodeId,
 				Priority = TaskPriority.High
 			});
@@ -306,6 +337,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Текущая задача 2",
 				Description = "Вторая текущая задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = currentNodeId,
 				Priority = TaskPriority.Critical
 			});
@@ -315,19 +347,22 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Активная задача",
 				Description = "Активная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = activeNodeId,
 				Priority = TaskPriority.Blocker
 			});
 		}
 
-		project = projects.FirstOrDefault(x => x.Name == "Задачи с конечными статусами");
-		if (project != null)
+		project = projects.FirstOrDefault(x => x.Name == _endStatus);
+		group = groups.FirstOrDefault(x => x.Name == _endStatus);
+		if (project is { } && group is { })
 		{
 			tasksToAdd.Add(new TaskModel
 			{
 				Name = $"[{project.Name}] Завершенная задача 1",
 				Description = "Первая завершенная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = doneNodeId,
 				Priority = TaskPriority.Low
 			});
@@ -337,6 +372,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Завершенная задача 2",
 				Description = "Вторая завершенная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = doneNodeId,
 				Priority = TaskPriority.Medium
 			});
@@ -346,6 +382,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Завершенная задача 3",
 				Description = "Третья завершенная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = doneNodeId,
 				Priority = TaskPriority.High
 			});
@@ -355,6 +392,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Тестируемая задача 1",
 				Description = "Первая тестируемая задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = testingNodeId,
 				Priority = TaskPriority.Critical
 			});
@@ -364,13 +402,15 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Тестируемая задача 2",
 				Description = "Вторая тестируемая задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = testingNodeId,
 				Priority = TaskPriority.Blocker
 			});
 		}
 
-		project = projects.FirstOrDefault(x => x.Name == "Задачи с отменой");
-		if (project != null)
+		project = projects.FirstOrDefault(x => x.Name == _cancelStatus);
+		group = groups.FirstOrDefault(x => x.Name == _cancelStatus);
+		if (project is { } && group is { })
 		{
 			var canceledNodeId = GetNodeId("Отменена");
 
@@ -379,6 +419,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Отмененная задача 1",
 				Description = "Первая отмененная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.Low
 			});
@@ -388,6 +429,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Отмененная задача 2",
 				Description = "Вторая отмененная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.Medium
 			});
@@ -397,6 +439,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Отмененная задача 3",
 				Description = "Третья отмененная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.High
 			});
@@ -406,6 +449,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Отмененная задача 4",
 				Description = "Четвертая отмененная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.Critical
 			});
@@ -415,6 +459,7 @@ public static class DatabaseSeeder
 				Name = $"[{project.Name}] Отмененная задача 5",
 				Description = "Пятая отмененная задача",
 				ProjectId = project.Id,
+				GroupId = group.Id,
 				TaskFlowNodeId = canceledNodeId,
 				Priority = TaskPriority.Blocker
 			});

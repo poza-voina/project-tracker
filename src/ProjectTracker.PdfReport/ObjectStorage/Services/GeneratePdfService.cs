@@ -21,7 +21,7 @@ public class GeneratePdfService(
 		var task = (await projectTrackerClient.GetTaskOrDefaultAsync(inputEvent.TaskId))
 			?.Result
 			?.Adapt<TaskReportDto>()
-			?? throw new NotFoundException($"Не удалось найти задачу с id = {inputEvent.TaskId}");
+			?? throw new NotFoundException($"РќРµ СѓРґР°Р»РѕСЃСЊ РЅР°Р№С‚Рё Р·Р°РґР°С‡Сѓ СЃ id = {inputEvent.TaskId}");
 
 		var document = new TaskReport(task);
 
@@ -41,7 +41,7 @@ public class GeneratePdfService(
 		var taskGroup = (await projectTrackerClient.GetTaskGroupOrDefaultAsync(inputEvent.TaskGroupId))
 			?.Result
 			?.Adapt<TaskGroupReportDto>()
-			?? throw new NotFoundException($"Не удалось найти группу задач с id = {inputEvent.TaskGroupId}");
+			?? throw new NotFoundException($"РќРµ СѓРґР°Р»РѕСЃСЊ РЅР°Р№С‚Рё РіСЂСѓРїРїСѓ Р·Р°РґР°С‡ СЃ id = {inputEvent.TaskGroupId}");
 
 		var document = new TaskGroupReport(taskGroup);
 

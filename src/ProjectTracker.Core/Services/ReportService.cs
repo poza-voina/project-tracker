@@ -101,7 +101,7 @@ public class ReportService(
 			}
 			catch (TimeoutException)
 			{
-				throw new UnprocessableException($"Превышено время ожидания");
+				throw new UnprocessableException($"РџСЂРµРІС‹С€РµРЅРѕ РІСЂРµРјСЏ РѕР¶РёРґР°РЅРёСЏ");
 			}
 			catch (Exception)
 			{

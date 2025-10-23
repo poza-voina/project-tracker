@@ -33,9 +33,9 @@ public class GroupService(
 			.ToListAsync();
 
 		var isDelete = tasks.Count == 0 ||
-			(tasks.All(
+			tasks.All(
 				x => x.Status != null &&
-				x.Status.Status == TaskFlowNodeStatus.Final));
+				x.Status.Status == TaskFlowNodeStatus.Final);
 
 		if (!isDelete)
 		{
