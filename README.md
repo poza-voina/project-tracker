@@ -5,6 +5,9 @@
 ```
 docker compose --env-file .env up
 ```
+Основной: `localhost:5000/swagger`
+
+Сервис истории: `localhost:5001/swagger`
 
 ## Чек лист: [Файл](./docs/checklist.md)
 
