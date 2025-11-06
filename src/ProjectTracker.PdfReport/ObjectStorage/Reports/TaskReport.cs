@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using ProjectTracker.Contracts.ViewModels.Task;
+using ProjectTracker.PdfReport.ObjectStorage.Dataproviders;
 using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskReport;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
@@ -8,39 +9,11 @@ namespace ProjectTracker.PdfReport.ObjectStorage.Reports;
 
 public class TaskReport : IDocument
 {
-	private readonly TaskReportDto _taskReportDto;
+	TaskReportInputDto _inputData;
 
-	private Dictionary<string, string?> taskProperties = new();
-	private Dictionary<string, string?> projectManagerProperties;
-	private Dictionary<string, string?> managerProperties;
-	private Dictionary<string, List<string?>> _observers;
-	private Dictionary<string, List<string?>> _performers;
-
-	public TaskReport(TaskReportDto taskReportDto)
+	public TaskReport(TaskReportDataProcessor processor, TaskReportDto dto)
 	{
-		_taskReportDto = taskReportDto;
-
-		taskProperties = new FieldsBuilder()
-			.AddAllPrimitiveFields(_taskReportDto)
-			.AddPrimitiveFields(_taskReportDto.Project, nameof(_taskReportDto.Project.Name))
-			.AddPrimitiveFields(_taskReportDto.Group, nameof(_taskReportDto.Group.Name))
-			.GetFields();
-
-		projectManagerProperties = new FieldsBuilder()
-			.AddAllPrimitiveFields(_taskReportDto.Project.ProjectManager)
-			.GetFields();
-
-		managerProperties = new FieldsBuilder()
-			.AddAllPrimitiveFields(_taskReportDto.Project.Manager)
-			.GetFields();
-
-		_observers = new ManyFieldsBuilder()
-			.AddAllPrimitiveFields(_taskReportDto.Observers)
-			.GetFields();
-
-		_performers = new ManyFieldsBuilder()
-			.AddAllPrimitiveFields(_taskReportDto.Performers)
-			.GetFields();
+		_inputData = processor.Process(dto);
 	}
 
 	public void Compose(IDocumentContainer container)
@@ -49,7 +22,9 @@ public class TaskReport : IDocument
 			page =>
 			{
 				page.Header().Padding(GenerateReportHelper.DefaultPaddingSize)
-					.Text($"Отчет по задаче {_taskReportDto.Id}").AlignCenter().FontSize(GenerateReportHelper.HeaderFontSize);
+					.Text($"Отчет по задаче {_inputData.TaskId}")
+					.AlignCenter()
+					.FontSize(GenerateReportHelper.HeaderFontSize);
 
 				page.Content()
 					.Column(
@@ -79,13 +54,13 @@ public class TaskReport : IDocument
 					GenerateReportHelper.GenerateHeaderSection(container, "Наблюдатели")
 				);
 
-		if (_observers.Count > 0)
+		if (_inputData.Observers.Count > 0)
 		{
 			column
 				.Item()
 				.Element(
 					container =>
-						GenerateReportHelper.GenerateTableTypeSecond(container, _observers)
+						GenerateReportHelper.GenerateTableTypeSecond(container, _inputData.Observers)
 					);
 		}
 		else
@@ -105,13 +80,13 @@ public class TaskReport : IDocument
 					GenerateReportHelper.GenerateHeaderSection(container, "Исполнители")
 				);
 
-		if (_performers.Count > 0)
+		if (_inputData.Performers.Count > 0)
 		{
 			column
 				.Item()
 				.Element(
 					container =>
-						GenerateReportHelper.GenerateTableTypeSecond(container, _performers)
+						GenerateReportHelper.GenerateTableTypeSecond(container, _inputData.Performers)
 					);
 		}
 		else
@@ -131,13 +106,13 @@ public class TaskReport : IDocument
 					GenerateReportHelper.GenerateHeaderSection(container, "Информация о Менеджере")
 				);
 
-		if (managerProperties.Count > 0)
+		if (_inputData.ManagerProperties.Count > 0)
 		{
 			column
 				.Item()
 				.Element(
 					container =>
-						GenerateReportHelper.GenerateTableTypeFirst(container, managerProperties)
+						GenerateReportHelper.GenerateTableTypeFirst(container, _inputData.ManagerProperties)
 					);
 		}
 		else
@@ -161,7 +136,7 @@ public class TaskReport : IDocument
 			.Item()
 			.Element(
 				container =>
-					GenerateReportHelper.GenerateTableTypeFirst(container, projectManagerProperties)
+					GenerateReportHelper.GenerateTableTypeFirst(container, _inputData.ProjectManagerProperties)
 				);
 	}
 
@@ -178,7 +153,7 @@ public class TaskReport : IDocument
 			.Item()
 			.Element(
 				container =>
-					GenerateReportHelper.GenerateTableTypeFirst(container, taskProperties)
+					GenerateReportHelper.GenerateTableTypeFirst(container, _inputData.TaskProperties)
 				);
 	}
 }

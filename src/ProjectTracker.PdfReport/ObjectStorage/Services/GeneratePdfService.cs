@@ -2,6 +2,7 @@ using Mapster;
 using ProjectTracker.Abstractions.Exceptions;
 using ProjectTracker.Contracts.Events.Reports;
 using ProjectTracker.PdfReport.ObjectStorage.Data;
+using ProjectTracker.PdfReport.ObjectStorage.Dataproviders;
 using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskGroupReport;
 using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskReport;
 using ProjectTracker.PdfReport.ObjectStorage.Reports;
@@ -23,7 +24,7 @@ public class GeneratePdfService(
 			?.Adapt<TaskReportDto>()
 			?? throw new NotFoundException($"Не удалось найти задачу с id = {inputEvent.TaskId}");
 
-		var document = new TaskReport(task);
+		var document = new TaskReport(new TaskReportDataProcessor(), task);
 
 		var bytes = document.GeneratePdf();
 

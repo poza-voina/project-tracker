@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace ProjectTracker.PdfReport.ObjectStorage;
+namespace ProjectTracker.PdfReport.ObjectStorage.FieldBuilder;
 
 public static class FieldsBuilderHelper
 {

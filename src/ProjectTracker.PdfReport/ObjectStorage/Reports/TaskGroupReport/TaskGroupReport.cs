@@ -1,4 +1,6 @@
-﻿using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskGroupReport;
+﻿using Mapster;
+using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskGroupReport;
+using ProjectTracker.PdfReport.ObjectStorage.FieldBuilder;
 using ProjectTracker.PdfReport.ObjectStorage.Reports;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
@@ -16,9 +18,8 @@ public class TaskGroupReport : IDocument
 	{
 		_taskGroupReportDto = taskGroupReportDto;
 
-		_groupProperties = new FieldsBuilder()
-			.AddAllPrimitiveFields(_taskGroupReportDto)
-			.GetFields();
+		_groupProperties = new FieldsBuilder<TaskGroupReportDto>()
+			.BuildWithPrimitiveFields(_taskGroupReportDto);
 
 		//NOTE Так делать тоже не очень
 		var firstTask = _taskGroupReportDto.Tasks.FirstOrDefault();
@@ -26,12 +27,24 @@ public class TaskGroupReport : IDocument
 		if (firstTask is { })
 		{
 			//NOTE добавить ссылки через Bookmark
-			_simpleTaskProperties = new ManyFieldsBuilder()
-				.AddPrimitiveFields(_taskGroupReportDto.Tasks,
-					nameof(firstTask.Id),
-					nameof(firstTask.CreatedAt),
-					nameof(firstTask.Deadline)) //NOTE Не получится получить статус скорее всего нужно делать Билдер с деревом выражений а с ними я работать не умею
-				.GetFields();
+			_simpleTaskProperties = new ManyFieldsBuilder<TaskGroupTaskDto>()
+				.Add
+				(
+					x => x.Id,
+					x => x.Name
+				)
+				.AddWithAfterProcess
+				(
+					x => x.Deadline,
+					x => x?.ToString("dd.MM.yyyy")
+				)
+				.AddWithAfterProcess
+				(
+					x => x.CreatedAt,
+					x => x.ToString("dd.MM.yyyy")
+				)
+				.AsManyFieldsBuilder()
+				?.Build(_taskGroupReportDto.Tasks);
 		}
 	}
 

@@ -1,6 +1,7 @@
 ﻿namespace ProjectTracker.PdfReport.ObjectStorage.Reports.TaskGroupReport;
 
 using ProjectTracker.PdfReport.ObjectStorage.Dtos.TaskGroupReport;
+using ProjectTracker.PdfReport.ObjectStorage.FieldBuilder;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 
@@ -23,9 +24,8 @@ public class TaskSection
 						container => container.GenerateHeaderSection($"Информация о задаче {_task.Id}")
 					);
 
-				var taskProperties = new FieldsBuilder()
-					.AddAllPrimitiveFields(_task)
-					.GetFields();
+				var taskProperties = new FieldsBuilder<TaskGroupTaskDto>()
+					.BuildWithPrimitiveFields(_task);
 
 				if (taskProperties.Any())
 				{
@@ -49,9 +49,8 @@ public class TaskSection
 					.Element(container => container.GenerateHeaderSection("Исполнители")
 				);
 
-				var performerProperties = new ManyFieldsBuilder()
-					.AddAllPrimitiveFields(_task.Performers)
-					.GetFields();
+				var performerProperties = new ManyFieldsBuilder<TaskGroupEmployeeDto>()
+					.BuildWithPrimitiveFields(_task.Performers);
 
 				if (performerProperties.Count > 0)
 				{
